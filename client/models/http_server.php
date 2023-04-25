@@ -1,20 +1,27 @@
 <?php
 class HttpServer
 {
-    private $url;
+    private $host;
+    private $port;
+    private $baseUrl;
 
-    function __construct($url)
+    public function __construct($host, $port)
     {
-        $this->url = $url;
+        $this->host = $host;
+        $this->port = $port;
+        $this->baseUrl = "http://{$host}:{$port}/";
     }
 
-    function getRequest()
+    public function get($endpoint)
     {
+        $url = $this->baseUrl . $endpoint;
+
         $ch = curl_init();
-        curl_setopt($ch, CURLOPT_URL, $this->url);
+        curl_setopt($ch, CURLOPT_URL, $url);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         $response = curl_exec($ch);
         curl_close($ch);
+
         return $response;
     }
 }

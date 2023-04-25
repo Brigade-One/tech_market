@@ -1,11 +1,13 @@
 <?php
+$host = 'techmarket';
+$port = 80;
+$docroot = __DIR__;
 
-$responseData = [
-    'name' => 'John Doe',
-    'email' => 'john.doe@example.com',
-    'phone' => '123-456-7890'
-];
+$cmd = sprintf('php -S %s:%d -t %s', $host, $port, $docroot);
+shell_exec($cmd);
 
-header('Content-Type: application/json');
-
-echo json_encode($responseData);
+// Handle the request
+if ($_SERVER['REQUEST_METHOD'] === 'GET') {
+    echo 'Hello, world!';
+}
+?>

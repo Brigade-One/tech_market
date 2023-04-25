@@ -2,8 +2,7 @@
 
 require_once '../models/http_server.php';
 
-$server = new HttpServer('http://techmarket/server/server.php');
-
-$response = $server->getRequest();
+$server = new HttpServer('techmarket', 80);
+$response = $server->get('server/server.php');
 
 echo $response;
