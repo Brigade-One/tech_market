@@ -9,32 +9,19 @@ class SignUp
         $this->filename = $filename;
     }
 
-    public function processSignupData($jsonData)
+    public function processSignUpData($jsonData)
     {
-
-
         $data = json_decode($jsonData);
         if (empty($data->name) || empty($data->email)) {
             return ['success' => false, 'message' => 'Name and email fields are required.'];
         }
+
         $userData = json_encode($data) . "\n";
 
-        /* $usersData = file_get_contents($this->filename);
-        $users = json_decode($usersData, true); */
-
         // Read the user data from the file
-
-        $users = [];
-        $handle = fopen($this->filename, "r");
-        if ($handle) {
-            while (($line = fgets($handle)) !== false) {
-                $user = json_decode($line, true);
-                $users[] = $user;
-            }
-            fclose($handle);
-        } else {
-            return ['success' => false, 'message' => 'Error reading user data.'];
-        }
+        require_once 'user_data_reader.php';
+        $reader = new UserDataReader($this->filename);
+        $users = $reader->read();
 
         $email = $data->email;
         // Check if the user with the same email already exists

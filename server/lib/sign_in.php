@@ -10,18 +10,11 @@ class SignIn
 
     public function processSignInData($jsonData)
     {
+        require_once 'user_data_reader.php';
+        $reader = new UserDataReader($this->filename);
+
         // Read the user data from the file
-        $users = [];
-        $handle = fopen($this->filename, "r");
-        if ($handle) {
-            while (($line = fgets($handle)) !== false) {
-                $user = json_decode($line, true);
-                $users[] = $user;
-            }
-            fclose($handle);
-        } else {
-            return ['success' => false, 'message' => 'Error reading user data.'];
-        }
+        $users = $reader->read();
 
         // Extract the email and password from the JSON data
         $data = json_decode($jsonData, true);
@@ -36,4 +29,5 @@ class SignIn
         }
         return ['success' => false, 'message' => 'No such user.']; // Authentication faile
     }
+
 }
