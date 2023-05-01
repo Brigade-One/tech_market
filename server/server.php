@@ -42,20 +42,28 @@ function _signUp($filename)
 function _signIn($filename)
 {
     require_once 'lib/sign_in.php';
+    $logHandler = new LogHandler();
+
     $signin = new SignIn($filename);
     $jsonData = file_get_contents('php://input');
     $result = $signin->processSignInData($jsonData);
     _sendAuthRequestResponse($result);
+
+    $logHandler->logEvent($result['message']);
 }
 
 function _sendAuthRequestResponse($result)
 {
+    require_once 'lib/log_handler.php';
+    $logHandler = new LogHandler();
+
     header('Content-Type: application/json');
     if ($result['success'] === true) {
         echo json_encode(['success' => true, 'message' => $result['message']]);
     } else {
         echo json_encode(['success' => false, 'message' => $result['message']]);
     }
+    $logHandler->logEvent($result['message']);
 }
 
 function startServer($host, $port, $docroot)

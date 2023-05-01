@@ -13,6 +13,9 @@ class HttpRouter
     }
     public function route($method, $uri)
     {
+        require_once 'lib/log_handler.php';
+        $logHandler = new LogHandler();
+        $logHandler->logEvent($method . ' request: ' . ' to ' . $uri);
         foreach ($this->routes as $route) {
             if ($route['method'] === $method && $route['uri'] === $uri) {
                 $callback = $route['callback'];
