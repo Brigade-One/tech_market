@@ -1,6 +1,7 @@
 import { User } from '../../models/user.js';
 
 const form = document.querySelector('form');
+const successDiv = document.getElementById("success");
 
 form.addEventListener('submit', function (event) {
     event.preventDefault();
@@ -20,12 +21,11 @@ form.addEventListener('submit', function (event) {
         if (xhr.readyState === XMLHttpRequest.DONE) {
             if (xhr.status === 200) {
                 const response = JSON.parse(xhr.responseText);
-                alert(response.message);
+                successDiv.innerHTML = response.message;
                 /*  window.location.href = ' ../views/index.php'; */
             } else {
                 const response = JSON.parse(xhr.responseText);
-                console.log(response);
-                alert('Error: ' + xhr.status + ' ' + response.message);
+                successDiv.innerHTML = response.message;
             }
         }
     };

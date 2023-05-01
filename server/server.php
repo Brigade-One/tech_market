@@ -68,10 +68,10 @@ function _signIn($filename)
     header('Content-Type: application/json');
 
     if ($result['success'] === true) {
-        echo json_encode(['success' => true]);
+        echo json_encode(['success' => true, 'message' => $result['message']]);
     } else {
         http_response_code(500);
-        echo json_encode(['error' => $result['message']]);
+        echo json_encode(['error' => true, 'message' => $result['message']]);
     }
 }
 

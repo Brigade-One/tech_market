@@ -13,6 +13,7 @@ form.addEventListener('submit', function (event) {
         alert('Invalid data');
         return;
     }
+
     console.log(user.password);
     console.log(formData.get('confirmPassword'));
     if (user.password !== formData.get('confirmPassword')) {
@@ -39,6 +40,6 @@ form.addEventListener('submit', function (event) {
         }
     };
     xhr.send(jsonData);
-
+    
 
 });

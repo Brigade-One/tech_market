@@ -31,7 +31,7 @@ class SignIn
         // Check if there's a matching user record
         foreach ($users as $user) {
             if ($user['email'] === $email && $user['password'] === $password) {
-                return ['success' => true, 'message' => 'User signed in successfully.']; // Authentication successful
+                return ['success' => true, 'message' => 'User with name ' . $user["name"] . ' signed in successfully.']; // Authentication successful
             }
         }
         return ['success' => false, 'message' => 'No such user.']; // Authentication faile
