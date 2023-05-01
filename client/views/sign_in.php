@@ -17,7 +17,7 @@
 
         <input type="submit" value="Увійти">
     </form>
-    <script type="module" src="../assets/js/sign_in.js"></script>
+    <script type="module" src="../src/js/sign_in.js"></script>
 
     <div id="success">
 
