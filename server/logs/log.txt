@@ -123,3 +123,9 @@
 2023-05-02 09:24:24: POST request:  to /server/server.php/sign_up
 2023-05-02 09:24:39: POST request:  to /server/server.php/sign_up
 2023-05-02 09:24:39: User  signed up successfully.
+2023-05-02 09:30:02: POST request:  to /server/server.php/sign_in
+2023-05-02 09:30:02: No such user.
+2023-05-02 09:30:02: No such user.
+2023-05-02 09:30:23: POST request:  to /server/server.php/sign_in
+2023-05-02 09:30:23: No such user.
+2023-05-02 09:30:23: No such user.
