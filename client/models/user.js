@@ -13,4 +13,19 @@ export class User {
         return true;
     }
 
+    fromJSON(json) {
+        this.name = json.name;
+        this.email = json.email;
+        this.password = json.password;
+    }
+
+    toJSON() {
+        
+        return {
+            name: this.name,
+            email: this.email,
+            password: this.password
+        };
+    }
+
 }

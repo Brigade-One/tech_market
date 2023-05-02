@@ -1,6 +1,7 @@
 import { User } from '../../models/user.js';
 
 const form = document.querySelector('form');
+const statusDiv = document.getElementById("status");
 
 form.addEventListener('submit', function (event) {
     event.preventDefault();
@@ -10,20 +11,20 @@ form.addEventListener('submit', function (event) {
     const user = new User(formData.get('username'), formData.get('email'), formData.get('password'));
 
     if (!user.validate()) {
-        alert('Invalid data');
+        statusDiv.innerHTML = "Invalid data";
         return;
     }
 
-    console.log(user.password);
-    console.log(formData.get('confirmPassword'));
     if (user.password !== formData.get('confirmPassword')) {
-        alert('Passwords do not match');
+        statusDiv.innerHTML = "Passwords do not match";
         return;
     }
 
     // Convert the data to a JSON string
-    const jsonData = JSON.stringify(user);
+    const jsonData = JSON.stringify(user.toJSON());
     console.log(jsonData);
+    console.log("JSON data: " + jsonData);
+
     // Send the data to the server using XMLHttpRequest
     const xhr = new XMLHttpRequest();
     xhr.open('POST', '../../server/server.php/sign_up');
@@ -32,14 +33,14 @@ form.addEventListener('submit', function (event) {
         if (xhr.readyState === XMLHttpRequest.DONE) {
             if (xhr.status === 200) {
                 const response = JSON.parse(xhr.responseText);
-                alert(response.message);
+                statusDiv.innerHTML = response.message;
                 /*    window.location.href = ' ../views/index.php'; */
             } else {
-                alert('Error: ' + xhr.status);
+                statusDiv.innerHTML = "Error: " + xhr.status;
             }
         }
     };
     xhr.send(jsonData);
-    
+
 
 });

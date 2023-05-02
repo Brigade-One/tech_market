@@ -1,0 +1,164 @@
+2023-05-01 17:33:36: No such user.
+2023-05-01 17:34:26: User with name vitalii signed in successfully.
+2023-05-01 17:34:26: User with name vitalii signed in successfully.
+2023-05-01 17:35:24: User with email vitaliypetrun2@gmail.com signed in successfully.
+2023-05-01 17:35:24: User with name vitalii signed in successfully.
+2023-05-01 17:35:56: User with email vitaliypetrun2@gmail.com signed in successfully.
+2023-05-01 17:42:23: User failed signed up try
+2023-05-01 17:43:23: User failed signed up try
+2023-05-01 17:44:48: Request: POST /server/server.php/sign_up
+2023-05-01 17:44:48: User with this email already exists.
+2023-05-01 17:45:55: POST request:  to /server/server.php/sign_up
+2023-05-01 17:45:55: User with this email already exists.
+2023-05-01 17:47:16: POST request:  to /server/server.php/sign_up
+2023-05-01 17:47:16: User with vitaliypetrun2@gmail.com email already exists.
+2023-05-01 17:48:29: POST request:  to /server/server.php/sign_in
+2023-05-01 17:48:29: No such user.
+2023-05-01 17:49:07: POST request:  to /server/server.php/sign_in
+2023-05-01 17:49:07: No such user.
+2023-05-01 17:49:07: No such user.
+2023-05-02 08:19:24: POST request:  to /server/server.php/sign_in
+2023-05-02 08:19:24: No such user.
+2023-05-02 08:19:24: No such user.
+2023-05-02 08:19:28: POST request:  to /server/server.php/sign_in
+2023-05-02 08:19:28: User with name vitalii signed in successfully.
+2023-05-02 08:19:28: User with name vitalii signed in successfully.
+2023-05-02 08:22:19: POST request:  to /server/server.php/sign_in
+2023-05-02 08:22:19: No such user.
+2023-05-02 08:22:19: No such user.
+2023-05-02 08:22:22: POST request:  to /server/server.php/sign_in
+2023-05-02 08:22:22: User with name vitalii signed in successfully.
+2023-05-02 08:22:22: User with name vitalii signed in successfully.
+2023-05-02 08:22:38: POST request:  to /server/server.php/sign_in
+2023-05-02 08:22:38: No such user.
+2023-05-02 08:22:38: No such user.
+2023-05-02 08:39:00: POST request:  to /server/server.php/sign_up
+2023-05-02 08:39:42: POST request:  to /server/server.php/sign_up
+2023-05-02 08:40:26: POST request:  to /server/server.php/sign_up
+2023-05-02 08:40:41: POST request:  to /server/server.php/sign_up
+2023-05-02 08:40:58: POST request:  to /server/server.php/sign_up
+2023-05-02 08:41:06: POST request:  to /server/server.php/sign_up
+2023-05-02 08:41:49: POST request:  to /server/server.php/sign_up
+2023-05-02 08:41:57: POST request:  to /server/server.php/sign_up
+2023-05-02 08:42:27: POST request:  to /server/server.php/sign_up
+2023-05-02 08:42:27: Name and email fields are required.
+2023-05-02 08:42:40: POST request:  to /server/server.php/sign_up
+2023-05-02 08:42:40: Name and email fields are required.
+2023-05-02 08:42:54: POST request:  to /server/server.php/sign_up
+2023-05-02 08:42:54: Name and email fields are required.
+2023-05-02 08:43:54: POST request:  to /server/server.php/sign_up
+2023-05-02 08:43:54: Name and email fields are required.
+2023-05-02 08:45:24: POST request:  to /server/server.php/sign_up
+2023-05-02 08:45:24: Name and email fields are required.
+2023-05-02 08:45:35: POST request:  to /server/server.php/sign_up
+2023-05-02 08:45:35: Name and email fields are required.
+2023-05-02 08:45:58: POST request:  to /server/server.php/sign_up
+2023-05-02 08:45:58: Name and email fields are required.
+2023-05-02 08:46:13: POST request:  to /server/server.php/sign_up
+2023-05-02 08:46:13: Name and email fields are required.
+2023-05-02 08:46:44: POST request:  to /server/server.php/sign_up
+2023-05-02 08:46:44: Name and email fields are required.
+2023-05-02 08:46:59: POST request:  to /server/server.php/sign_up
+2023-05-02 08:46:59: Name and email fields are required.
+2023-05-02 08:48:41: POST request:  to /server/server.php/sign_up
+2023-05-02 08:48:41: Name and email fields are required.
+2023-05-02 08:49:24: POST request:  to /server/server.php/sign_up
+2023-05-02 08:49:24: Name and email fields are required.
+2023-05-02 08:49:38: POST request:  to /server/server.php/sign_up
+2023-05-02 08:49:38: Name and email fields are required.
+2023-05-02 08:51:36: POST request:  to /server/server.php/sign_up
+2023-05-02 08:51:36: Name and email fields are required.
+2023-05-02 08:52:41: POST request:  to /server/server.php/sign_up
+2023-05-02 08:52:41: Name and email fields are required.
+2023-05-02 08:52:50: POST request:  to /server/server.php/sign_up
+2023-05-02 08:52:50: Name and email fields are required.
+2023-05-02 08:54:18: POST request:  to /server/server.php/sign_up
+2023-05-02 08:54:18: Name and email fields are required.
+2023-05-02 08:55:16: POST request:  to /server/server.php/sign_up
+2023-05-02 08:55:16: Name and email fields are required.
+2023-05-02 08:55:26: POST request:  to /server/server.php/sign_up
+2023-05-02 08:55:26: Name and email fields are required.
+2023-05-02 08:55:32: POST request:  to /server/server.php/sign_up
+2023-05-02 08:55:32: Name and email fields are required.
+2023-05-02 08:59:54: POST request:  to /server/server.php/sign_up
+2023-05-02 08:59:54: Name and email fields are required.
+2023-05-02 08:59:59: POST request:  to /server/server.php/sign_up
+2023-05-02 08:59:59: Name and email fields are required.
+2023-05-02 09:00:19: POST request:  to /server/server.php/sign_up
+2023-05-02 09:00:19: Name and email fields are required.
+2023-05-02 09:00:43: POST request:  to /server/server.php/sign_up
+2023-05-02 09:00:43: Name and email fields are required.
+2023-05-02 09:03:20: POST request:  to /server/server.php/sign_up
+2023-05-02 09:03:20: Name and email fields are required.
+2023-05-02 09:04:35: POST request:  to /server/server.php/sign_up
+2023-05-02 09:04:35: Name and email fields are required.
+2023-05-02 09:06:01: POST request:  to /server/server.php/sign_up
+2023-05-02 09:06:01: Name and email fields are required.
+2023-05-02 09:06:34: POST request:  to /server/server.php/sign_up
+2023-05-02 09:06:34: Name and email fields are required.
+2023-05-02 09:06:40: POST request:  to /server/server.php/sign_up
+2023-05-02 09:06:40: Name and email fields are required.
+2023-05-02 09:07:26: POST request:  to /server/server.php/sign_up
+2023-05-02 09:12:11: POST request:  to /server/server.php/sign_up
+2023-05-02 09:12:11: User with vitaliypetrun2@gmail.com email already exists.
+2023-05-02 09:13:23: POST request:  to /server/server.php/sign_up
+2023-05-02 09:13:23: Uservit@gmail.com signed up successfully.
+2023-05-02 09:16:05: POST request:  to /server/server.php/sign_in
+2023-05-02 09:16:05: No such user.
+2023-05-02 09:16:05: No such user.
+2023-05-02 09:16:18: POST request:  to /server/server.php/sign_in
+2023-05-02 09:16:18: User with name vitalii signed in successfully.
+2023-05-02 09:16:18: User with name vitalii signed in successfully.
+2023-05-02 09:18:34: POST request:  to /server/server.php/sign_in
+2023-05-02 09:18:34: No such user.
+2023-05-02 09:18:34: No such user.
+2023-05-02 09:19:08: POST request:  to /server/server.php/sign_up
+2023-05-02 09:19:08: User with  email already exists.
+2023-05-02 09:20:38: POST request:  to /server/server.php/sign_up
+2023-05-02 09:20:38: User  signed up successfully.
+2023-05-02 09:20:46: POST request:  to /server/server.php/sign_up
+2023-05-02 09:20:46: User  signed up successfully.
+2023-05-02 09:23:31: POST request:  to /server/server.php/sign_up
+2023-05-02 09:23:59: POST request:  to /server/server.php/sign_up
+2023-05-02 09:24:24: POST request:  to /server/server.php/sign_up
+2023-05-02 09:24:39: POST request:  to /server/server.php/sign_up
+2023-05-02 09:24:39: User  signed up successfully.
+2023-05-02 09:30:02: POST request:  to /server/server.php/sign_in
+2023-05-02 09:30:02: No such user.
+2023-05-02 09:30:02: No such user.
+2023-05-02 09:30:23: POST request:  to /server/server.php/sign_in
+2023-05-02 09:30:23: No such user.
+2023-05-02 09:30:23: No such user.
+2023-05-02 09:30:50: POST request:  to /server/server.php/sign_in
+2023-05-02 09:30:50: No such user.
+2023-05-02 09:30:50: No such user.
+2023-05-02 09:31:01: POST request:  to /server/server.php/sign_in
+2023-05-02 09:31:01: No such user.
+2023-05-02 09:31:01: No such user.
+2023-05-02 09:31:26: POST request:  to /server/server.php/sign_in
+2023-05-02 09:31:26: No such user.
+2023-05-02 09:31:26: No such user.
+2023-05-02 09:31:40: POST request:  to /server/server.php/sign_in
+2023-05-02 09:31:40: No such user.
+2023-05-02 09:31:40: No such user.
+2023-05-02 09:32:45: POST request:  to /server/server.php/sign_in
+2023-05-02 09:32:45: No such user.
+2023-05-02 09:32:45: No such user.
+2023-05-02 09:33:31: POST request:  to /server/server.php/sign_in
+2023-05-02 09:33:31: No such user.
+2023-05-02 09:33:31: No such user.
+2023-05-02 09:33:47: POST request:  to /server/server.php/sign_in
+2023-05-02 09:33:47: User with name vitalii signed in successfully.
+2023-05-02 09:33:47: User with name vitalii signed in successfully.
+2023-05-02 09:33:59: POST request:  to /server/server.php/sign_in
+2023-05-02 09:33:59: User with name vitalii signed in successfully.
+2023-05-02 09:33:59: User with name vitalii signed in successfully.
+2023-05-02 09:34:34: POST request:  to /server/server.php/sign_in
+2023-05-02 09:34:34: User with name vitalii signed in successfully.
+2023-05-02 09:34:34: User with name vitalii signed in successfully.
+2023-05-02 09:34:52: POST request:  to /server/server.php/sign_in
+2023-05-02 09:34:52: User with name vitalii signed in successfully.
+2023-05-02 09:34:52: User with name vitalii signed in successfully.
+2023-05-02 09:34:57: POST request:  to /server/server.php/sign_in
+2023-05-02 09:34:57: No such user.
+2023-05-02 09:34:57: No such user.

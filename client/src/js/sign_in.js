@@ -1,7 +1,7 @@
 import { User } from '../../models/user.js';
 
 const form = document.querySelector('form');
-const successDiv = document.getElementById("success");
+const statusDiv = document.getElementById("status");
 
 form.addEventListener('submit', function (event) {
     event.preventDefault();
@@ -11,7 +11,7 @@ form.addEventListener('submit', function (event) {
     const user = new User('', formData.get('email'), formData.get('password'));
 
     // Convert the data to a JSON string
-    const jsonData = JSON.stringify(user);
+    const jsonData = JSON.stringify(user.toJSON());
 
     // Send the data to the server using XMLHttpRequest
     const xhr = new XMLHttpRequest();
@@ -21,11 +21,11 @@ form.addEventListener('submit', function (event) {
         if (xhr.readyState === XMLHttpRequest.DONE) {
             if (xhr.status === 200) {
                 const response = JSON.parse(xhr.responseText);
-                successDiv.innerHTML = response.message;
+                statusDiv.innerHTML = response.message;
                 /*  window.location.href = ' ../views/index.php'; */
             } else {
                 const response = JSON.parse(xhr.responseText);
-                successDiv.innerHTML = response.message;
+                statusDiv.innerHTML = response.message;
             }
         }
     };
