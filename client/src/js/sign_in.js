@@ -11,7 +11,7 @@ form.addEventListener('submit', function (event) {
     const user = new User('', formData.get('email'), formData.get('password'));
 
     // Convert the data to a JSON string
-    const jsonData = JSON.stringify(user);
+    const jsonData = JSON.stringify(user.toJSON());
 
     // Send the data to the server using XMLHttpRequest
     const xhr = new XMLHttpRequest();

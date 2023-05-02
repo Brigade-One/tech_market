@@ -1,3 +1,4 @@
-{"name":"vitalii","email":"vitaliypetrun2@gmail.com","password":"asdsd"}
-{"name":"asdas","email":"vitalietrun2@gmail.com","password":"asd"}
-{"name":"user","email":"vit@gmail.com","password":"asdf"}
+
+
+
+

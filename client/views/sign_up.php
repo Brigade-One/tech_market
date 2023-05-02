@@ -26,6 +26,8 @@
         <input type="submit" value="Register">
     </form>
     <script type="module" src="../src/js/sign_up.js"></script>
+    <div id="status">
 
+    </div>
 
 </html>
