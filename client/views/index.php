@@ -9,9 +9,7 @@
 <body>
 
     <header>
-        <div id="header">
-
-        </div>
+        <div id="header"></div>
     </header>
 
     <body>
@@ -31,7 +29,6 @@
 
     <footer>
         <div id="footer">
-
         </div>
     </footer>
 
