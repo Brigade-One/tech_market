@@ -6,9 +6,12 @@
 </head>
 
 <body>
-    <div id="header">
 
-    </div>
+    <header>
+        <div id="header">
+
+        </div>
+    </header>
 
     <body>
         <?php
@@ -20,10 +23,18 @@
         ?>
     </body>
 
+    <footer>
+        <div id="footer">
+
+        </div>
+    </footer>
+
+
 </body>
 
 <script>
     $("#header").load("widgets/header.html");
+    $("#footer").load("widgets/footer.html");
 </script>
 
 </html>
