@@ -20,7 +20,7 @@ class SignUp
             return ['success' => false, 'message' => 'Name and email fields are required.'];
         }
 
-        $userData = $receivedUser->toJson . "\n";
+        $userData = $receivedUser->toJson() . "\n";
 
         // Read the user data from the file
         $reader = new UserDataReader($this->filename);
@@ -37,7 +37,7 @@ class SignUp
         $result = file_put_contents($this->filename, $userData, FILE_APPEND);
 
         if ($result !== false) {
-            return ['success' => true, 'message' => 'User ' . $user['email'] . ' signed up successfully.'];
+            return ['success' => true, 'message' => 'User ' . $receivedUser->email . ' signed up successfully.'];
         } else {
             return ['success' => false, 'message' => 'Signing up error.'];
         }

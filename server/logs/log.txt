@@ -162,3 +162,38 @@
 2023-05-02 09:34:57: POST request:  to /server/server.php/sign_in
 2023-05-02 09:34:57: No such user.
 2023-05-02 09:34:57: No such user.
+2023-05-03 09:48:01: POST request:  to /server/server.php/sign_in
+2023-05-03 09:48:01: No such user.
+2023-05-03 09:48:01: No such user.
+2023-05-03 09:48:05: POST request:  to /server/server.php/sign_in
+2023-05-03 09:48:05: No such user.
+2023-05-03 09:48:05: No such user.
+2023-05-03 09:49:07: POST request:  to /server/server.php/sign_in
+2023-05-03 09:49:07: No such user.
+2023-05-03 09:49:07: No such user.
+2023-05-03 09:49:11: POST request:  to /server/server.php/sign_in
+2023-05-03 09:49:11: No such user.
+2023-05-03 09:49:11: No such user.
+2023-05-03 09:49:19: POST request:  to /server/server.php/sign_in
+2023-05-03 09:49:19: User with name vitalii signed in successfully.
+2023-05-03 09:49:19: User with name vitalii signed in successfully.
+2023-05-03 09:49:43: POST request:  to /server/server.php/sign_in
+2023-05-03 09:49:43: User with name vitalii signed in successfully.
+2023-05-03 09:49:43: User with name vitalii signed in successfully.
+2023-05-03 09:51:34: POST request:  to /server/server.php/sign_up
+2023-05-03 09:51:34: User vit@gmail.com signed up successfully.
+2023-05-03 09:53:26: POST request:  to /server/server.php/sign_up
+2023-05-03 09:53:26: User  signed up successfully.
+2023-05-03 09:54:29: POST request:  to /server/server.php/sign_up
+2023-05-03 09:54:29: User  signed up successfully.
+2023-05-03 09:56:54: POST request:  to /server/server.php/sign_up
+2023-05-03 09:56:54: User  signed up successfully.
+2023-05-03 09:57:13: POST request:  to /server/server.php/sign_up
+2023-05-03 09:57:13: User with vitaliypetrun2@gmail.com email already exists.
+2023-05-03 09:58:55: POST request:  to /server/server.php/sign_up
+2023-05-03 09:58:55: User vitaliypetrun2@gmail.com signed up successfully.
+2023-05-03 10:00:26: POST request:  to /server/server.php/sign_up
+2023-05-03 10:00:26: User trun2@gmail.c signed up successfully.
+2023-05-03 10:00:52: POST request:  to /server/server.php/sign_in
+2023-05-03 10:00:52: User with name vitaliiasda signed in successfully.
+2023-05-03 10:00:52: User with name vitaliiasda signed in successfully.
