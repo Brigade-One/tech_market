@@ -13,7 +13,7 @@ export class User {
             //console.log(confirmPassword);
             console.log(document.getElementById("confirmPassword").value);
             if (this.password !== document.getElementById("confirmPassword").value) {
-                window.alert('Passwords do not match');
+                //window.alert('Passwords do not match');
                 return false;
             }
         }

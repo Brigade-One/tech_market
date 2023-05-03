@@ -3,20 +3,19 @@ export class UserController{
         this.model = model;
         this.view = view;
         const form = document.getElementById("signup-form");
-        form.addEventListener("submit", this.handleSignUp.bind(this));
+        //form.addEventListener("submit", this.handleSignUp.bind(this));
     }
 
     handleSignUp(event){
-        console.log(this);
-        console.log(event);
-        event.preventDefault();
+        //event.preventDefault();
         const name = this.model.name;//document.getElementById("name").value;
         const email = this.model.email;//document.getElementById("email").value;
         const password = this.model.password;//document.getElementById("password").value;
         if(this.model.validateSignUp()){
             const jsonData = JSON.stringify(this.model.toJSON());
+            console.log(jsonData);
             const xhr = new XMLHttpRequest();
-            xhr.open("POST", "../../views/sign_up");
+            xhr.open("POST", "../../server/server.php/sign_up");
             xhr.setRequestHeader("Content-Type", "application/json");
             xhr.onreadystatechange = () =>{
                 if (xhr.readyState === XMLHttpRequest.DONE){

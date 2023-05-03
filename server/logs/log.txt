@@ -222,3 +222,5 @@
 2023-05-03 11:26:54: POST request:  to /server/server.php/sign_in
 2023-05-03 11:26:54: No such user.
 2023-05-03 11:26:54: No such user.
+2023-05-03 21:56:59: POST request:  to /server/server.php/sign_up
+2023-05-03 21:56:59: User yaroslav.chertanov@nure.ua signed up successfully.
