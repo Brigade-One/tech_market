@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet" />
+    <link href="http://techmarket/client/src/css/header.css" rel="stylesheet" />
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="header">
+        <div class="header_logo">
+            <a href="http://techmarket/client/views/index.php">
+                <img src="http://techmarket/client/assets/images/logo.png" alt="logo" />
+            </a>
+        </div>
+        <div class="header_search">
+            <form action="http://techmarket/client/index.php?controller=product&action=search" method="post">
+                <input type="text" name="search" placeholder="Search for any things" />
+                <button type="submit" name="submit-search">
+                    Search
+                </button>
+            </form>
+        </div>
+        <div class=" header_nav">
+            <div class="header_cart">
+                <a href="http://techmarket/client/index.php?controller=cart&action=show">
+                    <img src="http://techmarket/client/assets/images/cart.png" alt="cart" />
+                </a>
+            </div>
+            <div class="header_user">
+                <a href="http://techmarket/client/index.php?controller=user&action=show">
+                    <img src="http://techmarket/client/assets/images/person.png" alt="user" />
+                </a>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>

@@ -197,3 +197,28 @@
 2023-05-03 10:00:52: POST request:  to /server/server.php/sign_in
 2023-05-03 10:00:52: User with name vitaliiasda signed in successfully.
 2023-05-03 10:00:52: User with name vitaliiasda signed in successfully.
+2023-05-03 10:35:26: POST request:  to /server/server.php/sign_in
+2023-05-03 10:35:26: No such user.
+2023-05-03 10:35:26: No such user.
+2023-05-03 10:35:30: POST request:  to /server/server.php/sign_in
+2023-05-03 10:35:30: User with name vitalii signed in successfully.
+2023-05-03 10:35:30: User with name vitalii signed in successfully.
+2023-05-03 11:04:35: POST request:  to /server/server.php/sign_in
+2023-05-03 11:04:35: User with name vitalii signed in successfully.
+2023-05-03 11:04:35: User with name vitalii signed in successfully.
+2023-05-03 11:04:39: POST request:  to /server/server.php/sign_in
+2023-05-03 11:04:39: No such user.
+2023-05-03 11:04:39: No such user.
+2023-05-03 11:13:53: POST request:  to /server/server.php/sign_in
+2023-05-03 11:13:53: User with name vitalii signed in successfully.
+2023-05-03 11:13:53: User with name vitalii signed in successfully.
+2023-05-03 11:14:21: POST request:  to /server/server.php/sign_up
+2023-05-03 11:14:21: User erer@F signed up successfully.
+2023-05-03 11:26:01: POST request:  to /server/server.php/sign_up
+2023-05-03 11:26:01: User vitrun@gmail.com signed up successfully.
+2023-05-03 11:26:45: POST request:  to /server/server.php/sign_in
+2023-05-03 11:26:45: User with name qwe signed in successfully.
+2023-05-03 11:26:45: User with name qwe signed in successfully.
+2023-05-03 11:26:54: POST request:  to /server/server.php/sign_in
+2023-05-03 11:26:54: No such user.
+2023-05-03 11:26:54: No such user.
