@@ -2,3 +2,4 @@
 {"name":"vitaliiasda","email":"trun2@gmail.c","password":"asd"}
 {"name":"er","email":"erer@F","password":"ASD"}
 {"name":"qwe","email":"vitrun@gmail.com","password":"asd"}
+{"name":"vitalii","email":"vitaliypetrun2@gmail.xn--com-hdd3gwb","password":"\u0444\u044b\u0432"}

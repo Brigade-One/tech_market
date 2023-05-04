@@ -1,6 +1,6 @@
 <?php
 require_once 'lib/http_router.php';
-
+header('Access-Control-Allow-Origin: *');
 // Server parameters.
 $host = 'techmarket';
 $port = 80;
@@ -11,8 +11,8 @@ startServer($host, $port, $docroot);
 // Helps to avoid if statements.
 $router = new HttpRouter();
 
-$router->addRoute('GET', '/', function () {
-    return '[GET] Hello, world!';
+$router->addRoute('GET', '/server/server.php/get_all_items', function () {
+    return _getAllItemsFromDB('SELECT * FROM items');
 });
 $router->addRoute('POST', '/server/server.php/sign_up', function () {
     return _signUp('data/users.txt');
@@ -50,6 +50,16 @@ function _signIn($filename)
     _sendAuthRequestResponse($result);
 
     $logHandler->logEvent($result['message']);
+}
+
+function _getAllItemsFromDB($request)
+{
+    require_once 'lib/connect_db.php';
+    $db = new ConnectDB('techmarket', 'tech_market_db', 'root', '');
+    $pdo = $db->connect();
+    $stmt = $pdo->query($request);
+    $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    echo json_encode($result);
 }
 
 function _sendAuthRequestResponse($result)
