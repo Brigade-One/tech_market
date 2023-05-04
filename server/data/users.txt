@@ -1,7 +1,4 @@
 {"name":"vitalii","email":"vitaliypetrun2@gmail.com","password":"asd"}
 {"name":"vitaliiasda","email":"trun2@gmail.c","password":"asd"}
-{"name":"er","email":"erer@F","password":"ASD"}
-{"name":"qwe","email":"vitrun@gmail.com","password":"asd"}
-{"name":"test","email":"yaroslav.chertanov@nure.ua","password":"asdf"}
-{"name":"ert","email":"vitaliun2@gmail.com","password":"qwe"}
-{"name":"ert","email":"vitaliypetrun2@gmail.comas","password":"asd"}
+{"name":"test","email":"yaroslav.chertanov@nure.ua","password":"asd"}
+{"name":"test","email":"yaroslertanov@nure.ua","password":"asdf"}

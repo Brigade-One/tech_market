@@ -5,6 +5,7 @@ export class UserController {
     }
 
     handleSignUp() {
+        console.dir(this.model);
         if (this.model.validateSignUp()) {
             const jsonData = JSON.stringify(this.model.toJSON());
             this.handleHttpRequest(jsonData, "sign_up");
@@ -24,7 +25,7 @@ export class UserController {
 
     handleHttpRequest(jsonData, url) {
         const xhr = new XMLHttpRequest();
-        xhr.open("POST", "../../server/server.php/" + url);
+        xhr.open("POST", "../../server/server.php/" + url); 
         xhr.setRequestHeader("Content-Type", "application/json");
         xhr.onreadystatechange = () => {
             if (xhr.readyState === XMLHttpRequest.DONE) {

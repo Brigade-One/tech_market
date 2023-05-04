@@ -258,3 +258,39 @@
 2023-05-04 09:04:18: User vitaliun2@gmail.com signed up successfully.
 2023-05-04 09:22:59: POST request:  to /server/server.php/sign_up
 2023-05-04 09:22:59: User vitaliypetrun2@gmail.comas signed up successfully.
+2023-05-04 09:32:49: POST request:  to /server/server.php/sign_up
+2023-05-04 09:32:49: User yaroslav.chertanov@nure.ua signed up successfully.
+2023-05-04 09:33:11: POST request:  to /server/server.php/sign_in
+2023-05-04 09:33:11: No such user.
+2023-05-04 09:33:11: No such user.
+2023-05-04 09:33:27: POST request:  to /server/server.php/sign_in
+2023-05-04 09:33:27: User with name test signed in successfully.
+2023-05-04 09:33:27: User with name test signed in successfully.
+2023-05-04 09:38:19: POST request:  to /server/server.php/sign_in
+2023-05-04 09:38:19: No such user.
+2023-05-04 09:38:19: No such user.
+2023-05-04 09:38:22: POST request:  to /server/server.php/sign_in
+2023-05-04 09:38:22: No such user.
+2023-05-04 09:38:22: No such user.
+2023-05-04 09:38:33: POST request:  to /server/server.php/sign_in
+2023-05-04 09:38:33: No such user.
+2023-05-04 09:38:33: No such user.
+2023-05-04 09:39:56: POST request:  to /server/server.php/sign_in
+2023-05-04 09:39:56: User with name test signed in successfully.
+2023-05-04 09:39:56: User with name test signed in successfully.
+2023-05-04 09:40:07: POST request:  to /server/server.php/sign_in
+2023-05-04 09:40:07: No such user.
+2023-05-04 09:40:07: No such user.
+2023-05-04 09:40:11: POST request:  to /server/server.php/sign_in
+2023-05-04 09:40:11: User with name test signed in successfully.
+2023-05-04 09:40:11: User with name test signed in successfully.
+2023-05-04 10:08:34: POST request:  to /server/server.php/sign_up
+2023-05-04 10:08:34: User with yaroslav.chertanov@nure.ua email already exists.
+2023-05-04 10:10:47: POST request:  to /server/server.php/sign_up
+2023-05-04 10:10:47: User yaroslertanov@nure.ua signed up successfully.
+2023-05-04 10:10:56: POST request:  to /server/server.php/sign_in
+2023-05-04 10:10:56: No such user.
+2023-05-04 10:10:56: No such user.
+2023-05-04 10:10:59: POST request:  to /server/server.php/sign_in
+2023-05-04 10:10:59: User with name test signed in successfully.
+2023-05-04 10:10:59: User with name test signed in successfully.

@@ -1,6 +1,6 @@
-import { UserView } from "../../MVC/views/userView.js";
-import { User } from "../../MVC/models/user.js";
-import { UserController } from "../../MVC/controllers/userController.js";
+import { UserView } from "../../views/userView.js";
+import { User } from "../../models/user.js";
+import { UserController } from "../../controllers/userController.js";
 
 const form = document.querySelector('form');
 
