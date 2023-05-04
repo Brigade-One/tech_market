@@ -19,7 +19,7 @@
     </form>
     <script type="module" src="../src/js/sign_in.js"></script>
 
-    <div id="success">
+    <div id="status">
 
     </div>
 

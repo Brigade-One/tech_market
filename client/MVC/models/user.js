@@ -5,30 +5,25 @@ export class User {
         this.password = password;
     }
 
-    validateSignUp(confirmPassword) {
+    validateSignUp() {
         if (this.name === '' || this.email === '' || this.password === '') {
             return false;
-        }else{
-            console.log(this.password);
-            //console.log(confirmPassword);
-            console.log(document.getElementById("confirmPassword").value);
+        } else {
             if (this.password !== document.getElementById("confirmPassword").value) {
-                //window.alert('Passwords do not match');
                 return false;
             }
         }
-
         return true;
     }
 
-    fromJSON(json){
+    fromJSON(json) {
         this.name = json.name;
         this.email = json.email;
         this.password = json.password;
     }
 
-    toJSON(){
-        return{
+    toJSON() {
+        return {
             name: this.name,
             email: this.email,
             password: this.password,
