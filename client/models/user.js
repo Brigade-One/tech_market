@@ -5,11 +5,21 @@ export class User {
         this.password = password;
     }
 
-    validate() {
+    validateSignUp(confirmPass) {
         if (this.name === '' || this.email === '' || this.password === '') {
             return false;
+        } else {
+            if (this.password !== confirmPass) {
+                return false;
+            }
         }
+        return true;
+    }
 
+    validateSignIn() {
+        if (this.email === '' || this.password === '') {
+            return false;
+        }
         return true;
     }
 
@@ -20,12 +30,10 @@ export class User {
     }
 
     toJSON() {
-        
         return {
             name: this.name,
             email: this.email,
-            password: this.password
+            password: this.password,
         };
     }
-
 }
