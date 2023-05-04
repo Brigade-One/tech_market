@@ -278,3 +278,13 @@
 2023-05-04 11:39:58: GET request:  to /server/server.php/get_all_items
 =======
 >>>>>>> dev
+2023-05-04 12:21:58: GET request:  to /server/server.php/get_all_items
+2023-05-04 12:22:35: GET request:  to /server/server.php/get_all_items
+2023-05-04 12:22:41: POST request:  to /server/server.php/sign_in
+2023-05-04 12:22:41: User with name vitalii signed in successfully.
+2023-05-04 12:22:41: User with name vitalii signed in successfully.
+2023-05-04 12:22:50: POST request:  to /server/server.php/sign_up
+2023-05-04 12:22:50: User vitali2@gmail.com signed up successfully.
+2023-05-04 12:22:59: POST request:  to /server/server.php/sign_in
+2023-05-04 12:22:59: User with name ert signed in successfully.
+2023-05-04 12:22:59: User with name ert signed in successfully.
