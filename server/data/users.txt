@@ -1,1 +1,2 @@
 {"name":"vitalii","email":"vitaliypetrun2@gmail.com","password":"asd"}
+{"name":"ert","email":"vitali2@gmail.com","password":"asd"}

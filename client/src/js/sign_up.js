@@ -12,5 +12,6 @@ form.addEventListener('submit', function (event) {
     const user = new User(formData.get('username'), formData.get('email'), formData.get('password'));
     const userView = new UserView();
     const userController = new UserController(user, userView);
+    
     userController.handleSignUp(formData.get("confirmPassword"));
 });

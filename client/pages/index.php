@@ -20,10 +20,12 @@
         echo '<br><br>';
         echo '<button onclick="location.href = \'http://techmarket/client/pages/sign_up.php\';" >РЕЄСТРАЦІЯ</button>';
         ?>
+        <br><br>
 
         <div class="product-grid">
             <div class="product-container"></div>
         </div>
+        <div id="items-container"></div>
 
     </body>
 
@@ -39,43 +41,58 @@
     $("#header").load("widgets/header.html");
     $("#footer").load("widgets/footer.html");
 
+    _getAllDBItems();
 
-    fetch('widgets/product.html')
-        .then(response => response.text())
-        .then(html => {
-            const parser = new DOMParser();
-            const doc = parser.parseFromString(html, 'text/html');
-            const productWidgetTemplate = doc.querySelector('#product-widget').content;
-
-            function createProductWidget(product) {
-                const widget = productWidgetTemplate.cloneNode(true);
-
-                widget.querySelector('img').src = product.imageUrl;
-                widget.querySelector('.product-name').textContent = product.name;
-                widget.querySelector('.product-price').textContent = product.description;
-                widget.querySelector('.cart-button').addEventListener('click', () => {
-                    alert('Product added to cart');
-                });
-                widget.querySelector('.details-button').addEventListener('click', () => {
-                    alert('Details button clicked');
-                });
-
-
-                return widget;
+    function _getAllDBItems() {
+        const xhr = new XMLHttpRequest();
+        xhr.open('GET', 'http://techmarket/server/server.php/get_all_items');
+        xhr.send();
+        xhr.onload = () => {
+            if (xhr.status == 200) {
+                var result = JSON.parse(xhr.response);
+                _loadGrid(result);
+            } else {
+                console.log('Error!');
             }
+        };
+    }
 
-            const newProduct = {
-                imageUrl: 'https://via.placeholder.com/150',
-                name: 'Product name',
-                description: '$100'
-            };
+    function _loadGrid(result) {
+        fetch('widgets/product.html')
+            .then(response => response.text())
+            .then(html => {
+                const parser = new DOMParser();
+                const doc = parser.parseFromString(html, 'text/html');
+                const productWidgetTemplate = doc.querySelector('#product-widget').content;
 
-            const productContainer = document.querySelector('.product-container');
-            for (let i = 0; i < 20; i++) {
-                productContainer.appendChild(createProductWidget(newProduct));
-            }
+                function createProductWidget(product) {
+                    const widget = productWidgetTemplate.cloneNode(true);
 
-        });
+                    widget.querySelector('img').src = 'https://via.placeholder.com/150';//TODO: product.imageUrl;
+
+                    widget.querySelector('.product-name').textContent = product['name'];
+                    widget.querySelector('.product-price').textContent = "₴" + product['price'];
+                    console.log(product['price']);
+                    widget.querySelector('.cart-button').addEventListener('click', () => {
+                        alert('Product added to cart');
+                    });
+                    widget.querySelector('.details-button').addEventListener('click', () => {
+                        alert('Details button clicked');
+                    });
+
+
+                    return widget;
+                }
+
+                const productContainer = document.querySelector('.product-container');
+                for (let i = 0; i < 20; i++) {
+                    console.log(result[i]);
+                    productContainer.appendChild(createProductWidget(result[i]));
+                }
+
+            });
+    }
+
 
 
 
