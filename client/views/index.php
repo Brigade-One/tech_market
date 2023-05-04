@@ -21,7 +21,6 @@
         echo '<button onclick="location.href = \'http://techmarket/client/views/sign_up.php\';" >РЕЄСТРАЦІЯ</button>';
         ?>
         <br><br>
-        <button id="get-all-items">Get all DB items</button>
 
         <div class="product-grid">
             <div class="product-container"></div>
@@ -42,7 +41,9 @@
     $("#header").load("widgets/header.html");
     $("#footer").load("widgets/footer.html");
 
-    document.getElementById('get-all-items').addEventListener('click', () => {
+    _getAllDBItems();
+
+    function _getAllDBItems() {
         const xhr = new XMLHttpRequest();
         xhr.open('GET', 'http://techmarket/server/server.php/get_all_items');
         xhr.send();
@@ -54,8 +55,7 @@
                 console.log('Error!');
             }
         };
-
-    });
+    }
 
     function _loadGrid(result) {
         fetch('widgets/product.html')
