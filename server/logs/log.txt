@@ -256,3 +256,5 @@
 2023-05-04 09:00:34: User with name vitalii signed in successfully.
 2023-05-04 09:04:18: POST request:  to /server/server.php/sign_up
 2023-05-04 09:04:18: User vitaliun2@gmail.com signed up successfully.
+2023-05-04 09:22:59: POST request:  to /server/server.php/sign_up
+2023-05-04 09:22:59: User vitaliypetrun2@gmail.comas signed up successfully.

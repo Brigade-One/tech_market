@@ -7,7 +7,7 @@ export class UserController {
     handleSignUp() {
         if (this.model.validateSignUp()) {
             const jsonData = JSON.stringify(this.model.toJSON());
-            handleHttpRequest(jsonData, "sign_up");
+            this.handleHttpRequest(jsonData, "sign_up");
         } else {
             this.view.showError("Please fill in all fields correctly.");
         }
@@ -16,7 +16,7 @@ export class UserController {
     handleSignIn() {
         if (this.model.validateSignIn()) {
             const jsonData = JSON.stringify(this.model.toJSON());
-            handleHttpRequest(jsonData, "sign_in");
+            this.handleHttpRequest(jsonData, "sign_in");
         } else {
             this.view.showError("Please fill in all fields correctly.");
         }

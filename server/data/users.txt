@@ -4,3 +4,4 @@
 {"name":"qwe","email":"vitrun@gmail.com","password":"asd"}
 {"name":"test","email":"yaroslav.chertanov@nure.ua","password":"asdf"}
 {"name":"ert","email":"vitaliun2@gmail.com","password":"qwe"}
+{"name":"ert","email":"vitaliypetrun2@gmail.comas","password":"asd"}
