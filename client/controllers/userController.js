@@ -5,7 +5,6 @@ export class UserController {
     }
 
     handleSignUp() {
-        console.dir(this.model);
         if (this.model.validateSignUp()) {
             const jsonData = JSON.stringify(this.model.toJSON());
             this.handleHttpRequest(jsonData, "sign_up");

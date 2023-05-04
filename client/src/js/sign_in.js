@@ -3,7 +3,6 @@ import { User } from "../../models/user.js";
 import { UserController } from "../../controllers/userController.js";
 
 const form = document.querySelector('form');
-//const statusDiv = document.getElementById("status");
 
 form.addEventListener('submit', function (event) {
     event.preventDefault();
