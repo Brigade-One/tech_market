@@ -1,3 +1,1 @@
 {"name":"vitalii","email":"vitaliypetrun2@gmail.com","password":"asd"}
-{"name":"vitaliiasda","email":"trun2@gmail.c","password":"asd"}
-

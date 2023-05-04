@@ -5,11 +5,11 @@ export class User {
         this.password = password;
     }
 
-    validateSignUp() {
+    validateSignUp(confirmPass) {
         if (this.name === '' || this.email === '' || this.password === '') {
             return false;
         } else {
-            if (this.password !== document.getElementById("confirmPassword").value) {
+            if (this.password !== confirmPass) {
                 return false;
             }
         }

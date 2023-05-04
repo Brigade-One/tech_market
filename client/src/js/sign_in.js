@@ -13,5 +13,5 @@ form.addEventListener('submit', function (event) {
     const userView = new UserView();
     const userController = new UserController(user, userView);
 
-    userController.handleSignIn(event);
+    userController.handleSignIn();
 });

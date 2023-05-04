@@ -4,8 +4,8 @@ export class UserController {
         this.view = view;
     }
 
-    handleSignUp() {
-        if (this.model.validateSignUp()) {
+    handleSignUp(confirmPass) {
+        if (this.model.validateSignUp(confirmPass)) {
             const jsonData = JSON.stringify(this.model.toJSON());
             this.handleHttpRequest(jsonData, "sign_up");
         } else {
