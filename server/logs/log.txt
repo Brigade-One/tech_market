@@ -302,3 +302,184 @@
 2023-05-06 09:10:00: GET request:  to /server/server.php/get_all_items
 2023-05-06 09:10:06: GET request:  to /server/server.php/get_all_items
 2023-05-06 09:15:49: GET request:  to /server/server.php/get_all_items
+2023-05-06 09:29:19: GET request:  to /server/server.php/get_all_items
+2023-05-06 09:29:23: POST request:  to /server/server.php/sign_in
+2023-05-06 09:29:23: No such user.
+2023-05-06 09:29:23: No such user.
+2023-05-06 09:29:30: POST request:  to /server/server.php/sign_in
+2023-05-06 09:29:30: No such user.
+2023-05-06 09:29:30: No such user.
+2023-05-06 09:29:57: POST request:  to /server/server.php/sign_in
+2023-05-06 09:29:57: No such user.
+2023-05-06 09:29:57: No such user.
+2023-05-06 09:30:04: POST request:  to /server/server.php/sign_in
+2023-05-06 09:30:04: User with name vitalii signed in successfully.
+2023-05-06 09:30:04: User with name vitalii signed in successfully.
+2023-05-06 09:30:57: POST request:  to /server/server.php/sign_in
+2023-05-06 09:30:57: No such user.
+2023-05-06 09:30:57: No such user.
+2023-05-06 09:31:06: POST request:  to /server/server.php/sign_in
+2023-05-06 09:31:06: No such user.
+2023-05-06 09:31:06: No such user.
+2023-05-06 09:31:08: POST request:  to /server/server.php/sign_in
+2023-05-06 09:31:08: No such user.
+2023-05-06 09:31:08: No such user.
+2023-05-06 09:31:08: POST request:  to /server/server.php/sign_in
+2023-05-06 09:31:08: No such user.
+2023-05-06 09:31:08: No such user.
+2023-05-06 09:31:10: POST request:  to /server/server.php/sign_in
+2023-05-06 09:31:10: No such user.
+2023-05-06 09:31:10: No such user.
+2023-05-06 09:31:10: POST request:  to /server/server.php/sign_in
+2023-05-06 09:31:10: No such user.
+2023-05-06 09:31:10: No such user.
+2023-05-06 09:31:13: POST request:  to /server/server.php/sign_in
+2023-05-06 09:31:13: No such user.
+2023-05-06 09:31:13: No such user.
+2023-05-06 09:31:13: POST request:  to /server/server.php/sign_in
+2023-05-06 09:31:13: No such user.
+2023-05-06 09:31:13: No such user.
+2023-05-06 09:31:15: POST request:  to /server/server.php/sign_in
+2023-05-06 09:31:15: No such user.
+2023-05-06 09:31:15: No such user.
+2023-05-06 09:31:18: POST request:  to /server/server.php/sign_in
+2023-05-06 09:31:18: No such user.
+2023-05-06 09:31:18: No such user.
+2023-05-06 09:31:19: POST request:  to /server/server.php/sign_in
+2023-05-06 09:31:19: No such user.
+2023-05-06 09:31:19: No such user.
+2023-05-06 09:31:19: POST request:  to /server/server.php/sign_in
+2023-05-06 09:31:19: No such user.
+2023-05-06 09:31:19: No such user.
+2023-05-06 09:31:19: POST request:  to /server/server.php/sign_in
+2023-05-06 09:31:19: No such user.
+2023-05-06 09:31:19: No such user.
+2023-05-06 09:31:21: POST request:  to /server/server.php/sign_in
+2023-05-06 09:31:21: No such user.
+2023-05-06 09:31:21: No such user.
+2023-05-06 09:31:21: POST request:  to /server/server.php/sign_in
+2023-05-06 09:31:21: No such user.
+2023-05-06 09:31:21: No such user.
+2023-05-06 09:31:26: POST request:  to /server/server.php/sign_in
+2023-05-06 09:31:26: No such user.
+2023-05-06 09:31:26: No such user.
+2023-05-06 09:31:35: POST request:  to /server/server.php/sign_in
+2023-05-06 09:31:35: No such user.
+2023-05-06 09:31:35: No such user.
+2023-05-06 09:32:06: POST request:  to /server/server.php/sign_in
+2023-05-06 09:32:06: No such user.
+2023-05-06 09:32:06: No such user.
+2023-05-06 09:32:08: POST request:  to /server/server.php/sign_in
+2023-05-06 09:32:08: No such user.
+2023-05-06 09:32:08: No such user.
+2023-05-06 09:33:16: POST request:  to /server/server.php/sign_in
+2023-05-06 09:33:16: No such user.
+2023-05-06 09:33:16: No such user.
+2023-05-06 09:33:18: POST request:  to /server/server.php/sign_in
+2023-05-06 09:33:18: No such user.
+2023-05-06 09:33:18: No such user.
+2023-05-06 09:33:28: POST request:  to /server/server.php/sign_in
+2023-05-06 09:33:28: No such user.
+2023-05-06 09:33:28: No such user.
+2023-05-06 09:33:34: POST request:  to /server/server.php/sign_in
+2023-05-06 09:33:34: No such user.
+2023-05-06 09:33:34: No such user.
+2023-05-06 09:35:13: POST request:  to /server/server.php/sign_in
+2023-05-06 09:35:13: No such user.
+2023-05-06 09:35:13: No such user.
+2023-05-06 09:35:18: POST request:  to /server/server.php/sign_in
+2023-05-06 09:35:18: No such user.
+2023-05-06 09:35:18: No such user.
+2023-05-06 09:35:31: POST request:  to /server/server.php/sign_in
+2023-05-06 09:35:31: No such user.
+2023-05-06 09:35:31: No such user.
+2023-05-06 09:35:37: POST request:  to /server/server.php/sign_in
+2023-05-06 09:35:37: No such user.
+2023-05-06 09:35:37: No such user.
+2023-05-06 09:36:15: POST request:  to /server/server.php/sign_up
+2023-05-06 09:36:15: Name and email fields are required.
+2023-05-06 09:36:40: GET request:  to /server/server.php/get_all_items
+2023-05-06 09:36:43: POST request:  to /server/server.php/sign_in
+2023-05-06 09:36:43: No such user.
+2023-05-06 09:36:43: No such user.
+2023-05-06 09:37:04: POST request:  to /server/server.php/sign_in
+2023-05-06 09:37:04: No such user.
+2023-05-06 09:37:04: No such user.
+2023-05-06 09:39:03: POST request:  to /server/server.php/sign_in
+2023-05-06 09:39:03: No such user.
+2023-05-06 09:39:03: No such user.
+2023-05-06 09:39:45: POST request:  to /server/server.php/sign_in
+2023-05-06 09:39:45: No such user.
+2023-05-06 09:39:45: No such user.
+2023-05-06 09:40:02: POST request:  to /server/server.php/sign_in
+2023-05-06 09:40:02: No such user.
+2023-05-06 09:40:02: No such user.
+2023-05-06 09:40:30: POST request:  to /server/server.php/sign_in
+2023-05-06 09:40:30: No such user.
+2023-05-06 09:40:30: No such user.
+2023-05-06 09:40:35: POST request:  to /server/server.php/sign_in
+2023-05-06 09:40:35: No such user.
+2023-05-06 09:40:35: No such user.
+2023-05-06 09:42:51: POST request:  to /server/server.php/sign_in
+2023-05-06 09:42:51: No such user.
+2023-05-06 09:42:51: No such user.
+2023-05-06 09:42:55: POST request:  to /server/server.php/sign_in
+2023-05-06 09:42:55: No such user.
+2023-05-06 09:42:55: No such user.
+2023-05-06 09:44:06: POST request:  to /server/server.php/sign_in
+2023-05-06 09:44:06: No such user.
+2023-05-06 09:44:06: No such user.
+2023-05-06 09:49:01: POST request:  to /server/server.php/sign_in
+2023-05-06 09:49:01: No such user.
+2023-05-06 09:49:01: No such user.
+2023-05-06 09:49:36: POST request:  to /server/server.php/sign_in
+2023-05-06 09:49:36: No such user.
+2023-05-06 09:49:36: No such user.
+2023-05-06 09:50:27: POST request:  to /server/server.php/sign_in
+2023-05-06 09:50:27: No such user.
+2023-05-06 09:50:27: No such user.
+2023-05-06 09:52:20: POST request:  to /server/server.php/sign_in
+2023-05-06 09:52:20: No such user.
+2023-05-06 09:52:20: No such user.
+2023-05-06 09:57:27: POST request:  to /server/server.php/sign_in
+2023-05-06 09:57:27: No such user.
+2023-05-06 09:57:27: No such user.
+2023-05-06 09:57:44: POST request:  to /server/server.php/sign_in
+2023-05-06 09:57:44: No such user.
+2023-05-06 09:57:44: No such user.
+2023-05-06 09:58:01: POST request:  to /server/server.php/sign_in
+2023-05-06 09:58:01: No such user.
+2023-05-06 09:58:01: No such user.
+2023-05-06 09:58:06: POST request:  to /server/server.php/sign_in
+2023-05-06 09:58:06: No such user.
+2023-05-06 09:58:06: No such user.
+2023-05-06 09:58:07: POST request:  to /server/server.php/sign_in
+2023-05-06 09:58:07: No such user.
+2023-05-06 09:58:07: No such user.
+2023-05-06 09:58:13: POST request:  to /server/server.php/sign_in
+2023-05-06 09:58:13: No such user.
+2023-05-06 09:58:13: No such user.
+2023-05-06 09:58:23: POST request:  to /server/server.php/sign_in
+2023-05-06 09:58:23: No such user.
+2023-05-06 09:58:23: No such user.
+2023-05-06 09:58:27: POST request:  to /server/server.php/sign_in
+2023-05-06 09:58:27: No such user.
+2023-05-06 09:58:27: No such user.
+2023-05-06 09:59:00: POST request:  to /server/server.php/sign_in
+2023-05-06 09:59:00: No such user.
+2023-05-06 09:59:00: No such user.
+2023-05-06 09:59:27: POST request:  to /server/server.php/sign_in
+2023-05-06 09:59:27: User with name vitalii signed in successfully.
+2023-05-06 09:59:27: User with name vitalii signed in successfully.
+2023-05-06 10:00:13: GET request:  to /server/server.php/get_all_items
+2023-05-06 10:00:23: POST request:  to /server/server.php/sign_up
+2023-05-06 10:00:23: User vitaliy@gmail.com signed up successfully.
+2023-05-06 10:03:16: POST request:  to /server/server.php/sign_in
+2023-05-06 10:03:16: User with name vitalii signed in successfully.
+2023-05-06 10:03:16: User with name vitalii signed in successfully.
+2023-05-06 10:03:43: POST request:  to /server/server.php/sign_in
+2023-05-06 10:03:43: User with name vitalii signed in successfully.
+2023-05-06 10:03:43: User with name vitalii signed in successfully.
+2023-05-06 10:03:46: POST request:  to /server/server.php/sign_in
+2023-05-06 10:03:46: User with name vitalii signed in successfully.
+2023-05-06 10:03:46: User with name vitalii signed in successfully.
