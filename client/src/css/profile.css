@@ -1,0 +1,78 @@
+.card {
+    background-color: #fff;
+    border-radius: 4px;
+    max-width: 800px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .2);
+    margin: 40px auto;
+    overflow: hidden;
+}
+
+.card-content {
+    padding: 16px;
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.profile-image-container {
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .2);
+}
+
+.profile-image {
+    display: block;
+    width: 128px;
+    height: 128px;
+    object-fit: cover;
+}
+
+.profile-name {
+    margin: 0;
+    font-size: 24px;
+}
+
+.profile-email {
+    margin: 0;
+    font-size: 18px;
+    color: #666;
+}
+
+button {
+    color: white;
+    padding: 6px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 16px;
+    text-align: center;
+}
+
+
+#cart-btn {
+    background-color: #4CAF50;
+
+}
+
+#cart-btn:hover {
+    background-color: #3e8e41;
+}
+
+#sign-out-btn {
+    background-color: #f44336;
+
+}
+
+#buttons {
+    margin: 0 16px;
+    display: flex;
+    justify-content: space-between;
+}
+
+#sign-out-btn:hover {
+    background-color: #da190b;
+}

@@ -69,7 +69,7 @@ function _sendAuthRequestResponse($result)
 
     header('Content-Type: application/json');
     if ($result['success'] === true) {
-        echo json_encode(['success' => true, 'message' => $result['message']]);
+        echo json_encode(['success' => true, 'message' => $result['message'], 'user' => $result['user']]);
     } else {
         echo json_encode(['success' => false, 'message' => $result['message']]);
     }

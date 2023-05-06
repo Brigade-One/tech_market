@@ -4,6 +4,7 @@
     <title>Techmarket | Home</title>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link rel="stylesheet" href="http://techmarket/client/src/css/products.css">
+    <link rel="stylesheet" href="http://techmarket/client/src/css/banner.css">
 </head>
 
 <body>
@@ -12,21 +13,23 @@
         <div id="header"></div>
     </header>
 
-    <body>
-        <?php
-        echo '<h1>TECHMARKET HOME</h1>';
-        echo '<br>';
-        echo '<button onclick="location.href = \'http://techmarket/client/pages/sign_in.php\';" >ВХІД</button>';
-        echo '<br><br>';
-        echo '<button onclick="location.href = \'http://techmarket/client/pages/sign_up.php\';" >РЕЄСТРАЦІЯ</button>';
-        ?>
-        <br><br>
+    <main>
+        <div class="banner">
+            <img src="http://techmarket/client/assets/images/banner-image.jpg" alt="Banner Image">
+            <div class="banner-text">
+                <h1>Welcome to Techmarket</h1>
+                <p>Shop the latest tech gadgets and accessories at affordable prices.</p>
+                <a href="#" class="banner-button">Shop Now</a>
+            </div>
+        </div>
+    </main>
 
+
+    <body>
         <div class="product-grid">
             <div class="product-container"></div>
         </div>
         <div id="items-container"></div>
-
     </body>
 
     <footer>
@@ -85,7 +88,7 @@
                 }
 
                 const productContainer = document.querySelector('.product-container');
-                for (let i = 0; i < 20; i++) {
+                for (let i = 0; i < result.length; i++) {   
                     console.log(result[i]);
                     productContainer.appendChild(createProductWidget(result[i]));
                 }
