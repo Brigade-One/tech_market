@@ -22,12 +22,14 @@
         <br>
 
         <input type="submit" value="Увійти">
+        
+        <div id="status">
+
+        </div>
     </form>
     <script type="module" src="../src/js/sign_in.js"></script>
 
-    <div id="status">
 
-    </div>
 
     <footer>
         <div id="footer">

@@ -28,16 +28,16 @@
         <br>
 
         <label for="confirmPassword">Confirm Password:</label>
-        <input type="password" name="confirmPassword" id="confirmPassword" placeholder="Confirm your password"
-            required>
+        <input type="password" name="confirmPassword" id="confirmPassword" placeholder="Confirm your password" required>
         <br>
 
         <input type="submit" value="Register">
+        <div id="status">
+
+        </div>
     </form>
     <script type="module" src="../src/js/sign_up.js"></script>
-    <div id="status">
 
-    </div>
 
     <footer>
         <div id="footer">
