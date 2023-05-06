@@ -276,8 +276,6 @@
 2023-05-04 11:34:01: GET request:  to /server/server.php/get_all_items
 2023-05-04 11:34:17: GET request:  to /server/server.php/get_all_items
 2023-05-04 11:39:58: GET request:  to /server/server.php/get_all_items
-=======
->>>>>>> dev
 2023-05-04 12:21:58: GET request:  to /server/server.php/get_all_items
 2023-05-04 12:22:35: GET request:  to /server/server.php/get_all_items
 2023-05-04 12:22:41: POST request:  to /server/server.php/sign_in
@@ -288,3 +286,19 @@
 2023-05-04 12:22:59: POST request:  to /server/server.php/sign_in
 2023-05-04 12:22:59: User with name ert signed in successfully.
 2023-05-04 12:22:59: User with name ert signed in successfully.
+2023-05-04 12:24:23: GET request:  to /server/server.php/get_all_items
+2023-05-04 12:24:24: GET request:  to /server/server.php/get_all_items
+2023-05-04 12:24:25: GET request:  to /server/server.php/get_all_items
+2023-05-04 12:24:42: POST request:  to /server/server.php/sign_in
+2023-05-04 12:24:42: User with name ert signed in successfully.
+2023-05-04 12:24:42: User with name ert signed in successfully.
+2023-05-04 12:37:40: GET request:  to /server/server.php/get_all_items
+2023-05-04 12:42:24: GET request:  to /server/server.php/get_all_items
+2023-05-06 08:33:22: GET request:  to /server/server.php/get_all_items
+2023-05-06 08:34:35: GET request:  to /server/server.php/get_all_items
+2023-05-06 08:34:36: GET request:  to /server/server.php/get_all_items
+2023-05-06 09:06:52: GET request:  to /server/server.php/get_all_items
+2023-05-06 09:09:38: GET request:  to /server/server.php/get_all_items
+2023-05-06 09:10:00: GET request:  to /server/server.php/get_all_items
+2023-05-06 09:10:06: GET request:  to /server/server.php/get_all_items
+2023-05-06 09:15:49: GET request:  to /server/server.php/get_all_items
