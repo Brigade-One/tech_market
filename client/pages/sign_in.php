@@ -22,7 +22,9 @@
         <br>
 
         <input type="submit" value="Увійти">
-        
+
+        <p>Don't have an account? <a href="sign_up.php">Sign Up</a></p>
+
         <div id="status">
 
         </div>

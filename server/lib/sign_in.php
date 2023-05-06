@@ -22,9 +22,15 @@ class SignIn
         // Check if there's a matching user record
         foreach ($users as $user) {
             if ($user['email'] === $receivedUser->email && $user['password'] === $receivedUser->password) {
-                return ['success' => true, 'message' => 'User with name ' . $user["name"] . ' signed in successfully.']; // Authentication successful
+                $userObject = new User($user["name"], $user["email"], $user["password"]);
+                return [
+                    'success' => true,
+                    'message' => 'User with name ' . $userObject->name . ' signed in successfully.',
+                    'user' => $userObject->toJson()
+                ];
             }
         }
+
         return ['success' => false, 'message' => 'No such user.']; // Authentication faile
     }
 
