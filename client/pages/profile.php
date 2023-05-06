@@ -52,6 +52,7 @@
         profileEmail.textContent = user.email;
         $("#sign-out-btn").on("click", function () {
             localStorage.removeItem("user");
+            localStorage.removeItem("token");
             window.location.href = "http://techmarket/client/pages/sign_in.php";
         });
     </script>

@@ -26,7 +26,8 @@ class SignIn
                 return [
                     'success' => true,
                     'message' => 'User with name ' . $userObject->name . ' signed in successfully.',
-                    'user' => $userObject->toJson()
+                    'user' => $userObject->toJson(),
+                    'token' => $jwt
                 ];
             }
         }
