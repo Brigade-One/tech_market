@@ -743,3 +743,60 @@
 2023-05-06 21:08:33: User with name vitalii signed in successfully.
 2023-05-06 21:08:48: GET request:  to /server/server.php/get_all_items
 2023-05-07 19:54:44: GET request:  to /get_all_items
+2023-05-07 19:58:08: GET request:  to /get_all_items
+2023-05-07 19:58:11: POST request:  to /sign_in
+2023-05-07 19:58:11: User with name vitalii signed in successfully.
+2023-05-07 19:58:11: User with name vitalii signed in successfully.
+2023-05-07 19:58:13: GET request:  to /get_all_items
+2023-05-07 19:58:17: GET request:  to /get_all_items
+2023-05-07 20:05:26: GET request:  to /get_all_items
+2023-05-07 20:14:25: GET request:  to /get_all_items
+2023-05-07 20:14:29: GET request:  to /product
+2023-05-07 20:14:34: POST request:  to /sign_in
+2023-05-07 20:14:34: User with name vitalii signed in successfully.
+2023-05-07 20:14:34: User with name vitalii signed in successfully.
+2023-05-07 20:14:35: GET request:  to /get_all_items
+2023-05-07 20:14:37: GET request:  to /product
+2023-05-07 20:15:04: POST request:  to /order
+2023-05-07 20:15:04: Order with name V VV written successfully.
+2023-05-07 20:17:16: POST request:  to /order
+2023-05-07 20:17:51: POST request:  to /order
+2023-05-07 20:17:51: Order with name V VV written successfully.
+2023-05-07 20:19:34: POST request:  to /order
+2023-05-07 20:19:34: Order with name V VV written successfully.
+2023-05-07 20:20:52: POST request:  to /order
+2023-05-07 20:20:52: Order with name V VV written successfully.
+2023-05-07 20:22:18: POST request:  to /order
+2023-05-07 20:22:18: Order with name V VV written successfully.
+2023-05-07 20:22:30: POST request:  to /order
+2023-05-07 20:22:30: Order with name V VV written successfully.
+2023-05-07 20:25:29: POST request:  to /order
+2023-05-07 20:25:29: Order with name V VV written successfully.
+2023-05-07 20:31:47: POST request:  to /order
+2023-05-07 20:31:47: The order already written.
+2023-05-07 20:31:53: POST request:  to /order
+2023-05-07 20:31:53: The order already written.
+2023-05-07 20:32:05: POST request:  to /order
+2023-05-07 20:32:05: The order already written.
+2023-05-07 20:32:37: POST request:  to /order
+2023-05-07 20:32:37: Order with name er written successfully.
+2023-05-07 20:32:49: POST request:  to /order
+2023-05-07 20:32:49: Order with name er written successfully.
+2023-05-07 20:33:02: POST request:  to /order
+2023-05-07 20:33:02: Order with name erd written successfully.
+2023-05-07 20:33:31: POST request:  to /order
+2023-05-07 20:33:31: Order with name erd written successfully.
+2023-05-07 20:33:57: POST request:  to /order
+2023-05-07 20:33:57: Order with name erd written successfully.
+2023-05-07 20:34:05: POST request:  to /order
+2023-05-07 20:34:05: Order with name erd written successfully.
+2023-05-07 20:34:11: POST request:  to /order
+2023-05-07 20:34:11: Order with name erd written successfully.
+2023-05-07 20:34:45: POST request:  to /order
+2023-05-07 20:34:45: The order already written.
+2023-05-07 20:34:48: POST request:  to /order
+2023-05-07 20:34:48: Order with name erds written successfully.
+2023-05-07 20:34:49: POST request:  to /order
+2023-05-07 20:34:49: The order already written.
+2023-05-07 20:34:51: POST request:  to /order
+2023-05-07 20:34:51: The order already written.

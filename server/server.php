@@ -28,6 +28,10 @@ $router->addRoute('GET', '/product', function () {
 $router->addRoute('POST', '/order', function () {
     return _order('data/orders.txt');
 });
+$router->addRoute('POST', '/get_order_history', function () {
+    return _getOrderHistory('data/orders.txt');
+});
+
 
 // HTTP method and URI of the request.
 $method = $_SERVER['REQUEST_METHOD'];
@@ -91,6 +95,15 @@ function _order($filename)
     $result = $order->writeOrderData($jsonData, $filename);
     _sendAuthRequestResponse($result);
 }
+function _getOrderHistory($filename)
+{
+    require_once 'lib/order.php';
+    require_once 'lib/order_manager.php';
+    $order = new OrderManager($filename);
+    $result = $order->readOrderData($filename);
+    _sendAuthRequestResponse($result);
+}
+
 function _sendAuthRequestResponse($result)
 {
     require_once 'lib/log_handler.php';

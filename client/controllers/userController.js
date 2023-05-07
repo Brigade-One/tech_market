@@ -21,16 +21,6 @@ export class UserController {
             this.view.showError("Please fill in all fields correctly.");
         }
     }
-    /*    handleSignIn() {
-           if (this.model.validateSignIn()) {
-               const jsonData = JSON.stringify(this.model.toJSON());
-               const token = localStorage.getItem("token"); // Get the JWT token from local storage
-               this.handleHttpAuthRequest(jsonData, token);
-           } else {
-               this.view.showError("Please fill in all fields correctly.");
-           }
-       }
-    */
 
     handleHttpRequest(jsonData, url) {
         const xhr = new XMLHttpRequest();
