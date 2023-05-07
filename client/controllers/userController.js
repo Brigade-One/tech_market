@@ -29,10 +29,8 @@ export class UserController {
         xhr.onreadystatechange = () => {
             if (xhr.readyState === XMLHttpRequest.DONE) {
                 if (xhr.status === 200) {
-                    console.log(xhr.responseText);
                     const response = JSON.parse(xhr.responseText);
                     const user = response.user;
-                    console.log(user);
                     localStorage.setItem("user", user);
                     this.view.render(response.message);
                     // Add a 1.5 second delay before redirecting to the index page

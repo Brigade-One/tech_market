@@ -23,7 +23,7 @@ class SignUp
         $userData = $receivedUser->toJson() . "\n";
 
         // Read the user data from the file
-        $reader = new UserDataReader($this->filename);
+        $reader = new DataReader($this->filename);
         $users = $reader->read();
 
 

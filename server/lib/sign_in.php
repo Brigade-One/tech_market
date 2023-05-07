@@ -10,9 +10,9 @@ class SignIn
 
     public function processSignInData($jsonData)
     {
-        require_once 'user_data_reader.php';
+        require_once 'data_reader.php';
         require_once 'user.php';
-        $reader = new UserDataReader($this->filename);
+        $reader = new DataReader($this->filename);
 
         // Read the user data from the file
         $users = $reader->read();

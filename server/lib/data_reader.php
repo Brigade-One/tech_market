@@ -1,5 +1,5 @@
 <?php
-class UserDataReader
+class DataReader
 {
     private $filename;
 
@@ -10,17 +10,17 @@ class UserDataReader
 
     public function read()
     {
-        $users = [];
+        $data = [];
         $handle = fopen($this->filename, "r");
         if (!$handle) {
             throw new Exception('Unable to open file');
         }
         while (($line = fgets($handle)) !== false) {
-            $user = json_decode($line, true);
-            $users[] = $user;
+            $line = json_decode($line, true);
+            $data[] = $line;
         }
         fclose($handle);
-        return $users;
+        return $data;
     }
 
 }
