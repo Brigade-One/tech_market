@@ -29,17 +29,19 @@ $router->addRoute('POST', '/order', function () {
     $token = $_GET['token'];
     if (!_verifyToken($token)) {
         header('HTTP/1.1 401 Unauthorized');
-        return 'Unauthorized';
+        echo 'Unauthorized (invalid token)';
+        return;
     }
     return _order('data/orders.txt', $token);
 });
 
 
 $router->addRoute('POST', '/get_order_history', function () {
-    $headers = getallheaders();
-    if (!isset($headers['Authorization']) || $headers['Authorization'] !== 'Bearer YOUR_TOKEN_HERE') {
+    $token = $_GET['token'];
+    if (!_verifyToken($token)) {
         header('HTTP/1.1 401 Unauthorized');
-        return 'Unauthorized';
+        echo 'Unauthorized (invalid token)';
+        return;
     }
 
     return _getOrderHistory('data/orders.txt');

@@ -883,3 +883,9 @@
 2023-05-07 21:14:39: POST request:  to /order
 2023-05-07 21:14:39: Order with name Vitalii Petrun3a written successfully.
 2023-05-07 21:15:07: POST request:  to /order
+2023-05-07 21:20:27: POST request:  to /order
+2023-05-07 21:20:27: The order already written.
+2023-05-07 21:21:38: POST request:  to /order
+2023-05-07 21:22:07: POST request:  to /order
+2023-05-07 21:23:20: POST request:  to /order
+2023-05-07 21:23:26: POST request:  to /order
