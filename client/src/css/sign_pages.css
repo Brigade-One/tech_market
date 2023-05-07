@@ -52,7 +52,7 @@ form input[type="submit"] {
 
 #form-container {
     margin: 50px auto;
-    max-width: 50%;
+    max-width: 500px;
     background-color: #fff;
     padding: 20px;
     border-radius: 5px;
@@ -74,7 +74,7 @@ form input[type="submit"] {
 #form-container {
     flex-basis: 80%;
     flex-grow: 0;
-    align-self:  center;
+    align-self: center;
 }
 
 

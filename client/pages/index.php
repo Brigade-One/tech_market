@@ -55,7 +55,7 @@
                 var result = JSON.parse(xhr.response);
                 _loadGrid(result);
             } else {
-                console.log('Error!');
+                console.log('Error loading grid!');
             }
         };
     }
@@ -89,7 +89,6 @@
 
                 const productContainer = document.querySelector('.product-container');
                 for (let i = 0; i < result.length; i++) {
-                    console.log(result[i]);
                     productContainer.appendChild(createProductWidget(result[i]));
                 }
 
