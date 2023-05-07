@@ -7,7 +7,6 @@ export class OrderController {
     sendOrder() {
         if (this.model.validateOrder()) {
             const jsonData = JSON.stringify(this.model.toJSON());
-            console.log(jsonData); console.log("Sending order...");
             this.handleHttpRequest(jsonData);
         } else {
             this.view.showError("Please fill in all fields correctly.");
