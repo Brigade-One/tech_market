@@ -841,3 +841,16 @@
 2023-05-07 10:34:00: Order with name V VV written successfully.
 2023-05-07 10:35:14: POST request:  to /order
 2023-05-07 10:35:14: Order with name V VV written successfully.
+2023-05-07 12:12:24: GET request:  to /get_all_items
+2023-05-07 12:12:31: POST request:  to /sign_in
+2023-05-07 12:12:33: POST request:  to /sign_in
+2023-05-07 12:12:39: POST request:  to /sign_in
+2023-05-07 12:13:02: POST request:  to /sign_in
+2023-05-07 12:13:02: User with name vitalii signed in successfully.
+2023-05-07 12:13:02: User with name vitalii signed in successfully.
+2023-05-07 12:13:04: GET request:  to /get_all_items
+2023-05-07 12:13:20: POST request:  to /sign_in
+2023-05-07 12:13:20: User with name vitalii signed in successfully.
+2023-05-07 12:13:20: User with name vitalii signed in successfully.
+2023-05-07 12:13:22: GET request:  to /get_all_items
+2023-05-07 12:13:59: GET request:  to /get_all_items
