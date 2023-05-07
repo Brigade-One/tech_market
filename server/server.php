@@ -20,9 +20,7 @@ $router->addRoute('POST', '/sign_up', function () {
 $router->addRoute('POST', '/sign_in', function () {
     return _signIn('data/users.txt');
 });
-$router->addRoute('POST', '/sign_in', function () {
-    return _signIn('data/users.txt');
-});
+
 $router->addRoute('GET', '/product', function () {
     return _getItemInstanceByID($_GET['id']);
 });
