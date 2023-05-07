@@ -15,8 +15,9 @@ export class OrderController {
 
 
     handleHttpRequest(jsonData) {
-        const xhr = new XMLHttpRequest();
-        xhr.open("POST", "../../server/server.php/order");
+        const xhr = new XMLHttpRequest(); 
+        const token = localStorage.getItem("token");
+        xhr.open("POST", `../../server/server.php/order?token=${token}`);
         xhr.setRequestHeader("Content-Type", "application/json");
         xhr.onreadystatechange = () => {
             if (xhr.readyState === XMLHttpRequest.DONE) {
@@ -30,5 +31,6 @@ export class OrderController {
         };
         xhr.send(jsonData);
     }
+
 
 }

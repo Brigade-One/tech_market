@@ -19,10 +19,15 @@ class SignIn
 
         $receivedUser = User::fromJson($jsonData);
 
+
+
+
         // Check if there's a matching user record
         foreach ($users as $user) {
             if ($user['email'] === $receivedUser->email && $user['password'] === $receivedUser->password) {
                 $userObject = new User($user["name"], $user["email"], $user["password"]);
+                require_once 'lib/token_manager.php';
+                $jwt = TokenManager::generateToken($userObject);
                 return [
                     'success' => true,
                     'message' => 'User with name ' . $userObject->name . ' signed in successfully.',

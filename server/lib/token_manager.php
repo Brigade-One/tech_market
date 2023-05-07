@@ -18,4 +18,15 @@ class TokenManager
         $userJsonData = $decoded->data;
         return $userJsonData;
     }
+
+    function verifyToken($token)
+    {
+        try {
+            $decoded = JWT::decode($token, TokenManager::$secret_key, array('HS256'));
+            return true;
+        } catch (Exception $e) {
+            return false;
+        }
+    }
+
 }

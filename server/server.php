@@ -26,12 +26,24 @@ $router->addRoute('GET', '/product', function () {
     return _getItemInstanceByID($_GET['id']);
 });
 $router->addRoute('POST', '/order', function () {
-    return _order('data/orders.txt');
-});
-$router->addRoute('POST', '/get_order_history', function () {
-    return _getOrderHistory('data/orders.txt');
+    $token = $_GET['token'];
+    if (!_verifyToken($token)) {
+        header('HTTP/1.1 401 Unauthorized');
+        return 'Unauthorized';
+    }
+    return _order('data/orders.txt', $token);
 });
 
+
+$router->addRoute('POST', '/get_order_history', function () {
+    $headers = getallheaders();
+    if (!isset($headers['Authorization']) || $headers['Authorization'] !== 'Bearer YOUR_TOKEN_HERE') {
+        header('HTTP/1.1 401 Unauthorized');
+        return 'Unauthorized';
+    }
+
+    return _getOrderHistory('data/orders.txt');
+});
 
 // HTTP method and URI of the request.
 $method = $_SERVER['REQUEST_METHOD'];
@@ -62,7 +74,11 @@ function _signIn($filename)
     _sendAuthRequestResponse($result);
     $logHandler->logEvent($result['message']);
 }
-
+function _verifyToken($token)
+{
+    $tokenManager = new TokenManager();
+    return $tokenManager->verifyToken($token);
+}
 function _getAllItemsFromDB($request)
 {
     require_once 'lib/connect_db.php';
@@ -86,7 +102,7 @@ function _getItemInstanceByID($id)
     header("Content-Type: text/html; charset=utf-8");
     echo json_encode($result[0]);
 }
-function _order($filename)
+function _order($filename, $token)
 {
     require_once 'lib/order.php';
     require_once 'lib/order_manager.php';

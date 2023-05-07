@@ -18,7 +18,6 @@ export class Order {
     }
 
     fromJSON(json) {
-
         this.email = json.email;
         this.name = json.name;
         this.phoneNumber = json.phoneNumber;
