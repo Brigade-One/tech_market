@@ -75,20 +75,20 @@
 
                     widget.querySelector('.product-name').textContent = product['name'];
                     widget.querySelector('.product-price').textContent = "₴" + product['price'];
-                    console.log(product['price']);
+
                     widget.querySelector('.cart-button').addEventListener('click', () => {
                         alert('Product added to cart');
                     });
                     widget.querySelector('.details-button').addEventListener('click', () => {
-                        alert('Details button clicked');
-                    });
+                        window.location.href = "http://techmarket/client/pages/product_details.php?id=" + product['id'];
 
+                    });
 
                     return widget;
                 }
 
                 const productContainer = document.querySelector('.product-container');
-                for (let i = 0; i < result.length; i++) {   
+                for (let i = 0; i < result.length; i++) {
                     console.log(result[i]);
                     productContainer.appendChild(createProductWidget(result[i]));
                 }

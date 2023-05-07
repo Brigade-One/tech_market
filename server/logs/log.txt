@@ -642,3 +642,141 @@
 2023-05-06 11:30:13: User with name vitalii signed in successfully.
 2023-05-06 11:30:13: User with name vitalii signed in successfully.
 2023-05-06 11:30:14: GET request:  to /server/server.php/get_all_items
+2023-05-06 21:45:32: GET request:  to /server/server.php/get_all_items
+2023-05-06 21:45:57: GET request:  to /server/server.php/get_all_items
+2023-05-06 21:48:32: GET request:  to /server/server.php/get_all_items
+2023-05-06 21:48:56: GET request:  to /server/server.php/get_all_items
+2023-05-06 21:52:55: GET request:  to /server/server.php/get_all_items
+2023-05-06 21:53:49: GET request:  to /server/server.php/get_all_items
+2023-05-06 21:54:56: GET request:  to /server/server.php/get_all_items
+2023-05-06 21:56:55: GET request:  to /server/server.php/get_all_items
+2023-05-06 21:58:49: GET request:  to /server/server.php/get_all_items
+2023-05-06 21:59:04: GET request:  to /server/server.php/get_all_items
+2023-05-06 22:01:11: GET request:  to /server/server.php/get_all_items
+2023-05-06 22:02:35: GET request:  to /server/server.php/get_all_items
+2023-05-06 22:02:35: GET request:  to /server/server.php/get_all_items
+2023-05-06 22:02:59: GET request:  to /server/server.php/get_all_items
+2023-05-06 22:04:18: GET request:  to /server/server.php/get_all_items
+2023-05-06 22:04:58: GET request:  to /server/server.php/get_all_items
+2023-05-06 22:04:59: GET request:  to /server/server.php/product_details.php?id=1
+2023-05-06 22:05:29: GET request:  to /server/server.php/get_all_items
+2023-05-06 22:05:31: GET request:  to /server/server.php/product_details.php?id=1
+2023-05-06 22:11:21: GET request:  to /server/server.php/get_all_items
+2023-05-06 22:11:23: GET request:  to /server/server.php/product_details.php?id=1
+2023-05-06 22:13:55: GET request:  to /server/server.php/get_all_items
+2023-05-06 22:13:57: GET request:  to /server/server.php/product_details.php?id=1
+2023-05-06 22:20:28: GET request:  to /server/server.php/get_all_items
+2023-05-06 22:20:29: GET request:  to /server/server.php/product_details.php?id=1
+2023-05-06 22:21:15: GET request:  to /server/server.php/get_all_items
+2023-05-06 22:21:16: GET request:  to /server/server.php/product_details.php?id=1
+2023-05-06 22:22:37: GET request:  to /server/server.php/get_all_items
+2023-05-06 22:23:10: GET request:  to /server/server.php/get_all_items
+2023-05-06 22:23:18: POST request:  to /server/server.php/product_details.php?id=1
+2023-05-06 22:23:39: POST request:  to /server/server.php/product_details.php?id=1
+2023-05-06 22:23:40: GET request:  to /server/server.php/get_all_items
+2023-05-06 22:24:10: GET request:  to /server/server.php/get_all_items
+2023-05-06 22:24:12: POST request:  to /server/server.php/product_details.php?id=1
+2023-05-06 22:24:23: GET request:  to /server/server.php/get_all_items
+2023-05-06 22:24:24: POST request:  to /server/server.php/product_details?id=1
+2023-05-06 22:24:59: POST request:  to /server/server.php/product_details?id=1
+2023-05-06 22:25:01: GET request:  to /server/server.php/get_all_items
+2023-05-06 22:25:02: POST request:  to /server/server.php/product_details?id=1
+2023-05-06 22:25:34: GET request:  to /server/server.php/get_all_items
+2023-05-06 22:25:35: POST request:  to /server/server.php/product_details?id=1
+2023-05-06 22:25:56: POST request:  to /server/server.php/product_details?id=1
+2023-05-06 22:25:57: GET request:  to /server/server.php/get_all_items
+2023-05-06 22:25:58: POST request:  to /server/server.php/product_details?id=1
+2023-05-06 22:26:29: GET request:  to /server/server.php/get_all_items
+2023-05-06 22:27:30: GET request:  to /server/server.php/get_all_items
+2023-05-06 22:27:31: POST request:  to /server/server.php/product_details?id=1
+2023-05-06 22:28:16: POST request:  to /server/server.php/product_details?id=1
+2023-05-06 22:28:43: POST request:  to /server/server.php/product_details?id=1
+2023-05-06 22:34:15: GET request:  to /server/server.php/get_all_items
+2023-05-06 22:34:16: POST request:  to /server/server.php/product_details?id=1
+2023-05-06 22:35:23: GET request:  to /server/server.php/product_details?id=1
+2023-05-06 22:36:08: GET request:  to /server/server.php/product_details?id=1
+2023-05-06 22:36:12: GET request:  to /server/server.php/product_details?id=1
+2023-05-06 22:37:13: GET request:  to /server/server.php/product_details?id=1
+2023-05-06 22:37:30: GET request:  to /server/server.php/product_details?id=1
+2023-05-06 22:37:49: GET request:  to /server/server.php/product_details?id=1
+2023-05-06 22:38:29: GET request:  to /server/server.php/product_details?id=1
+2023-05-06 22:39:00: GET request:  to /server/server.php/product_details?id=1
+2023-05-06 22:39:31: GET request:  to /server/server.php/product_details?id=1
+2023-05-06 22:39:57: POST request:  to /server/server.php/product_details?id=1
+2023-05-06 22:40:45: POST request:  to /server/server.php/product_details?id=1
+2023-05-06 22:41:31: POST request:  to /server/server.php/product_details?id=1
+2023-05-06 22:42:32: POST request:  to /server/server.php/product_details
+2023-05-07 06:42:45: GET request:  to /server/server.php/get_all_items
+2023-05-07 06:42:47: GET request:  to /server/server.php/product?id=2
+2023-05-07 06:42:51: GET request:  to /server/server.php/product?id=2
+2023-05-07 06:43:39: GET request:  to /server/server.php/product?id=2
+2023-05-07 06:44:59: GET request:  to /server/server.php/product?id=2
+2023-05-07 06:45:23: GET request:  to /server/server.php/product?id=2
+2023-05-07 06:46:22: GET request:  to /server/server.php/product?id=2
+2023-05-07 06:48:07: GET request:  to /server/server.php/product?id=2
+2023-05-07 06:49:32: GET request:  to 
+2023-05-07 06:49:58: GET request:  to 
+2023-05-07 06:50:16: GET request:  to 
+2023-05-07 06:52:14: GET request:  to 
+2023-05-07 06:52:47: GET request:  to 
+2023-05-07 06:53:29: GET request:  to 
+2023-05-07 06:53:39: GET request:  to 
+2023-05-07 06:57:40: GET request:  to 
+2023-05-07 07:00:45: GET request:  to 
+2023-05-07 07:03:21: GET request:  to 
+2023-05-07 07:39:10: GET request:  to 
+2023-05-07 07:40:43: GET request:  to 
+2023-05-07 07:43:22: GET request:  to 
+2023-05-07 07:43:42: GET request:  to 
+2023-05-07 07:44:19: GET request:  to 
+2023-05-07 07:44:30: GET request:  to 
+2023-05-07 07:45:24: GET request:  to 
+2023-05-07 07:46:40: GET request:  to 
+2023-05-07 07:46:57: GET request:  to /product
+2023-05-07 07:47:36: GET request:  to /get_all_items
+2023-05-07 07:47:49: POST request:  to /sign_in
+2023-05-07 07:47:49: User with name vitalii signed in successfully.
+2023-05-07 07:47:49: User with name vitalii signed in successfully.
+2023-05-07 07:47:51: GET request:  to /get_all_items
+2023-05-07 07:48:36: GET request:  to /product
+2023-05-07 07:54:05: GET request:  to /product
+2023-05-07 07:54:27: GET request:  to /product
+2023-05-07 07:59:24: GET request:  to /product
+2023-05-07 07:59:28: GET request:  to /product
+2023-05-07 08:00:08: GET request:  to /product
+2023-05-07 08:00:40: GET request:  to /product
+2023-05-07 08:04:09: GET request:  to /product
+2023-05-07 08:05:51: GET request:  to /product
+2023-05-07 08:06:32: GET request:  to /product
+2023-05-07 08:06:59: GET request:  to /product
+2023-05-07 08:07:05: GET request:  to /product
+2023-05-07 08:07:59: GET request:  to /product
+2023-05-07 08:08:36: GET request:  to /product
+2023-05-07 08:08:49: GET request:  to /product
+2023-05-07 08:09:07: GET request:  to /product
+2023-05-07 08:10:38: GET request:  to /product
+2023-05-07 08:10:57: GET request:  to /product
+2023-05-07 08:13:11: GET request:  to /product
+2023-05-07 08:13:17: GET request:  to /product
+2023-05-07 08:13:57: GET request:  to /product
+2023-05-07 08:15:38: GET request:  to /get_all_items
+2023-05-07 08:15:42: GET request:  to /product
+2023-05-07 08:19:07: GET request:  to /product
+2023-05-07 08:19:35: GET request:  to /product
+2023-05-07 08:20:15: GET request:  to /product
+2023-05-07 08:20:18: GET request:  to /product
+2023-05-07 08:21:06: GET request:  to /product
+2023-05-07 08:21:12: GET request:  to /product
+2023-05-07 08:21:53: GET request:  to /product
+2023-05-07 08:22:53: GET request:  to /product
+2023-05-07 08:23:03: GET request:  to /product
+2023-05-07 08:23:10: GET request:  to /product
+2023-05-07 08:23:52: GET request:  to /product
+2023-05-07 08:23:59: GET request:  to /product
+2023-05-07 08:24:53: GET request:  to /product
+2023-05-07 08:25:07: GET request:  to /product
+2023-05-07 08:25:14: GET request:  to /product
+2023-05-07 08:25:25: GET request:  to /product
+2023-05-07 08:25:40: GET request:  to /product
+2023-05-07 08:25:56: GET request:  to /product
+2023-05-07 08:27:18: GET request:  to /product
