@@ -50,11 +50,38 @@ form input[type="submit"] {
     margin-bottom: 20px;
 }
 
-#form-container{
+#form-container {
     margin: 50px auto;
-    max-width: 500px;
+    max-width: 50%;
     background-color: #fff;
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+}
+
+#order-details {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#order-items {
+    flex-basis: 20%;
+    flex-grow: 0;
+}
+
+#form-container {
+    flex-basis: 80%;
+    flex-grow: 0;
+    align-self:  center;
+}
+
+
+
+
+#items-container {
+    border: 1px solid #003F62;
+    padding: 10px;
+    border-radius: 5px;
 }

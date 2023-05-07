@@ -27,7 +27,7 @@ $id = $_GET['id'];
                 const response = JSON.parse(responseText);
                 itemInstance = new Item(response.id, response.name, response.price, response.quantity, response.quality, response.v_name, response.c_name);
                 document.getElementById("product-name").innerHTML = itemInstance.name;
-                document.getElementById("product-price").innerHTML = itemInstance.price;
+                document.getElementById("product-price").innerHTML = itemInstance.price + "₴";
                 document.getElementById("product-vendor").innerHTML = "Vendor: " + itemInstance.vendorName;
                 document.getElementById("product-category").innerHTML = "Category: " + itemInstance.category;
                 document.getElementById("product-quality").innerHTML = "Quality: " + itemInstance.quality + "/5";
@@ -37,12 +37,8 @@ $id = $_GET['id'];
         xhr.send();
 
         $("#buy-now-btn").on("click", function () {
-            if (itemInstance) { // check if itemInstance is defined
-                localStorage.setItem("item", JSON.stringify({ itemInstance.toJSON() }));
-                window.location.href = "http://techmarket/client/pages/order.php";
-            } else {
-                console.log("Item instance not defined");
-            }
+            localStorage.setItem("item", JSON.stringify({ itemInstance }));
+            window.location.href = "http://techmarket/client/pages/order.php";
         });
     </script>
     <header>

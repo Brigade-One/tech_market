@@ -10,9 +10,13 @@ form.addEventListener('submit', function (event) {
     // Get the form data
     const formData = new FormData(form);
     const items = [];
-    const item = new Item(JSON.parse(localStorage.getItem('item')).id, JSON.parse(localStorage.getItem('item')).name, JSON.parse(localStorage.getItem('item')).price, JSON.parse(localStorage.getItem('item')).quantity, JSON.parse(localStorage.getItem('item')).quality, JSON.parse(localStorage.getItem('item')).vendorName, JSON.parse(localStorage.getItem('item')).category);
+    let localStorageItem = JSON.parse(localStorage.getItem('item'));
+    console.log("----localStorageItem----");
+    console.log(localStorageItem);
+    const item = new Item(localStorageItem.itemInstance["id"], localStorageItem.itemInstance["name"], localStorageItem.itemInstance["price"], localStorageItem.itemInstance["quantity"], localStorageItem.itemInstance["quality"], localStorageItem.itemInstance["vendorName"], localStorageItem.itemInstance["category"]);
     items.push(item)
-
+    console.log("----BEFORE SEND----");
+    console.log(items);
     const order = new Order(idGenerator(), formData.get('full_name'), formData.get('phone_number'), formData.get('address'), formData.get('card_number'), formData.get('card_CVV'), items);
     console.log(order);
     const orderView = new OrderView();
