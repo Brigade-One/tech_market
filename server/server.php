@@ -1,7 +1,10 @@
 <?php
-require_once 'lib/token_manager.php';
 require_once 'lib/http_router.php';
-header('Access-Control-Allow-Origin: *');
+require_once 'lib/token_manager.php';
+
+header('Access-Control-Allow-Origin: http://techmarkethome/');
+header('Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS');
+header('Access-Control-Allow-Headers: Content-Type, Authorization, X-Requested-With');
 
 // Server parameters.
 $host = 'techmarket';
@@ -10,23 +13,28 @@ $docroot = __DIR__;
 startServer($host, $port, $docroot);
 
 $router = new HttpRouter();
-
-$router->addRoute('GET', '/server/server.php/get_all_items', function () {
-    return _getAllItemsFromDB('SELECT * FROM items');
-});
-$router->addRoute('POST', '/server/server.php/sign_up', function () {
+$router->addRoute('POST', '/sign_up', function () {
     return _signUp('data/users.txt');
 });
-$router->addRoute('POST', '/server/server.php/sign_in', function () {
+$router->addRoute('POST', '/sign_in', function () {
     return _signIn('data/users.txt');
+});
+$router->addRoute('GET', '/get_all_items', function () {
+    return _getAllItemsFromDB('SELECT * FROM items');
+});
+$router->addRoute('GET', '/product', function () {
+    return _getItemInstanceByID($_GET['id']);
+});
+$router->addRoute('POST', '/order', function () {
+    return _order('data/orders.txt');
 });
 
 // HTTP method and URI of the request.
 $method = $_SERVER['REQUEST_METHOD'];
-$uri = $_SERVER['REQUEST_URI'];
+$path = $_SERVER['PATH_INFO'];
 
 // Route the request.
-$router->route($method, $uri);
+$router->route($method, $path);
 
 function _signUp($filename)
 {
@@ -60,9 +68,29 @@ function _getAllItemsFromDB($request)
     $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
     echo json_encode($result);
 }
-
-
-
+function _getItemInstanceByID($id)
+{
+    require_once 'lib/connect_db.php';
+    $db = new ConnectDB('techmarket', 'tech_market_db', 'root', '');
+    $pdo = $db->connect();
+    $stmt = $pdo->query("SELECT i.*, v.v_name, c.c_name FROM items i JOIN vendors v ON i.FID_Vendor = v.ID_Vendors JOIN category c ON i.FID_Category = c.ID_Category WHERE i.id = $id");
+    if (!$stmt) {
+        echo "Error executing query: " . $pdo->errorInfo()[2];
+        return false;
+    }
+    $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    header("Content-Type: text/html; charset=utf-8");
+    echo json_encode($result[0]);
+}
+function _order($filename)
+{
+    require_once 'lib/order.php';
+    require_once 'lib/order_manager.php';
+    $order = new OrderManager($filename);
+    $jsonData = file_get_contents('php://input');
+    $result = $order->writeOrderData($jsonData, $filename);
+    _sendAuthRequestResponse($result);
+}
 function _sendAuthRequestResponse($result)
 {
     require_once 'lib/log_handler.php';

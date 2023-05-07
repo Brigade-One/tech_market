@@ -742,3 +742,4 @@
 2023-05-06 21:08:33: User with name vitalii signed in successfully.
 2023-05-06 21:08:33: User with name vitalii signed in successfully.
 2023-05-06 21:08:48: GET request:  to /server/server.php/get_all_items
+2023-05-07 19:54:44: GET request:  to /get_all_items
