@@ -43,8 +43,7 @@ $router->addRoute('POST', '/get_order_history', function () {
         echo 'Unauthorized (invalid token)';
         return;
     }
-
-    return _getOrderHistory('data/orders.txt');
+    return _getOrderHistory('data/orders.txt', $token);
 });
 
 // HTTP method and URI of the request.
@@ -113,15 +112,22 @@ function _order($filename, $token)
     $result = $order->writeOrderData($jsonData, $filename);
     _sendAuthRequestResponse($result);
 }
-function _getOrderHistory($filename)
+function _getOrderHistory($filename, $token)
 {
-    require_once 'lib/order.php';
     require_once 'lib/order_manager.php';
     $order = new OrderManager($filename);
-    $result = $order->readOrderData($filename);
-    _sendAuthRequestResponse($result);
+    $result = $order->getUserOrderHistory($filename, $token);
+    _sendOrderResponse($result);
 }
-
+function _sendOrderResponse($result)
+{
+    header('Content-Type: application/json');
+    if ($result['success'] === true) {
+        echo json_encode(['success' => true, 'message' => $result['message'], 'orders' => $result['orders']]);
+    } else {
+        echo json_encode(['success' => false, 'message' => $result['message']]);
+    }
+}
 function _sendAuthRequestResponse($result)
 {
     require_once 'lib/log_handler.php';

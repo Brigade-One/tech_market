@@ -37,6 +37,7 @@ class OrderManager
     }
     public function readOrderData($filename)
     {
+        require_once 'order.php';
         $orders = [];
         $file = fopen($filename, 'r');
         while (!feof($file)) {
@@ -53,8 +54,13 @@ class OrderManager
             'orders' => $orders
         ];
     }
-    public function getUserOrderHistory($filename, $user)
+    public function getUserOrderHistory($filename, $token)
     {
+
+        require_once 'token_manager.php';
+
+        $tokenManager = new TokenManager();
+        $user = $tokenManager->retrieveUserData($token);
         $orders = $this->readOrderData($filename)['orders'];
         $userOrders = [];
         foreach ($orders as $order) {

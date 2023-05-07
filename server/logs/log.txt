@@ -889,3 +889,54 @@
 2023-05-07 21:22:07: POST request:  to /order
 2023-05-07 21:23:20: POST request:  to /order
 2023-05-07 21:23:26: POST request:  to /order
+2023-05-07 21:24:46: GET request:  to /get_all_items
+2023-05-07 21:24:59: GET request:  to /get_all_items
+2023-05-07 21:29:41: POST request:  to /sign_in
+2023-05-07 21:29:41: User with name vitalii signed in successfully.
+2023-05-07 21:29:41: User with name vitalii signed in successfully.
+2023-05-07 21:29:43: GET request:  to /get_all_items
+2023-05-07 21:29:54: GET request:  to /getOrderHistory
+2023-05-07 21:30:51: GET request:  to /getOrderHistory
+2023-05-07 21:31:04: GET request:  to /getOrderHistory
+2023-05-07 21:31:08: GET request:  to /get_all_items
+2023-05-07 21:31:42: GET request:  to /getOrderHistory
+2023-05-07 21:32:03: GET request:  to /get_order_history
+2023-05-07 21:32:34: GET request:  to /get_order_history
+2023-05-07 21:33:12: POST request:  to /get_order_history
+2023-05-07 21:33:12: Order history read successfully.
+2023-05-07 21:33:40: POST request:  to /get_order_history
+2023-05-07 21:33:40: Order history read successfully.
+2023-05-07 21:37:13: POST request:  to /get_order_history
+2023-05-07 21:37:31: POST request:  to /get_order_history
+2023-05-07 21:39:31: POST request:  to /get_order_history
+2023-05-07 21:39:39: GET request:  to /get_all_items
+2023-05-07 21:39:42: POST request:  to /get_order_history
+2023-05-07 21:40:21: POST request:  to /get_order_history
+2023-05-07 21:40:21: User order history read successfully.
+2023-05-07 21:40:59: POST request:  to /get_order_history
+2023-05-07 21:40:59: User order history read successfully.
+2023-05-07 21:41:25: POST request:  to /get_order_history
+2023-05-07 21:41:25: User order history read successfully.
+2023-05-07 21:42:54: POST request:  to /get_order_history
+2023-05-07 21:42:54: User order history read successfully.
+2023-05-07 21:43:44: POST request:  to /get_order_history
+2023-05-07 21:44:03: POST request:  to /get_order_history
+2023-05-07 21:44:58: POST request:  to /get_order_history
+2023-05-07 21:45:12: POST request:  to /get_order_history
+2023-05-07 21:45:50: POST request:  to /get_order_history
+2023-05-07 21:45:58: POST request:  to /get_order_history
+2023-05-07 21:47:50: POST request:  to /get_order_history
+2023-05-07 21:48:14: POST request:  to /get_order_history
+2023-05-07 21:48:39: POST request:  to /get_order_history
+2023-05-07 21:49:02: POST request:  to /get_order_history
+2023-05-07 21:49:13: POST request:  to /get_order_history
+2023-05-07 21:49:42: POST request:  to /get_order_history
+2023-05-07 21:49:58: POST request:  to /get_order_history
+2023-05-07 21:51:16: POST request:  to /get_order_history
+2023-05-07 21:51:36: POST request:  to /get_order_history
+2023-05-07 21:51:52: POST request:  to /get_order_history
+2023-05-07 21:52:41: POST request:  to /get_order_history
+2023-05-07 22:16:28: POST request:  to /get_order_history
+2023-05-07 22:18:34: POST request:  to /get_order_history
+2023-05-07 22:19:18: POST request:  to /get_order_history
+2023-05-07 22:19:50: POST request:  to /get_order_history

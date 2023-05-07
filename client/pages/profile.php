@@ -31,6 +31,11 @@
             <div id="buttons"><button id="cart-btn">Your cart</button>
                 <button id="sign-out-btn">Sign Out</button>
             </div>
+            <div id="options-list">
+                <ul>
+                    <li><a href="http://techmarket/client/pages/order_history.php">Order history</a></li>
+                </ul>
+            </div>
         </div>
 
     </main>
