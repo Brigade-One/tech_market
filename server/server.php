@@ -20,12 +20,16 @@ $router->addRoute('POST', '/sign_up', function () {
 $router->addRoute('POST', '/sign_in', function () {
     return _signIn('data/users.txt');
 });
-
-$itemId = $_GET['id'];
-
-$router->addRoute('GET', '/product', function () {
-    return _getItemFromDBById($_GET['id']);
+$router->addRoute('POST', '/sign_in', function () {
+    return _signIn('data/users.txt');
 });
+$router->addRoute('GET', '/product', function () {
+    return _getItemInstanceByID($_GET['id']);
+});
+$router->addRoute('POST', '/order', function () {
+    return _order('data/orders.txt');
+});
+
 
 // HTTP method and URI of the request.
 $method = $_SERVER['REQUEST_METHOD'];
@@ -43,6 +47,16 @@ function _signUp($filename)
     // Process the data
     $result = $signup->processSignUpData($jsonData);
     // Send the response in JSON format
+    _sendAuthRequestResponse($result);
+}
+
+function _order($filename)
+{
+    require_once 'lib/order.php';
+    require_once 'lib/order_manager.php';
+    $order = new OrderManager($filename);
+    $jsonData = file_get_contents('php://input');
+    $result = $order->writeOrderData($jsonData, $filename);
     _sendAuthRequestResponse($result);
 }
 function _signIn($filename)
@@ -65,7 +79,8 @@ function _getAllItemsFromDB($request)
     $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
     echo json_encode($result);
 }
-function _getItemFromDBById($id)
+
+function _getItemInstanceByID($id)
 {
     require_once 'lib/connect_db.php';
     $db = new ConnectDB('techmarket', 'tech_market_db', 'root', '');
@@ -77,27 +92,10 @@ function _getItemFromDBById($id)
     }
     $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
     header("Content-Type: text/html; charset=utf-8");
-    echo _generateInfoBlock(json_encode($result[0]));
+    echo json_encode($result[0]);
 }
 
 
-function _generateInfoBlock($item)
-{
-    $item = json_decode($item, true);
-    var_dump($item);
-    $main = ' 
-        <div id="product-details">
-            <h1>' . $item['name'] . '</h1>
-            <p>' . $item['description'] . '</p>
-            <p>Quantity in stock: ' . $item['quantity'] . '</p>
-            <p> Price: ' . $item['price'] . '</p>   
-            <p>Vendor: ' . $item['v_name'] . '</p>
-            <p>Category: ' . $item['c_name'] . '</p>
-            <p> Quality: ' . $item['quality'] . "/" . '5' . '</p>
-        </div>
-    ';
-    return $main;
-}
 
 
 function _sendAuthRequestResponse($result)

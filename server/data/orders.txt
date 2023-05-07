@@ -1,0 +1,1 @@
+{"id":"_3juoq10i4","name":"V VV","phoneNumber":"33333333","address":"VVVV","cardNumber":"123","cardCVV":"123","items":[{"id":"9","name":"RX 580","price":"2900","quantity":"2","quality":"5","vendorName":"ASUS","category":"GPU"}]}
