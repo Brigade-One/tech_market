@@ -7,15 +7,17 @@
 </head>
 
 <body>
-
+    <script>
+        if (localStorage.getItem('user') === null) {
+            window.location.href = "http://techmarket/client/pages/sign_in.php";
+        }
+    </script>
     <header>
         <div id="header"></div>
     </header>
     <main>
-
         <div id="form-container">
             <div id="order-details">
-
                 <form id="order-form">
                     <h3 id="form_label">Order Details</h3>
                     <label for="full_name">Full name:</label>
@@ -35,14 +37,12 @@
                     <input type="text" name="card_CVV" placeholder="Enter your CVV" required pattern="\d{3}">
                     <br>
                     <input type="submit" value="Order">
-
                     <div id=status></div>
                 </form>
                 <div id="order-items">
                     <div id="items-container"></div>
                 </div>
             </div>
-
             <script type="module" src="../src/js/order.js"></script>
     </main>
     <script type="module">

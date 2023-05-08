@@ -7,7 +7,6 @@ export class OrderController {
     sendOrder() {
         if (this.model.validateOrder()) {
             const jsonData = JSON.stringify(this.model.toJSON());
-            console.log(jsonData); console.log("Sending order...");
             this.handleHttpRequest(jsonData);
         } else {
             this.view.showError("Please fill in all fields correctly.");
@@ -17,7 +16,8 @@ export class OrderController {
 
     handleHttpRequest(jsonData) {
         const xhr = new XMLHttpRequest();
-        xhr.open("POST", "../../server/server.php/order");
+        const token = localStorage.getItem("token");
+        xhr.open("POST", `../../server/server.php/order?token=${token}`);
         xhr.setRequestHeader("Content-Type", "application/json");
         xhr.onreadystatechange = () => {
             if (xhr.readyState === XMLHttpRequest.DONE) {
@@ -25,11 +25,12 @@ export class OrderController {
                     const response = JSON.parse(xhr.responseText);
                     this.view.render(response.message);
                 } else {
-                    this.view.showError(xhr.status);
+                    this.view.showError(xhr.status + ": " + xhr.responseText);
                 }
             }
         };
         xhr.send(jsonData);
     }
+
 
 }
