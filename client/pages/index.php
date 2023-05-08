@@ -57,6 +57,8 @@
             } else {
                 console.log('Error loading grid!');
             }
+            // Our long polling
+            setTimeout(_getAllDBItems, 2000);
         };
     }
 
@@ -88,6 +90,7 @@
                 }
 
                 const productContainer = document.querySelector('.product-container');
+                productContainer.innerHTML = '';
                 for (let i = 0; i < result.length; i++) {
                     productContainer.appendChild(createProductWidget(result[i]));
                 }
@@ -95,4 +98,5 @@
             });
     }
 </script>
+
 </html>
