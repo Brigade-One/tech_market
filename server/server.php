@@ -34,7 +34,7 @@ $router->addRoute('POST', '/order', function () {
     require_once 'lib/order_controller.php';
     $token = $_GET['token'];
 
-    if (AuthController::verifyToken($token)) {
+    if (!AuthController::verifyToken($token)) {
         header('HTTP/1.1 401 Unauthorized');
         echo 'Unauthorized (invalid token)';
         return;
@@ -48,7 +48,7 @@ $router->addRoute('POST', '/get_order_history', function () {
     require_once 'lib/auth_controller.php';
     require_once 'lib/order_controller.php';
 
-    if (AuthController::verifyToken($token)) {
+    if (!AuthController::verifyToken($token)) {
         header('HTTP/1.1 401 Unauthorized');
         echo 'Unauthorized (invalid token)';
         return;
