@@ -11,7 +11,7 @@ class SignUp
 
     public function processSignUpData($jsonData)
     {
-        require_once 'user_data_reader.php';
+        require_once 'data_reader.php';
         require_once 'user.php';
 
         $receivedUser = User::fromJson($jsonData);
