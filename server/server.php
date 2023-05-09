@@ -1,6 +1,8 @@
 <?php
 require_once 'lib/http_router.php';
-require_once 'lib/token_manager.php';
+require_once 'lib/auth_controller.php';
+require_once 'lib/db_controller.php';
+require_once 'lib/order_controller.php';
 
 header('Access-Control-Allow-Origin: http://techmarkethome');
 header('Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS');
@@ -14,24 +16,19 @@ startServer($host, $port, $docroot);
 
 $router = new HttpRouter();
 $router->addRoute('POST', '/sign_up', function () {
-    require_once 'lib/auth_controller.php';
     return AuthController::signUp('data/users.txt');
 });
 $router->addRoute('POST', '/sign_in', function () {
-    require_once 'lib/auth_controller.php';
     return AuthController::signIn('data/users.txt');
 });
 $router->addRoute('GET', '/get_all_items', function () {
-    require_once 'lib/db_controller.php';
-    DBController::getAllItemsFromDB('SELECT * FROM items');
+    return DBController::getAllItemsFromDB('SELECT * FROM items');
 });
 $router->addRoute('GET', '/product', function () {
-    require_once 'lib/db_controller.php';
-    DBController::getItemInstanceByID($_GET['id']);
+    return DBController::getItemInstanceByID($_GET['id']);
 });
 $router->addRoute('POST', '/order', function () {
-    require_once 'lib/auth_controller.php';
-    require_once 'lib/order_controller.php';
+
     $token = $_GET['token'];
 
     if (!AuthController::verifyToken($token)) {
@@ -45,8 +42,6 @@ $router->addRoute('POST', '/order', function () {
 
 $router->addRoute('POST', '/get_order_history', function () {
     $token = $_GET['token'];
-    require_once 'lib/auth_controller.php';
-    require_once 'lib/order_controller.php';
 
     if (!AuthController::verifyToken($token)) {
         header('HTTP/1.1 401 Unauthorized');
