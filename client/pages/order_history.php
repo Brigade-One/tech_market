@@ -44,7 +44,10 @@
                 itemsContainer.innerHTML = `History is empty.`;
             } else {
                 const orders = JSON.parse(xhr.response).orders.reverse();
-
+                if (orders.length === 0) {
+                    itemsContainer.innerHTML = `History is empty.`;
+                    return;
+                }
                 orders.forEach(order => {
                     var id = order.id;
                     var order = new Order(order.email, order.name, order.phoneNumber, order.address, order.cardNumber, order.cardCVV, order.items);

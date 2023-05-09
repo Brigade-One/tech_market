@@ -39,7 +39,7 @@ export class UserController {
                     // Add a 1.5 second delay before redirecting to the index page
                     setTimeout(function () {
                         window.location.href = "../pages/index.php";
-                    }, 1500);
+                    }, 1500); 
                 } else {
                     this.view.showError(xhr.status);
                 }
