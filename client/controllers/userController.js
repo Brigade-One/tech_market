@@ -31,8 +31,10 @@ export class UserController {
                 if (xhr.status === 200) {
                     const response = JSON.parse(xhr.responseText);
                     const user = response.user;
-                    localStorage.setItem("user", user);
-                    localStorage.setItem("token", response.token);
+                    if (response.success === true) {
+                        localStorage.setItem("user", user);
+                        localStorage.setItem("token", response.token);
+                    }
                     this.view.render(response.message);
                     // Add a 1.5 second delay before redirecting to the index page
                     setTimeout(function () {
