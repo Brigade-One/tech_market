@@ -23,6 +23,7 @@ class AuthController
 
     public static function verifyToken($token)
     {
+        require_once 'lib/token_manager.php';
         $tokenManager = new TokenManager();
         return $tokenManager->verifyToken($token);
     }
