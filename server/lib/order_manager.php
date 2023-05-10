@@ -25,7 +25,7 @@ class OrderManager
         return [
             'success' => true,
             'message' => 'Order with name ' . $orderObject->name . ' written successfully.',
-            'order' => $orderObject->toJson()
+            'orders' => $orderObject->toJson()
         ];
     }
     // Generate a unique id for each order 
