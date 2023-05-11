@@ -27,7 +27,6 @@ class GetOrderHistoryTask implements Task
     public function run(Channel $channel, Cancellation $cancellation): mixed
     {
         $function = $this->function;
-
         return $this->$function($this->args);
     }
     public function getOrderHistory($args)

@@ -2,15 +2,14 @@
 
 class OrderController
 {
-    public static function writeOrderData($filename, $token)
+    public static function writeOrderData($token, $jsonData)
     {
         require_once 'lib/order.php';
         require_once 'lib/order_manager.php';
         $order = new OrderManager($filename);
-        $jsonData = file_get_contents('php://input');
-        $result = $order->writeOrderData($jsonData, $filename);
+        $result = $order->writeOrderData($jsonData);
         OrderController::_sendOrderResponse($result);
-        return $result['order'];
+        return $result['orders'];
     }
     public static function getOrderHistory($token)
     {
@@ -19,7 +18,6 @@ class OrderController
         $order = new OrderManager($filename);
         $result = $order->getUserOrderHistory($token);
         OrderController::_sendOrderResponse($result);
-        echo "getOrderHistory method called";
         return $result['orders'];
     }
 

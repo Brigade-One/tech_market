@@ -13,8 +13,4 @@ class MessageLogger
         fwrite($this->file, $message . PHP_EOL);
     }
 
-    public function close()
-    {
-        fclose($this->file);
-    }
 }

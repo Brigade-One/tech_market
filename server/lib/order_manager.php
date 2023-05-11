@@ -6,11 +6,11 @@ class OrderManager
     {
         $this->filename = $filename;
     }
-    public function writeOrderData($jsonData, $filename)
+    public function writeOrderData($jsonData)
     {
         require_once 'order.php';
         $order = Order::fromJson($jsonData);
-
+        $filename = './data/orders.txt';
         $orders = $this->readOrderData($filename)['orders'];
         foreach ($orders as $worder) {
             if ($worder->id === $this->generateId($jsonData)) {

@@ -1,18 +1,39 @@
 <?php
+namespace ServerTasks;
+
+use OrderController;
+
 use Amp\Cancellation;
 use Amp\Parallel\Worker\Task;
 use Amp\Sync\Channel;
 
 class OrderTask implements Task
 {
+    /**
+     * @var callable
+     */
+    private $function;
+    /**
+     * @var mixed[]
+     */
+    private $args;
     public function __construct(
-        private string $token
+        string $function,
+        array $args = []
     ) {
+        $this->function = $function;
+        $this->args = $args;
     }
 
-    public function run(Channel $channel, Cancellation $cancellation): string
+    public function run(Channel $channel, Cancellation $cancellation): mixed
     {
-        require_once './order_controller.php';
-        return OrderController::writeOrderData('./data/orders.txt', $this->token);
+        $function = $this->function;
+
+        return $this->$function($this->args);
+    }
+    public function order($args)
+    {
+        require_once 'lib/order_controller.php';
+        return json_encode(OrderController::writeOrderData($args['token'], $args['jsonData']));
     }
 }
