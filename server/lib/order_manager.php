@@ -39,7 +39,9 @@ class OrderManager
     {
         require_once 'order.php';
         $orders = [];
-        $file = fopen($filename, 'r');
+
+        $file = fopen("./data/orders.txt", "r");
+
         while (!feof($file)) {
             $line = fgets($file);
             if ($line !== false) {
@@ -54,7 +56,7 @@ class OrderManager
             'orders' => $orders
         ];
     }
-    public function getUserOrderHistory($filename, $token)
+    public function getUserOrderHistory($token)
     {
 
         require_once 'token_manager.php';
@@ -68,6 +70,7 @@ class OrderManager
                 array_push($userOrders, $order);
             }
         }
+
         return [
             'success' => true,
             'message' => 'User order history read successfully.',
