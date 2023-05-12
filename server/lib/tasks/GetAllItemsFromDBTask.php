@@ -1,13 +1,12 @@
 <?php
 namespace ServerTasks;
 
-use OrderController;
-
+use DBController;
 use Amp\Cancellation;
 use Amp\Parallel\Worker\Task;
 use Amp\Sync\Channel;
 
-class OrderTask implements Task
+class GetAllItemsFromDBTask implements Task
 {
     /**
      * @var callable
@@ -30,9 +29,9 @@ class OrderTask implements Task
         $function = $this->function;
         return $this->$function($this->args);
     }
-    public function order($args)
+    public function getAllItems($args)
     {
-        require_once 'lib/order_controller.php';
-        return json_encode(OrderController::writeOrderData($args['token'], $args['jsonData']));
+        require_once 'lib/db_controller.php';
+        return json_encode(DBController::getAllItemsFromDB('SELECT * FROM items'));
     }
 }

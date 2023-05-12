@@ -1,18 +1,20 @@
 <?php
-
+require '..\vendor\autoload.php';
 require_once 'lib/http_router.php';
 require_once 'lib/auth_controller.php';
 require_once 'lib/db_controller.php';
 require_once 'lib/order_controller.php';
 require_once 'lib/message_logger.php';
 require_once 'lib/message_queue.php';
-require '..\vendor\autoload.php';
-use ServerTasks\GetOrderHistoryTask;
-use ServerTasks\OrderTask;
 
 header('Access-Control-Allow-Origin: http://techmarkethome');
 header('Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS');
 header('Access-Control-Allow-Headers: Content-Type, Authorization, X-Requested-With');
+
+use ServerTasks\GetOrderHistoryTask;
+use ServerTasks\OrderTask;
+use ServerTasks\GetAllItemsFromDBTask;
+use ServerTasks\GetItemFromDBByIDTask;
 
 // Server parameters.
 $host = 'techmarket';
@@ -20,11 +22,10 @@ $port = 80;
 $docroot = __DIR__;
 startServer($host, $port, $docroot);
 
-// Create the MessageLogger and MessageQueue instances.
 $logger = new MessageLogger('logs/server_tasks_log.txt');
 $queue = new MessageQueue();
-
 $router = new HttpRouter();
+
 $router->addRoute('POST', '/sign_up', function () use ($logger, $queue) {
     $logger->log('Client requested sign up');
 
@@ -36,14 +37,14 @@ $router->addRoute('POST', '/sign_in', function () use ($logger, $queue) {
     return AuthController::signIn('data/users.txt');
 });
 $router->addRoute('GET', '/get_all_items', function () use ($logger, $queue) {
-    $logger->log('Client requested all items');
-
-    DBController::getAllItemsFromDB('SELECT * FROM items');
+    $logger->log('Client requested all items from DB');
+    $task = new GetAllItemsFromDBTask('getAllItems', []);
+    $queue->add($task);
 });
 $router->addRoute('GET', '/product', function () use ($logger, $queue) {
     $logger->log('Client requested product with ID: ' . $_GET['id']);
-
-    return DBController::getItemInstanceByID($_GET['id']);
+    $task = new GetItemFromDBByIDTask('getItemById', ['id' => $_GET['id']]);
+    $queue->add($task);
 });
 $router->addRoute('POST', '/order', function () use ($logger, $queue) {
     $token = $_GET['token'];
@@ -75,7 +76,6 @@ $router->addRoute('POST', '/get_order_history', function () use ($logger, $queue
 $method = $_SERVER['REQUEST_METHOD'];
 $path = $_SERVER['PATH_INFO'];
 
-// Route the request.
 $router->route($method, $path);
 
 use Amp\Future;
@@ -96,6 +96,7 @@ $responses = Future\await(
         $executions,
     )
 );
+
 foreach ($responses as $result => $response) {
     echo (string) $response;
 }

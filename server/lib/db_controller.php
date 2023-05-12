@@ -22,7 +22,6 @@ class DBController
         $pdo = self::connect();
         $stmt = $pdo->query($request);
         $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
-        echo json_encode($result);
         return $result;
     }
 

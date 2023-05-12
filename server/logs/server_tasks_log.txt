@@ -247,3 +247,18 @@ Client requested all items
 Client requested product with ID: 2
 Added write order task to the message queue
 Added write order task to the message queue
+Client requested all items
+Client requested all items from DB
+Client requested all items from DB
+Client requested all items from DB
+Client requested all items from DB
+Client requested all items from DB
+Client requested all items from DB
+Client requested all items from DB
+Client requested product with ID: 2
+Client requested product with ID: 2
+Client requested all items from DB
+Client requested product with ID: 2
+Client requested all items from DB
+Client requested all items from DB
+Client requested all items from DB
