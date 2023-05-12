@@ -33,7 +33,7 @@
         xhr.onload = function () {
             const itemsContainer = document.getElementById("items");
             if (xhr.status != 200) {
-                itemsContainer.innerHTML = `History is empty.`;
+                itemsContainer.innerHTML = `Error ${xhr.status}: ${xhr.statusText}`;
             } else {
                 const response = JSON.parse(xhr.response);
                 console.log(response);
