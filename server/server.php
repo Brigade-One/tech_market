@@ -27,15 +27,13 @@ $router = new HttpRouter();
 
 $router->addRoute('POST', '/sign_up', function () use ($logger, $queue) {
     $logger->log('Client requested sign up');
-    /*  $task = new AuthTask('signUp', ['jsonData' => file_get_contents('php://input')]);
-    $queue->add($task); */
-    echo json_encode(AuthController::signIn(file_get_contents('php://input')));
+    $task = new AuthTask('signUp', ['jsonData' => file_get_contents('php://input')]);
+    $queue->add($task);
 });
 $router->addRoute('POST', '/sign_in', function () use ($logger, $queue) {
     $logger->log('Client requested sign in');
     $task = new AuthTask('signIn', ['jsonData' => file_get_contents('php://input')]);
     $queue->add($task);
-
 });
 $router->addRoute('GET', '/get_all_items', function () use ($logger, $queue) {
     $logger->log('Client requested all items from DB');
@@ -50,9 +48,7 @@ $router->addRoute('GET', '/product', function () use ($logger, $queue) {
 $router->addRoute('POST', '/order', function () use ($logger, $queue) {
     $token = $_GET['token'];
     if (!AuthController::verifyToken($token)) {
-        $logger->log('Unauthorized request for order');
-        header('HTTP/1.1 401 Unauthorized');
-        echo 'Unauthorized (invalid token)';
+        handleUnauthorizedRequest($logger);
         return;
     }
     $task = new OrderTask("order", ['token' => $token, 'jsonData' => file_get_contents('php://input')]);
@@ -63,9 +59,7 @@ $router->addRoute('POST', '/order', function () use ($logger, $queue) {
 $router->addRoute('POST', '/get_order_history', function () use ($logger, $queue) {
     $token = $_GET['token'];
     if (!AuthController::verifyToken($token)) {
-        $logger->log('Unauthorized request for order history');
-        header('HTTP/1.1 401 Unauthorized');
-        echo 'Unauthorized (invalid token)';
+        handleUnauthorizedRequest($logger);
         return;
     }
     $task = new OrderTask('getOrderHistory', ['token' => $token]);
@@ -82,7 +76,7 @@ $router->route($method, $path);
 use Amp\Future;
 use Amp\Parallel\Worker;
 
-$pool = Amp\Parallel\Worker\workerPool();
+$pool = Worker\workerPool();
 
 $tasks = $queue->getTasks();
 $executions = [];
@@ -106,4 +100,10 @@ function startServer($host, $port, $docroot)
 {
     $cmd = sprintf('php -S %s:%d -t %s', $host, $port, $docroot);
     shell_exec($cmd);
+}
+function handleUnauthorizedRequest($logger)
+{
+    $logger->log('Unauthorized request');
+    header('HTTP/1.1 401 Unauthorized');
+    echo 'Unauthorized (invalid token)';
 }

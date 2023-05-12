@@ -1,12 +1,12 @@
 <?php
 
-define("FILE_PATH", "./data/users.txt");
+define("USER_FILE_PATH", "./data/users.txt");
 class AuthController
 {
     public static function signUp($jsonData)
     {
         require_once 'lib/sign_up.php';
-        $signup = new SignUp(FILE_PATH);
+        $signup = new SignUp(USER_FILE_PATH);
         $result = $signup->processSignUpData($jsonData);
         AuthController::sendAuthRequestResponse($result);
     }
@@ -14,7 +14,7 @@ class AuthController
     public static function signIn($jsonData)
     {
         require_once 'lib/sign_in.php';
-        $signin = new SignIn(FILE_PATH);
+        $signin = new SignIn(USER_FILE_PATH);
         $result = $signin->processSignInData($jsonData);
         return AuthController::sendAuthRequestResponse($result);
     }
@@ -41,7 +41,6 @@ class AuthController
                 'user' =>
                 $result['user']
             ];
-            var_dump($result['user']);
         } else {
             $logHandler->logEvent($result['message']);
             return ['success' => false, 'message' => $result['message']];

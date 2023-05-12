@@ -10,8 +10,7 @@ class OrderManager
     {
         require_once 'order.php';
         $order = Order::fromJson($jsonData);
-        $filename = './data/orders.txt';
-        $orders = $this->readOrderData($filename)['orders'];
+        $orders = $this->readOrderData()['orders'];
         foreach ($orders as $worder) {
             if ($worder->id === $this->generateId($jsonData)) {
                 return [
@@ -24,7 +23,7 @@ class OrderManager
         file_put_contents($filename, $orderObject->toJson() . "\n", FILE_APPEND);
         return [
             'success' => true,
-            'message' => 'Order with name ' . $orderObject->name . ' written successfully.',
+            'message' => 'Order of buyer ' . $orderObject->name . ' written successfully.',
             'orders' => $orderObject->toJson()
         ];
     }
@@ -35,12 +34,12 @@ class OrderManager
         $id = hash('sha256', $jsonData);
         return $id;
     }
-    public function readOrderData($filename)
+    public function readOrderData()
     {
         require_once 'order.php';
         $orders = [];
-
-        $file = fopen("./data/orders.txt", "r");
+        $filename = $this->filename;
+        $file = fopen($filename, "r");
 
         while (!feof($file)) {
             $line = fgets($file);

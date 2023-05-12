@@ -1,12 +1,12 @@
 <?php
-
+define('ORDERS_FILE_PATH', './data/orders.txt');
 class OrderController
 {
     public static function writeOrderData($token, $jsonData)
     {
         require_once 'lib/order.php';
         require_once 'lib/order_manager.php';
-        $order = new OrderManager($filename);
+        $order = new OrderManager(ORDERS_FILE_PATH);
         $result = $order->writeOrderData($jsonData);
         OrderController::_sendOrderResponse($result);
         return $result;
@@ -15,7 +15,7 @@ class OrderController
     {
         require_once 'lib/order_manager.php';
 
-        $order = new OrderManager($filename);
+        $order = new OrderManager(ORDERS_FILE_PATH);
         $result = $order->getUserOrderHistory($token);
         OrderController::_sendOrderResponse($result);
         return $result;
