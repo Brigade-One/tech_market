@@ -11,10 +11,9 @@ header('Access-Control-Allow-Origin: http://techmarkethome');
 header('Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS');
 header('Access-Control-Allow-Headers: Content-Type, Authorization, X-Requested-With');
 
-use ServerTasks\GetOrderHistoryTask;
 use ServerTasks\OrderTask;
-use ServerTasks\GetAllItemsFromDBTask;
-use ServerTasks\GetItemFromDBByIDTask;
+use ServerTasks\DatabaseTask;
+use ServerTasks\AuthTask;
 
 // Server parameters.
 $host = 'techmarket';
@@ -28,22 +27,24 @@ $router = new HttpRouter();
 
 $router->addRoute('POST', '/sign_up', function () use ($logger, $queue) {
     $logger->log('Client requested sign up');
-
-    return AuthController::signUp('data/users.txt');
+    /*  $task = new AuthTask('signUp', ['jsonData' => file_get_contents('php://input')]);
+    $queue->add($task); */
+    echo json_encode(AuthController::signIn(file_get_contents('php://input')));
 });
 $router->addRoute('POST', '/sign_in', function () use ($logger, $queue) {
     $logger->log('Client requested sign in');
+    $task = new AuthTask('signIn', ['jsonData' => file_get_contents('php://input')]);
+    $queue->add($task);
 
-    return AuthController::signIn('data/users.txt');
 });
 $router->addRoute('GET', '/get_all_items', function () use ($logger, $queue) {
     $logger->log('Client requested all items from DB');
-    $task = new GetAllItemsFromDBTask('getAllItems', []);
+    $task = new DatabaseTask('getAllItems', []);
     $queue->add($task);
 });
 $router->addRoute('GET', '/product', function () use ($logger, $queue) {
     $logger->log('Client requested product with ID: ' . $_GET['id']);
-    $task = new GetItemFromDBByIDTask('getItemById', ['id' => $_GET['id']]);
+    $task = new DatabaseTask('getItemById', ['id' => $_GET['id']]);
     $queue->add($task);
 });
 $router->addRoute('POST', '/order', function () use ($logger, $queue) {
@@ -67,7 +68,7 @@ $router->addRoute('POST', '/get_order_history', function () use ($logger, $queue
         echo 'Unauthorized (invalid token)';
         return;
     }
-    $task = new GetOrderHistoryTask('getOrderHistory', ['token' => $token]);
+    $task = new OrderTask('getOrderHistory', ['token' => $token]);
     $queue->add($task);
     $logger->log('Client requested order history');
 });

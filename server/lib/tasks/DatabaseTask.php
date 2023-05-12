@@ -6,7 +6,7 @@ use Amp\Cancellation;
 use Amp\Parallel\Worker\Task;
 use Amp\Sync\Channel;
 
-class GetAllItemsFromDBTask implements Task
+class DatabaseTask implements Task
 {
     /**
      * @var callable
@@ -33,5 +33,10 @@ class GetAllItemsFromDBTask implements Task
     {
         require_once 'lib/db_controller.php';
         return json_encode(DBController::getAllItemsFromDB('SELECT * FROM items'));
+    }
+    public function getItemById($args)
+    {
+        require_once 'lib/db_controller.php';
+        return json_encode(DBController::getItemInstanceByID($args['id']));
     }
 }

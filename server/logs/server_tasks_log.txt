@@ -262,3 +262,97 @@ Client requested product with ID: 2
 Client requested all items from DB
 Client requested all items from DB
 Client requested all items from DB
+Client requested all items from DB
+Client requested all items from DB
+Client requested all items from DB
+Client requested all items from DB
+Client requested all items from DB
+Client requested all items from DB
+Client requested sign in
+Client requested sign in
+Client requested sign in
+Client requested sign in
+Client requested sign in
+Client requested sign in
+Client requested sign in
+Client requested sign in
+Client requested sign in
+Client requested sign in
+Client requested sign in
+Client requested sign in
+Client requested sign in
+Client requested sign in
+Client requested sign in
+Client requested sign in
+Client requested sign in
+Client requested sign in
+Client requested sign in
+Client requested sign in
+Client requested sign in
+Client requested sign in
+Client requested sign in
+Client requested sign in
+Client requested sign in
+Client requested sign in
+Client requested sign in
+Client requested all items from DB
+Client requested all items from DB
+Client requested all items from DB
+Client requested all items from DB
+Client requested all items from DB
+Client requested sign in
+Client requested sign in
+Client requested sign in
+Client requested all items from DB
+Client requested all items from DB
+Client requested all items from DB
+Client requested all items from DB
+Client requested all items from DB
+Client requested all items from DB
+Client requested all items from DB
+Client requested all items from DB
+Client requested all items from DB
+Client requested all items from DB
+Client requested all items from DB
+Client requested all items from DB
+Client requested all items from DB
+Client requested all items from DB
+Client requested all items from DB
+Client requested all items from DB
+Client requested all items from DB
+Client requested all items from DB
+Client requested all items from DB
+Client requested all items from DB
+Client requested sign in
+Client requested sign in
+Client requested sign in
+Client requested all items from DB
+Client requested all items from DB
+Client requested sign in
+Client requested sign in
+Client requested sign in
+Client requested sign in
+Client requested sign in
+Client requested sign in
+Client requested sign in
+Client requested sign in
+Client requested sign in
+Client requested sign in
+Client requested all items from DB
+Client requested all items from DB
+Client requested sign in
+Client requested sign in
+Client requested sign in
+Client requested sign in
+Client requested sign in
+Client requested sign in
+Client requested sign in
+Client requested sign in
+Client requested sign in
+Client requested all items from DB
+Client requested all items from DB
+Client requested all items from DB
+Client requested product with ID: 1
+Added write order task to the message queue
+Added write order task to the message queue
+Added write order task to the message queue

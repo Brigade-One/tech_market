@@ -111,8 +111,8 @@ class ComposerStaticInit69eeab3d5f17bfece21fd9678cae9607
         ),
         'League\\Uri\\' => 
         array (
-            0 => __DIR__ . '/..' . '/league/uri/src',
-            1 => __DIR__ . '/..' . '/league/uri-interfaces/src',
+            0 => __DIR__ . '/..' . '/league/uri-interfaces/src',
+            1 => __DIR__ . '/..' . '/league/uri/src',
         ),
         'Kelunik\\Certificate\\' => 
         array (

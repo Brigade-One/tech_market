@@ -9,7 +9,7 @@ class OrderController
         $order = new OrderManager($filename);
         $result = $order->writeOrderData($jsonData);
         OrderController::_sendOrderResponse($result);
-        return $result['orders'];
+        return $result;
     }
     public static function getOrderHistory($token)
     {
@@ -18,7 +18,7 @@ class OrderController
         $order = new OrderManager($filename);
         $result = $order->getUserOrderHistory($token);
         OrderController::_sendOrderResponse($result);
-        return $result['orders'];
+        return $result;
     }
 
     private static function _sendOrderResponse($result)

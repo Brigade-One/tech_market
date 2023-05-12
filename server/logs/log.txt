@@ -1228,3 +1228,130 @@
 2023-05-12 09:01:18: GET request:  to /get_all_items
 2023-05-12 09:01:22: GET request:  to /get_all_items
 2023-05-12 09:01:25: GET request:  to /get_all_items
+2023-05-12 09:17:11: GET request:  to /get_all_items
+2023-05-12 09:17:18: GET request:  to /get_all_items
+2023-05-12 09:17:32: GET request:  to /get_all_items
+2023-05-12 09:17:35: GET request:  to /get_all_items
+2023-05-12 09:17:38: GET request:  to /get_all_items
+2023-05-12 09:17:40: GET request:  to /get_all_items
+2023-05-12 09:17:48: POST request:  to /sign_in
+2023-05-12 09:18:01: POST request:  to /sign_in
+2023-05-12 09:18:25: POST request:  to /sign_in
+2023-05-12 09:19:03: POST request:  to /sign_in
+2023-05-12 09:19:37: POST request:  to /sign_in
+2023-05-12 09:20:00: POST request:  to /sign_in
+2023-05-12 09:20:20: POST request:  to /sign_in
+2023-05-12 09:20:40: POST request:  to /sign_in
+2023-05-12 09:20:59: POST request:  to /sign_in
+2023-05-12 09:21:14: POST request:  to /sign_in
+2023-05-12 09:21:36: POST request:  to /sign_in
+2023-05-12 09:22:06: POST request:  to /sign_in
+2023-05-12 09:22:17: POST request:  to /sign_in
+2023-05-12 09:23:07: POST request:  to /sign_in
+2023-05-12 09:25:01: POST request:  to /sign_in
+2023-05-12 09:25:23: POST request:  to /sign_in
+2023-05-12 09:26:12: POST request:  to /sign_in
+2023-05-12 09:30:07: POST request:  to /sign_in
+2023-05-12 09:30:10: User with name vitalii signed in successfully.
+2023-05-12 09:30:35: POST request:  to /sign_in
+2023-05-12 09:31:38: POST request:  to /sign_in
+2023-05-12 09:31:43: User with name vitalii signed in successfully.
+2023-05-12 09:32:25: POST request:  to /sign_in
+2023-05-12 09:32:54: User with name vitalii signed in successfully.
+2023-05-12 09:33:02: POST request:  to /sign_in
+2023-05-12 09:33:07: User with name vitalii signed in successfully.
+2023-05-12 09:34:15: POST request:  to /sign_in
+2023-05-12 09:35:19: POST request:  to /sign_in
+2023-05-12 09:35:24: User with name vitalii signed in successfully.
+2023-05-12 09:35:38: POST request:  to /sign_in
+2023-05-12 09:36:13: POST request:  to /sign_in
+2023-05-12 09:36:21: User with name vitalii signed in successfully.
+2023-05-12 09:38:11: POST request:  to /sign_in
+2023-05-12 09:38:15: User with name vitalii signed in successfully.
+2023-05-12 09:42:53: GET request:  to /get_all_items
+2023-05-12 09:43:04: GET request:  to /get_all_items
+2023-05-12 09:43:19: GET request:  to /get_all_items
+2023-05-12 09:43:22: GET request:  to /get_all_items
+2023-05-12 09:43:37: GET request:  to /get_all_items
+2023-05-12 09:43:54: POST request:  to /sign_in
+2023-05-12 09:43:54: No such user.
+2023-05-12 09:43:58: POST request:  to /sign_in
+2023-05-12 09:43:58: No such user.
+2023-05-12 09:44:06: POST request:  to /sign_in
+2023-05-12 09:44:14: No such user.
+2023-05-12 09:44:22: GET request:  to /get_all_items
+2023-05-12 09:44:34: GET request:  to /get_all_items
+2023-05-12 09:44:36: GET request:  to /get_all_items
+2023-05-12 09:44:56: GET request:  to /get_all_items
+2023-05-12 09:45:00: GET request:  to /get_all_items
+2023-05-12 09:45:00: GET request:  to /get_all_items
+2023-05-12 09:46:07: GET request:  to /get_all_items
+2023-05-12 09:46:22: GET request:  to /get_all_items
+2023-05-12 09:46:38: GET request:  to /get_all_items
+2023-05-12 09:46:47: GET request:  to /get_all_items
+2023-05-12 09:47:03: GET request:  to /get_all_items
+2023-05-12 09:47:41: GET request:  to /get_all_items
+2023-05-12 09:47:47: GET request:  to /get_all_items
+2023-05-12 09:47:56: GET request:  to /get_all_items
+2023-05-12 09:48:10: GET request:  to /get_all_items
+2023-05-12 09:49:10: GET request:  to /get_all_items
+2023-05-12 09:49:18: GET request:  to /get_all_items
+2023-05-12 09:51:12: GET request:  to /get_all_items
+2023-05-12 09:51:18: GET request:  to /get_all_items
+2023-05-12 09:51:24: GET request:  to /get_all_items
+2023-05-12 09:51:31: POST request:  to /sign_in
+2023-05-12 09:51:38: No such user.
+2023-05-12 09:52:45: POST request:  to /sign_in
+2023-05-12 09:53:08: No such user.
+2023-05-12 09:53:57: POST request:  to /sign_in
+2023-05-12 09:54:00: No such user.
+2023-05-12 09:54:14: GET request:  to /get_all_items
+2023-05-12 09:54:19: GET request:  to /get_all_items
+2023-05-12 09:54:32: POST request:  to /sign_in
+2023-05-12 09:54:57: User with name vitalii signed in successfully.
+2023-05-12 09:55:32: POST request:  to /sign_in
+2023-05-12 09:55:41: User with name vitalii signed in successfully.
+2023-05-12 09:56:42: POST request:  to /sign_in
+2023-05-12 09:56:42: User with name vitalii signed in successfully.
+2023-05-12 09:56:49: POST request:  to /sign_in
+2023-05-12 09:57:06: User with name vitalii signed in successfully.
+2023-05-12 09:57:14: POST request:  to /sign_in
+2023-05-12 09:57:34: User with name vitalii signed in successfully.
+2023-05-12 09:58:15: POST request:  to /sign_in
+2023-05-12 09:58:15: User with name vitalii signed in successfully.
+2023-05-12 09:58:27: POST request:  to /sign_in
+2023-05-12 09:58:27: User with name vitalii signed in successfully.
+2023-05-12 09:59:56: POST request:  to /sign_in
+2023-05-12 09:59:56: User with name vitalii signed in successfully.
+2023-05-12 10:01:28: POST request:  to /sign_in
+2023-05-12 10:01:29: User with name vitalii signed in successfully.
+2023-05-12 10:01:50: POST request:  to /sign_in
+2023-05-12 10:01:55: User with name vitalii signed in successfully.
+2023-05-12 10:03:06: GET request:  to /get_all_items
+2023-05-12 10:03:14: GET request:  to /get_all_items
+2023-05-12 10:05:18: POST request:  to /sign_in
+2023-05-12 10:06:22: POST request:  to /sign_in
+2023-05-12 10:06:22: User with name vitalii signed in successfully.
+2023-05-12 10:06:46: POST request:  to /sign_in
+2023-05-12 10:06:46: User with name vitalii signed in successfully.
+2023-05-12 10:07:02: POST request:  to /sign_in
+2023-05-12 10:09:05: User with name vitalii signed in successfully.
+2023-05-12 10:09:43: POST request:  to /sign_in
+2023-05-12 10:09:49: POST request:  to /sign_in
+2023-05-12 10:09:49: User with name vitalii signed in successfully.
+2023-05-12 10:09:56: User with name vitalii signed in successfully.
+2023-05-12 10:20:15: POST request:  to /sign_in
+2023-05-12 10:20:15: User with name vitalii signed in successfully.
+2023-05-12 10:20:43: POST request:  to /sign_in
+2023-05-12 10:20:51: User with name vitalii signed in successfully.
+2023-05-12 10:20:56: User with name vitalii signed in successfully.
+2023-05-12 10:21:06: POST request:  to /sign_in
+2023-05-12 10:21:10: User with name vitalii signed in successfully.
+2023-05-12 10:21:17: User with name vitalii signed in successfully.
+2023-05-12 10:21:19: GET request:  to /get_all_items
+2023-05-12 10:21:41: GET request:  to /get_all_items
+2023-05-12 10:21:54: GET request:  to /get_all_items
+2023-05-12 10:21:54: GET request:  to /product
+2023-05-12 10:22:10: POST request:  to /order
+2023-05-12 10:22:45: POST request:  to /order
+2023-05-12 10:22:51: POST request:  to /order

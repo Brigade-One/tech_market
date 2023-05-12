@@ -35,4 +35,9 @@ class OrderTask implements Task
         require_once 'lib/order_controller.php';
         return json_encode(OrderController::writeOrderData($args['token'], $args['jsonData']));
     }
+    public function getOrderHistory($args)
+    {
+        require_once 'lib/order_controller.php';
+        return json_encode(OrderController::getOrderHistory($args['token']));
+    }
 }

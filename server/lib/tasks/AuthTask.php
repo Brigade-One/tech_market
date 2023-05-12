@@ -1,12 +1,13 @@
 <?php
 namespace ServerTasks;
 
-use OrderController;
+use AuthController;
+
 use Amp\Cancellation;
 use Amp\Parallel\Worker\Task;
 use Amp\Sync\Channel;
 
-class GetOrderHistoryTask implements Task
+class AuthTask implements Task
 {
     /**
      * @var callable
@@ -29,9 +30,14 @@ class GetOrderHistoryTask implements Task
         $function = $this->function;
         return $this->$function($this->args);
     }
-    public function getOrderHistory($args)
+    public function signIn($args)
     {
-        require_once 'lib/order_controller.php';
-        return json_encode(OrderController::getOrderHistory($args['token']));
+        require_once 'lib/auth_controller.php';
+        return json_encode(AuthController::signIn($args['jsonData']));
+    }
+    public function signUp($args)
+    {
+        require_once 'lib/auth_controller.lib';
+        return json_encode(AuthController::signUp($args['jsonData']));
     }
 }
