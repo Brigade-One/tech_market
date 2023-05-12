@@ -36,10 +36,8 @@
                 itemsContainer.innerHTML = `History is empty.`;
             } else {
                 const response = JSON.parse(xhr.response);
-                const orders = [];
-                response.forEach(element => {
-                    orders.push(element);
-                });
+                console.log(response);
+                const orders =  response.orders;
                 if (orders.length === 0) {
                     itemsContainer.innerHTML = `History is empty.`;
                     return;
