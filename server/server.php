@@ -96,6 +96,8 @@ foreach ($responses as $result => $response) {
     echo (string) $response;
 }
 
+$pool->shutdown();
+
 function startServer($host, $port, $docroot)
 {
     $cmd = sprintf('php -S %s:%d -t %s', $host, $port, $docroot);

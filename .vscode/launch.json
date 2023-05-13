@@ -1,6 +1,18 @@
 {
-    "name": "Listen for Xdebug",
-    "type": "php",
-    "request": "launch",
-    "port": 9000,
+    "configurations": [
+        {
+            "name": "Listen for Xdebug",
+            "type": "php",
+            "request": "launch",
+            "port": 9000,
+        },
+        {
+            "name": "Profile",
+            "type": "php",
+            "request": "launch",
+            "port": 9000,
+            "noDebug": true,
+            "profile": true,
+        }
+    ]
 }
