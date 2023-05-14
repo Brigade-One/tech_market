@@ -1,24 +1,24 @@
 <?php
-
+define('ORDERS_FILE_PATH', './data/orders.txt');
 class OrderController
 {
-    public static function order($filename, $token)
+    public static function writeOrderData($token, $jsonData)
     {
         require_once 'lib/order.php';
         require_once 'lib/order_manager.php';
-        $order = new OrderManager($filename);
-        $jsonData = file_get_contents('php://input');
-        $result = $order->writeOrderData($jsonData, $filename);
+        $order = new OrderManager(ORDERS_FILE_PATH);
+        $result = $order->writeOrderData($jsonData);
         OrderController::_sendOrderResponse($result);
+        return $result;
     }
-
-    public static function getOrderHistory($filename, $token)
+    public static function getOrderHistory($token)
     {
         require_once 'lib/order_manager.php';
 
-        $order = new OrderManager($filename);
-        $result = $order->getUserOrderHistory($filename, $token);
+        $order = new OrderManager(ORDERS_FILE_PATH);
+        $result = $order->getUserOrderHistory($token);
         OrderController::_sendOrderResponse($result);
+        return $result;
     }
 
     private static function _sendOrderResponse($result)

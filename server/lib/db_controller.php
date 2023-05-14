@@ -22,7 +22,7 @@ class DBController
         $pdo = self::connect();
         $stmt = $pdo->query($request);
         $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
-        echo json_encode($result);
+        return $result;
     }
 
     public static function getItemInstanceByID($id)
@@ -37,5 +37,6 @@ category c ON i.FID_Category = c.ID_Category WHERE i.id = $id");
         $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
         header("Content-Type: text/html; charset=utf-8");
         echo json_encode($result[0]);
+        return $result[0];
     }
 }

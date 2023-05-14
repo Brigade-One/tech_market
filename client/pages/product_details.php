@@ -25,13 +25,14 @@ $id = $_GET['id'];
             if (xhr.status === 200) {
                 const responseText = xhr.responseText;
                 const response = JSON.parse(responseText);
-                itemInstance = new Item(response.id, response.name, response.price, response.quantity, response.quality, response.v_name, response.c_name);
+                itemInstance = new Item(response.id, response.name, response.price, response.quantity, response.quality, response.v_name, response.c_name, response.imgUrl);
                 document.getElementById("product-name").innerHTML = itemInstance.name;
                 document.getElementById("product-price").innerHTML = itemInstance.price + "₴";
                 document.getElementById("product-vendor").innerHTML = "Vendor: " + itemInstance.vendorName;
                 document.getElementById("product-category").innerHTML = "Category: " + itemInstance.category;
                 document.getElementById("product-quality").innerHTML = "Quality: " + itemInstance.quality + "/5";
                 document.getElementById("product-quantity").innerHTML = "Quantity: " + itemInstance.quantity + " in stock";
+                document.getElementById("product-image").src = itemInstance.imgUrl;
             }
         };
         xhr.send();
@@ -70,4 +71,5 @@ $id = $_GET['id'];
         <div id="footer">
         </div>
     </footer>
+
 </html>

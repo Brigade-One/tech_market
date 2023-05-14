@@ -1,5 +1,13 @@
 {
     "require": {
-        "firebase/php-jwt": "^3.0"
+        "firebase/php-jwt": "^3.0",
+        "amphp/parallel": "^2.1.0",
+        "amphp/amp": "^3.0.0",
+        "revolt/event-loop-adapter-react": "^1.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "ServerTasks\\": "server/lib/tasks/"
+        }
     }
 }

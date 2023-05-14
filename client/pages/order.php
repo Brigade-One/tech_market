@@ -48,9 +48,9 @@
     <script type="module">
         import { Item } from '../models/item.js';
         let localStorageItem = JSON.parse(localStorage.getItem('item'));
-        const item = new Item(localStorageItem.itemInstance["id"], localStorageItem.itemInstance["name"], localStorageItem.itemInstance["price"], localStorageItem.itemInstance["quantity"], localStorageItem.itemInstance["quality"], localStorageItem.itemInstance["vendorName"], localStorageItem.itemInstance["category"]);
+        const item = new Item(localStorageItem.itemInstance["id"], localStorageItem.itemInstance["name"], localStorageItem.itemInstance["price"], localStorageItem.itemInstance["quantity"], localStorageItem.itemInstance["quality"], localStorageItem.itemInstance["vendorName"], localStorageItem.itemInstance["category"], localStorageItem.itemInstance["imgUrl"]);
         const itemContainer = document.getElementById("items-container");
-        const itemHTML = `  <img src="https://via.placeholder.com/100" alt="Product Image" id="order_image">
+        const itemHTML = `  <img src="${item.imgUrl}" alt="Product Image" id="order_image">
                             <div class="item-details">
                                 <h3>${item.name}</h3>
                                 <p>Price: ${item.price}</p>

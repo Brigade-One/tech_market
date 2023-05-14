@@ -1,24 +1,22 @@
 <?php
+
+define("USER_FILE_PATH", "./data/users.txt");
 class AuthController
 {
-    public static function signUp($filename)
+    public static function signUp($jsonData)
     {
         require_once 'lib/sign_up.php';
-        $signup = new SignUp($filename);
-        $jsonData = file_get_contents('php://input');
+        $signup = new SignUp(USER_FILE_PATH);
         $result = $signup->processSignUpData($jsonData);
         AuthController::sendAuthRequestResponse($result);
     }
 
-    public static function signIn($filename)
+    public static function signIn($jsonData)
     {
         require_once 'lib/sign_in.php';
-        $logHandler = new LogHandler();
-        $signin = new SignIn($filename);
-        $jsonData = file_get_contents('php://input');
+        $signin = new SignIn(USER_FILE_PATH);
         $result = $signin->processSignInData($jsonData);
-        AuthController::sendAuthRequestResponse($result);
-        $logHandler->logEvent($result['message']);
+        return AuthController::sendAuthRequestResponse($result);
     }
 
     public static function verifyToken($token)
@@ -35,16 +33,18 @@ class AuthController
 
         header('Content-Type: application/json');
         if ($result['success'] === true) {
-            echo json_encode([
+            $logHandler->logEvent($result['message']);
+            return [
                 'success' => true,
                 'message' => $result['message'],
                 'token' => $result['token'],
                 'user' =>
                 $result['user']
-            ]);
+            ];
         } else {
-            echo json_encode(['success' => false, 'message' => $result['message']]);
+            $logHandler->logEvent($result['message']);
+            return ['success' => false, 'message' => $result['message']];
         }
-        $logHandler->logEvent($result['message']);
+
     }
 }

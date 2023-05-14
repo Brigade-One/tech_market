@@ -6,12 +6,11 @@ class OrderManager
     {
         $this->filename = $filename;
     }
-    public function writeOrderData($jsonData, $filename)
+    public function writeOrderData($jsonData)
     {
         require_once 'order.php';
         $order = Order::fromJson($jsonData);
-
-        $orders = $this->readOrderData($filename)['orders'];
+        $orders = $this->readOrderData()['orders'];
         foreach ($orders as $worder) {
             if ($worder->id === $this->generateId($jsonData)) {
                 return [
@@ -24,7 +23,7 @@ class OrderManager
         file_put_contents($filename, $orderObject->toJson() . "\n", FILE_APPEND);
         return [
             'success' => true,
-            'message' => 'Order with name ' . $orderObject->name . ' written successfully.',
+            'message' => 'Order of buyer ' . $orderObject->name . ' written successfully.',
             'orders' => $orderObject->toJson()
         ];
     }
@@ -35,11 +34,13 @@ class OrderManager
         $id = hash('sha256', $jsonData);
         return $id;
     }
-    public function readOrderData($filename)
+    public function readOrderData()
     {
         require_once 'order.php';
         $orders = [];
-        $file = fopen($filename, 'r');
+        $filename = $this->filename;
+        $file = fopen($filename, "r");
+
         while (!feof($file)) {
             $line = fgets($file);
             if ($line !== false) {
@@ -54,20 +55,21 @@ class OrderManager
             'orders' => $orders
         ];
     }
-    public function getUserOrderHistory($filename, $token)
+    public function getUserOrderHistory($token)
     {
 
         require_once 'token_manager.php';
 
         $tokenManager = new TokenManager();
         $user = $tokenManager->retrieveUserData($token);
-        $orders = $this->readOrderData($filename)['orders'];
+        $orders = $this->readOrderData()['orders'];
         $userOrders = [];
         foreach ($orders as $order) {
             if ($order->email === $user->email) {
                 array_push($userOrders, $order);
             }
         }
+
         return [
             'success' => true,
             'message' => 'User order history read successfully.',
