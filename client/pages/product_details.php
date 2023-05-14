@@ -35,7 +35,6 @@ $id = $_GET['id'];
             }
         };
         xhr.send();
-
         $("#buy-now-btn").on("click", function () {
             localStorage.setItem("item", JSON.stringify({ itemInstance }));
             window.location.href = "http://techmarket/client/pages/order.php";
@@ -67,14 +66,8 @@ $id = $_GET['id'];
             </button>
         </div>
     </main>
-
     <footer>
         <div id="footer">
         </div>
     </footer>
-
-    <script>
-
-    </script>
-
 </html>

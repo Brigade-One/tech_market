@@ -11,7 +11,7 @@ class SignUp
 
     public function processSignUpData($jsonData)
     {
-        require_once 'user_data_reader.php';
+        require_once 'data_reader.php';
         require_once 'user.php';
 
         $receivedUser = User::fromJson($jsonData);
@@ -37,7 +37,15 @@ class SignUp
         $result = file_put_contents($this->filename, $userData, FILE_APPEND);
 
         if ($result !== false) {
-            return ['success' => true, 'message' => 'User ' . $receivedUser->email . ' signed up successfully.'];
+            require_once 'lib/token_manager.php';
+
+            $jwt = TokenManager::generateToken($userObject);
+            return [
+                'success' => true,
+                'message' => 'User with name ' . $receivedUser->name . ' signed up successfully.',
+                'user' => $receivedUser->toJson(),
+                'token' => $jwt
+            ];
         } else {
             return ['success' => false, 'message' => 'Signing up error.'];
         }

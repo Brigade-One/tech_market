@@ -33,10 +33,11 @@ export class UserController {
                     const user = response.user;
                     if (response.success === true) {
                         localStorage.setItem("user", user);
+                        localStorage.setItem("token", response.token);
                     }
                     this.view.render(response.message);
                     // Add a 1.5 second delay before redirecting to the index page
-                    setTimeout(function () {
+                    if (response.success === true) setTimeout(function () {
                         window.location.href = "../pages/index.php";
                     }, 1500);
                 } else {
