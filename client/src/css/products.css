@@ -1,11 +1,14 @@
 .product-grid {
     display: grid;
+    justify-content: center !important;
+    align-items: center !important;
     grid-template-columns: repeat(1, 1fr);
     grid-gap: 20px;
-    justify-content: center;
-    align-items: center;
+    gap: 4px;
+    grid-auto-flow: column;
+    max-width: 80%;
+    margin: auto;
 }
-
 
 .product-container {
     display: flex;
@@ -16,6 +19,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     border: 1px solid #ccc;
     border-radius: 10px;
     padding: 14px 60px;
