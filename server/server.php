@@ -26,19 +26,23 @@ $queue = new MessageQueue();
 $router = new HttpRouter();
 
 $router->addRoute('POST', '/sign_up', function () use ($logger, $queue) {
-    $logger->log('Client requested sign up');
-    $task = new AuthTask('signUp', ['jsonData' => file_get_contents('php://input')]);
-    $queue->add($task);
+    /*  $logger->log('Client requested sign up');
+     $task = new AuthTask('signUp', ['jsonData' => file_get_contents('php://input')]);
+     $queue->add($task); */
+    AuthController::signUp(file_get_contents('php://input'));
 });
 $router->addRoute('POST', '/sign_in', function () use ($logger, $queue) {
-    $logger->log('Client requested sign in');
+    /* $logger->log('Client requested sign in');
     $task = new AuthTask('signIn', ['jsonData' => file_get_contents('php://input')]);
-    $queue->add($task);
+    $queue->add($task); */
+    $result = AuthController::signIn(file_get_contents('php://input'));
+    echo json_encode($result);
 });
 $router->addRoute('GET', '/get_all_items', function () use ($logger, $queue) {
     /* $logger->log('Client requested all items from DB');
     $task = new DatabaseTask('getAllItems', []);
-    $queue->add($task); */$db = new DBController();
+    $queue->add($task); */
+    $db = new DBController();
     $result = $db->getAllItemsFromDB('SELECT * FROM items');
     echo json_encode($result);
 
@@ -47,6 +51,9 @@ $router->addRoute('GET', '/product', function () use ($logger, $queue) {
     $logger->log('Client requested product with ID: ' . $_GET['id']);
     $task = new DatabaseTask('getItemById', ['id' => $_GET['id']]);
     $queue->add($task);
+    /*   $db = new DBController();
+      $result = $db->getItemInstanceByID($_GET['id']);
+      echo json_encode($result); */
 });
 $router->addRoute('POST', '/order', function () use ($logger, $queue) {
     $token = $_GET['token'];
@@ -57,6 +64,8 @@ $router->addRoute('POST', '/order', function () use ($logger, $queue) {
     $task = new OrderTask("order", ['token' => $token, 'jsonData' => file_get_contents('php://input')]);
     $queue->add($task);
     $logger->log('Added write order task to the message queue');
+    /* OrderController::writeOrderData($token, file_get_contents('php://input'));
+    echo json_encode(['success' => true, 'message' => 'Order placed successfully']); */
 });
 
 $router->addRoute('POST', '/get_order_history', function () use ($logger, $queue) {
@@ -68,6 +77,8 @@ $router->addRoute('POST', '/get_order_history', function () use ($logger, $queue
     $task = new OrderTask('getOrderHistory', ['token' => $token]);
     $queue->add($task);
     $logger->log('Client requested order history');
+
+    /* echo json_encode(OrderController::getOrderHistory($token)); */
 });
 
 // Listen for incoming client requests
