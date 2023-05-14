@@ -17,7 +17,7 @@ class DBController
         return self::$pdo;
     }
 
-    public static function getAllItemsFromDB($request)
+    public static function getItemsByQuery($request)
     {
         $pdo = self::connect();
         $stmt = $pdo->query($request);

@@ -29,10 +29,10 @@ class DatabaseTask implements Task
         $function = $this->function;
         return $this->$function($this->args);
     }
-    public function getAllItems($args)
+    public function getItemsByQuery($args)
     {
         require_once 'lib/db_controller.php';
-        return json_encode(DBController::getAllItemsFromDB('SELECT * FROM items'));
+        return json_encode(DBController::getItemsByQuery($args['query']));
     }
     public function getItemById($args)
     {

@@ -19,7 +19,7 @@
             <div class="banner-text">
                 <h1>Welcome to Techmarket</h1>
                 <p>Shop the latest tech gadgets and accessories at affordable prices.</p>
-                <a href="#" class="banner-button">Shop Now</a>
+                <a href="http://techmarket/client/pages/search_page.php?search=" class=" banner-button">Shop Now</a>
             </div>
         </div>
     </main>
@@ -95,7 +95,9 @@
                     return widget;
                 }
             });
+
     }
+
 </script>
 
 </html>
