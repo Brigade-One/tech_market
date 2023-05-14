@@ -36,9 +36,12 @@ $router->addRoute('POST', '/sign_in', function () use ($logger, $queue) {
     $queue->add($task);
 });
 $router->addRoute('GET', '/get_all_items', function () use ($logger, $queue) {
-    $logger->log('Client requested all items from DB');
+    /* $logger->log('Client requested all items from DB');
     $task = new DatabaseTask('getAllItems', []);
-    $queue->add($task);
+    $queue->add($task); */$db = new DBController();
+    $result = $db->getAllItemsFromDB('SELECT * FROM items');
+    echo json_encode($result);
+
 });
 $router->addRoute('GET', '/product', function () use ($logger, $queue) {
     $logger->log('Client requested product with ID: ' . $_GET['id']);

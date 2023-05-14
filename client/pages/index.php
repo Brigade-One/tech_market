@@ -70,10 +70,16 @@
                 const doc = parser.parseFromString(html, 'text/html');
                 const productWidgetTemplate = doc.querySelector('#product-widget').content;
 
+                const productContainer = document.querySelector('.product-container');
+                productContainer.innerHTML = '';
+                for (let i = 0; i < result.length; i++) {
+                    productContainer.appendChild(createProductWidget(result[i]));
+                }
+
                 function createProductWidget(product) {
                     const widget = productWidgetTemplate.cloneNode(true);
 
-                    widget.querySelector('img').src = 'https://via.placeholder.com/150';//TODO: product.imageUrl;
+                    widget.querySelector('img').src = product['imgUrl'];
 
                     widget.querySelector('.product-name').textContent = product['name'];
                     widget.querySelector('.product-price').textContent = "₴" + product['price'];
@@ -88,13 +94,6 @@
 
                     return widget;
                 }
-
-                const productContainer = document.querySelector('.product-container');
-                productContainer.innerHTML = '';
-                for (let i = 0; i < result.length; i++) {
-                    productContainer.appendChild(createProductWidget(result[i]));
-                }
-
             });
     }
 </script>
