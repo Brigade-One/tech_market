@@ -28,8 +28,8 @@ $search = $_GET['search'];
                     Display
                 </label>
                 <label>
-                    <input type="checkbox" class="filter-checkbox" id="filter-by-videocard" name="videocard">
-                    Videocard
+                    <input type="checkbox" class="filter-checkbox" id="filter-by-videocard" name="gpu">
+                    GPU
                 </label>
                 <label>
                     <input type="checkbox" class="filter-checkbox" id="filter-by-cpu" name="cpu">
@@ -78,6 +78,7 @@ $search = $_GET['search'];
         </div>
 
         <div class="product-grid">
+            <div class="count-items"></div>
             <div class="product-container"></div>
         </div>
     </div>
@@ -136,9 +137,11 @@ $search = $_GET['search'];
             if (xhr.status === 200) {
                 if (xhr.responseText == '') {
                     $('.product-container').html('<h1>No results found</h1>');
+                    $('.count-items').html('    <h2>0 items found</h2>');
                     return;
                 }
                 var searchResults = JSON.parse(xhr.responseText);
+                $('.count-items').html('    <h2>' + searchResults.length + ' items found</h2>');
                 _loadGrid(searchResults);
             } else {
                 console.log('Request failed.  Returned status of ' + xhr.status);

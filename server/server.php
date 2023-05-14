@@ -59,10 +59,16 @@ $router->addRoute('GET', '/search', function () {
     $price = isset($_GET['price']) ? $_GET['price'] : null;
 
     // Build the SQL query based on the search parameters
-    $sql = "SELECT * FROM items WHERE name LIKE '%$query%'";
+    if ($query == '') {
+        $query = '%';
+    } else {
+        $query = "%$query%";
+    }
+    $sql = "SELECT i.*, v.v_name, c.c_name FROM items i JOIN vendors v ON i.FID_Vendor = v.ID_Vendors JOIN
+    category c ON i.FID_Category = c.ID_Category WHERE name LIKE '%$query%'";
     if ($category) {
         $categories = explode(',', $category);
-        $sql .= " AND category IN ('" . implode("', '", $categories) . "')";
+        $sql .= " AND c_name IN ('" . implode("', '", $categories) . "')";
     }
     if ($quality) {
         $qualityArr = explode(',', $quality);
@@ -70,7 +76,7 @@ $router->addRoute('GET', '/search', function () {
         $sql .= " AND quality IN ($qualityInClause)";
     }
     if ($price) {
-        $sql .= " AND price <= $price";
+        $sql .= " AND v_name <= $price";
     }
 
     $result = $db->getItemsByQuery($sql);
