@@ -1,5 +1,5 @@
 export class Item {
-    constructor(id, name, price, quantity, quality, vendorName, category) {
+    constructor(id, name, price, quantity, quality, vendorName, category, imgUrl) {
         this.id = id;
         this.name = name;
         this.price = price;
@@ -7,6 +7,7 @@ export class Item {
         this.quality = quality;
         this.vendorName = vendorName;
         this.category = category;
+        this.imgUrl = imgUrl;
     }
     toJSON() {
         return {
@@ -16,7 +17,8 @@ export class Item {
             quantity: this.quantity,
             quality: this.quality,
             vendorName: this.vendorName,
-            category: this.category
+            category: this.category,
+            imgUrl: this.imgUrl
         };
     }
     fromJSON(json) {
@@ -27,5 +29,6 @@ export class Item {
         this.quality = json.quality;
         this.vendorName = json.vendorName;
         this.category = json.category;
+        this.imgUrl = json.imgUrl;
     }
 }

@@ -62,7 +62,7 @@ class OrderManager
 
         $tokenManager = new TokenManager();
         $user = $tokenManager->retrieveUserData($token);
-        $orders = $this->readOrderData($filename)['orders'];
+        $orders = $this->readOrderData()['orders'];
         $userOrders = [];
         foreach ($orders as $order) {
             if ($order->email === $user->email) {
