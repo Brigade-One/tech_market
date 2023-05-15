@@ -17,7 +17,6 @@ $search = $_GET['search'];
     <div id="header"></div>
 </header>
 
-
 <body>
     <div id="search-content">
         <div id="filter">
@@ -94,7 +93,7 @@ $search = $_GET['search'];
     $("#header").load("widgets/header.html");
     $("#footer").load("widgets/footer.html");
     getSearchResults();
-
+    $(document).ready(function () {});
     $(document).ready(function () {
         $('#searchField').val("<?php echo $search; ?>");
         $('#searchField').on('input', function () {
