@@ -8,7 +8,7 @@ class AuthController
         require_once 'lib/sign_up.php';
         $signup = new SignUp(USER_FILE_PATH);
         $result = $signup->processSignUpData($jsonData);
-        AuthController::sendAuthRequestResponse($result);
+        return AuthController::sendAuthRequestResponse($result);
     }
 
     public static function signIn($jsonData)
