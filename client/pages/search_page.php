@@ -5,8 +5,8 @@ $search = $_GET['search'];
 <html>
 
 <head>
-    <title>Search for "
-        <?php echo $search; ?>" - TechMarket
+    <title>
+        Search - TechMarket
     </title>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link rel="stylesheet" href="http://techmarket/client/src/css/products.css">
@@ -65,10 +65,11 @@ $search = $_GET['search'];
             <fieldset>
                 <legend>Price</legend>
                 <label>
-                    From <input type="number" name="price" id="price" min="0" max="1000000" step="100" value="1000">
+                    From <input type="number" name="minPrice" id="minPrice" min="0" max="1000000" step="100"
+                        value="1000">
                 </label>
                 <label>
-                    To <input type="number" name="price" id="price" min="1000000" max="2000000" step="1000"
+                    To <input type="number" name="maxPrice" id="maxPrice" min="1000000" max="2000000" step="1000"
                         value="100000">
                 </label>
 
@@ -116,18 +117,20 @@ $search = $_GET['search'];
 
         // Get the selected filters
         var filters = getFilters();
-
+        console.log(filters);
         // Construct the search query
         var searchUrl = 'http://techmarket/server/server.php/search?query=' + searchQuery;
-        console.log(searchUrl);
         if (filters.category.length > 0) {
             searchUrl += '&category=' + filters.category.join(',');
         }
         if (filters.quality) {
             searchUrl += '&quality=' + filters.quality;
         }
-        if (filters.price) {
-            searchUrl += '&price=' + filters.price;
+        if (filters.minPrice) {
+            searchUrl += '&minPrice=' + filters.minPrice;
+        }
+        if (filters.maxPrice) {
+            searchUrl += '&maxPrice=' + filters.maxPrice;
         }
 
         // Send the search request
@@ -214,10 +217,10 @@ $search = $_GET['search'];
                 filters.category.push(categoryCheckboxes[i].name);
             }
         }
-
         // Get the selected quality filter
-        filters.quality = document.getElementById('quality').value;
-
+        filters.quality = $('input[name="quality"]:checked').val();
+        filters.minPrice = $('#minPrice').val();
+        filters.maxPrice = $('#maxPrice').val();
         return filters;
     }
 

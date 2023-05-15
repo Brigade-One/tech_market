@@ -56,7 +56,8 @@ $router->addRoute('GET', '/search', function () {
     $query = $_GET['query'];
     $category = isset($_GET['category']) ? $_GET['category'] : null;
     $quality = isset($_GET['quality']) ? $_GET['quality'] : null;
-    $price = isset($_GET['price']) ? $_GET['price'] : null;
+    $minPrice = isset($_GET['minPrice']) ? $_GET['minPrice'] : null;
+    $maxPrice = isset($_GET['maxPrice']) ? $_GET['maxPrice'] : null;
 
     // Build the SQL query based on the search parameters
     if ($query == '') {
@@ -75,8 +76,11 @@ $router->addRoute('GET', '/search', function () {
         $qualityInClause = implode(',', array_map(fn($q) => "'$q'", $qualityArr));
         $sql .= " AND quality IN ($qualityInClause)";
     }
-    if ($price) {
-        $sql .= " AND v_name <= $price";
+    if ($minPrice) {
+        $sql .= " AND price >= $minPrice";
+    }
+    if ($maxPrice) {
+        $sql .= " AND price <= $maxPrice";
     }
 
     $result = $db->getItemsByQuery($sql);
