@@ -88,8 +88,7 @@ $router->addRoute('GET', '/product', function () use ($logger, $queue) {
      $task = new DatabaseTask('getItemById', ['id' => $_GET['id']]);
      $queue->add($task); */
     $db = new DBController();
-    $result = $db->getItemInstanceByID($_GET['id']);
-    echo json_encode($result);
+    $db->getItemInstanceByID($_GET['id']);
 });
 $router->addRoute('POST', '/order', function () use ($logger, $queue) {
     $token = $_GET['token'];
