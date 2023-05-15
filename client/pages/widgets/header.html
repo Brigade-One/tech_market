@@ -15,8 +15,8 @@
             </a>
         </div>
         <div class="header_search">
-            <form action="http://techmarket/client/index.php?controller=product&action=search" method="post">
-                <input type="text" name="search" placeholder="Search for any things" />
+            <form onsubmit="return submitSearchForm()">
+                <input type="text" id="searchField" name="search" placeholder="Search for any things" />
                 <button type="submit" name="submit-search">
                     Search
                 </button>
@@ -24,7 +24,7 @@
         </div>
         <div class=" header_nav">
             <div class="header_cart">
-                <a href="http://techmarket/client/index.php?controller=cart&action=show">
+                <a href="http://techmarket/client/index.php">
                     <img src="http://techmarket/client/assets/images/cart.png" alt="cart" />
                 </a>
             </div>
@@ -37,5 +37,15 @@
 
     </div>
 </body>
+
+<script>
+
+    function submitSearchForm() {
+        var searchQuery = document.querySelector('input[name="search"]').value;
+        var searchUrl = "http://techmarket/client/pages/search_page.php?search=" + searchQuery;
+        window.location.href = searchUrl;
+        return false;
+    }
+</script>
 
 </html>

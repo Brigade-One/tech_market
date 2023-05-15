@@ -24,7 +24,8 @@
         <br>
 
         <label for="password">Password:</label>
-        <input type="password" name="password" id="password" placeholder="Create a password" required>
+        <input type="password" name="password" id="password" placeholder="Create a password (min. 6 characters)"
+            required pattern=".{6,}">
         <br>
 
         <label for="confirmPassword">Confirm Password:</label>

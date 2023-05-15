@@ -1,4 +1,12 @@
 .product-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-width: 80%;
+}
+
+.product-container {
     display: grid;
     justify-content: center !important;
     align-items: center !important;
@@ -8,9 +16,6 @@
     grid-auto-flow: column;
     max-width: 80%;
     margin: auto;
-}
-
-.product-container {
     display: flex;
     flex-wrap: wrap;
 }

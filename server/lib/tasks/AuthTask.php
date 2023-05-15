@@ -37,7 +37,7 @@ class AuthTask implements Task
     }
     public function signUp($args)
     {
-        require_once 'lib/auth_controller.lib';
+        require_once 'lib/auth_controller.php';
         return json_encode(AuthController::signUp($args['jsonData']));
     }
 }

@@ -1,0 +1,88 @@
+body {
+    min-height: 100vh;
+    font-family: "Poppins", sans-serif;
+}
+
+#search-content {
+    display: flex;
+    flex-direction: row;
+}
+
+#filter {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+    padding: 24px;
+    margin-bottom: 24px;
+}
+
+#filter fieldset {
+    border: none;
+    margin-bottom: 24px;
+}
+
+#filter legend {
+    font-weight: bold;
+    margin-bottom: 12px;
+}
+
+#filter .filter-checkbox {
+    margin-right: 12px;
+}
+
+#filter label {
+    display: flex;
+    align-items: center;
+}
+
+#filter input[type="radio"],
+#filter input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    width: 18px;
+    height: 18px;
+    margin: 8px;
+}
+
+#filter input[type="radio"]:checked::before,
+#filter input[type="checkbox"]:checked::before {
+    content: '';
+    display: block;
+    width: 10px;
+    height: 10px;
+    background-color: #003F62;
+
+    border-radius: 50%;
+}
+
+#filter input[type="number"] {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 4px 8px;
+    margin: 12px;
+    width: 100px;
+}
+
+#filter button {
+    background-color: #003F62;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 16px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+
+#filter button:hover {
+    background-color: #002640;
+}
+
+#count-items {
+    margin-left: auto;
+    margin-right: 24px;
+    font-size: 16px;
+    font-weight: bold;
+}

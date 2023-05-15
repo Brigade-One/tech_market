@@ -36,8 +36,7 @@
                 itemsContainer.innerHTML = `Error ${xhr.status}: ${xhr.statusText}`;
             } else {
                 const response = JSON.parse(xhr.response);
-                console.log(response);
-                const orders =  response.orders;
+                const orders = response.orders;
                 if (orders.length === 0) {
                     itemsContainer.innerHTML = `History is empty.`;
                     return;
@@ -55,7 +54,7 @@
                                             <div class="order-items">
                                                 <h3>Items:</h3>
                                                 <div class="item">
-                                                    <img src="https://via.placeholder.com/100" alt="Product Image" id="order_image">
+                                                    <img src="${item.imgUrl || 'https://via.placeholder.com/100'}" alt="Item image">
                                                     <div class="item-details">
                                                         <h3>${item.name}</h3>
                                                         <p>Price: ${item.price}</p>
