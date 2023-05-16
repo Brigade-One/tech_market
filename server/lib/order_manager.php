@@ -20,7 +20,7 @@ class OrderManager
             }
         }
         $orderObject = new Order($this->generateId($jsonData), $order->email, $order->name, $order->phoneNumber, $order->address, $order->cardNumber, $order->cardCVV, $order->items);
-        file_put_contents($filename, $orderObject->toJson() . "\n", FILE_APPEND);
+        file_put_contents($this->filename, $orderObject->toJson() . "\n", FILE_APPEND);
         return [
             'success' => true,
             'message' => 'Order of buyer ' . $orderObject->name . ' written successfully.',
@@ -70,10 +70,12 @@ class OrderManager
             }
         }
 
+        $reversedOrders = array_reverse($userOrders);
+
         return [
             'success' => true,
             'message' => 'User order history read successfully.',
-            'orders' => $userOrders
+            'orders' => $reversedOrders
         ];
     }
 }
