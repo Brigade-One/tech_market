@@ -20,14 +20,15 @@ class HttpRouter
 
     public function route($method, $path)
     {
-        $this->logHandler->logEvent($method . ' request: ' . ' to ' . $path);
         foreach ($this->routes as $route) {
             if ($route['method'] === $method && $route['path'] === $path) {
                 $callback = $route['callback'];
+                $this->logHandler->logEvent($method . ' request: ' . ' to ' . $path);
                 return $callback();
             }
         }
         http_response_code(404);
+        $this->logHandler->logEvent('Invalid request to ' . $path);
         echo 'Invalid request';
     }
 }

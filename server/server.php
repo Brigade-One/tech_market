@@ -14,6 +14,7 @@ header('Access-Control-Allow-Headers: Content-Type, Authorization, X-Requested-W
 use ServerTasks\OrderTask;
 use ServerTasks\DatabaseTask;
 use ServerTasks\AuthTask;
+use TechMarket\Lib\LogHandler;
 
 // Server parameters.
 $host = 'techmarket';
@@ -23,7 +24,8 @@ startServer($host, $port, $docroot);
 
 $logger = new MessageLogger('logs/server_tasks_log.txt');
 $queue = new MessageQueue();
-$router = new HttpRouter();
+$logHandler = new LogHandler();
+$router = new HttpRouter($logHandler);
 
 $router->addRoute('POST', '/sign_up', function () use ($logger, $queue) {
     $logger->log('Client requested sign up');

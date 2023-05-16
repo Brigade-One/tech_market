@@ -1,5 +1,6 @@
 <?php
-
+use  TechMarket\Lib\LineDataReader;
+use TechMarket\Lib\User;
 class SignUp
 {
     private $filename;
@@ -11,7 +12,7 @@ class SignUp
 
     public function processSignUpData($jsonData)
     {
-        require_once 'data_reader.php';
+ 
         require_once 'user.php';
 
         $receivedUser = User::fromJson($jsonData);
@@ -23,7 +24,7 @@ class SignUp
         $userData = $receivedUser->toJson() . "\n";
 
         // Read the user data from the file
-        $reader = new DataReader($this->filename);
+        $reader = new LineDataReader($this->filename);
         $users = $reader->read();
 
 

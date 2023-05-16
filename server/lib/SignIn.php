@@ -1,4 +1,10 @@
 <?php
+namespace TechMarket\Lib;
+
+use TechMarket\Lib\LineDataReader;
+use TechMarket\Lib\User;
+use TokenManager;
+
 class SignIn
 {
     private $filename;
@@ -10,10 +16,8 @@ class SignIn
 
     public function processSignInData($jsonData)
     {
-        require_once 'data_reader.php';
-        require_once 'user.php';
-        $reader = new DataReader($this->filename);
-
+        $reader = new LineDataReader($this->filename);
+        
         // Read the user data from the file
         $users = $reader->read();
 

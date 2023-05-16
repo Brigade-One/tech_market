@@ -1,5 +1,9 @@
 <?php
-class DataReader
+namespace TechMarket\Lib;
+
+use Exception;
+
+class LineDataReader
 {
     private $filename;
 

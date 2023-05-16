@@ -1,4 +1,5 @@
 <?php
+namespace TechMarket\Lib;
 class User
 {
     public $name;

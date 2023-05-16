@@ -1,4 +1,6 @@
 <?php
+use TechMarket\Lib\LogHandler;
+use TechMarket\Lib\SignIn;
 
 define("USER_FILE_PATH", "./data/users.txt");
 class AuthController
@@ -13,7 +15,6 @@ class AuthController
 
     public static function signIn($jsonData)
     {
-        require_once 'lib/sign_in.php';
         $signin = new SignIn(USER_FILE_PATH);
         $result = $signin->processSignInData($jsonData);
         return AuthController::sendAuthRequestResponse($result);
@@ -22,13 +23,12 @@ class AuthController
     public static function verifyToken($token)
     {
         require_once 'lib/token_manager.php';
-        $tokenManager = new TokenManager();
-        return $tokenManager->verifyToken($token);
+        return TokenManager::verifyToken($token);
     }
 
     private static function sendAuthRequestResponse($result)
     {
-        require_once 'lib/log_handler.php';
+
         $logHandler = new LogHandler();
 
         header('Content-Type: application/json');

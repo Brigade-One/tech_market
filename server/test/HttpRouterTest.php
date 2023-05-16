@@ -4,30 +4,27 @@ namespace ServerTests\Tests;
 use HttpRouter;
 use TechMarket\Lib\LogHandler;
 use PHPUnit\Framework\TestCase;
+use PHPUnit\Framework\MockObject\MockObject;
 
 require_once __DIR__ . '/../lib/http_router.php';
-
-class MockLogHandler extends LogHandler
-{
-    public function logEvent($event)
-    {
-        // Custom logic for logging event in the mock
-    }
-}
 
 class HttpRouterTest extends TestCase
 {
     private HttpRouter $router;
-    private MockLogHandler $mockLogHandler;
+
+    /**
+     *  @var MockObject|LogHandler
+     */
+    private MockObject $logHandler;
 
     protected function setUp(): void
     {
-        $this->mockLogHandler = $this->createMock(MockLogHandler::class);
-        $this->router = new HttpRouter($this->mockLogHandler);
+        $this->logHandler = $this->createMock(LogHandler::class);
+        $this->router = new HttpRouter($this->logHandler);
     }
     public function testRouteValid()
     {
-        $this->mockLogHandler->expects($this->never())
+        $this->logHandler->expects($this->once())
             ->method('logEvent');
 
         $this->router->addRoute('GET', '/users', function () {
@@ -41,9 +38,9 @@ class HttpRouterTest extends TestCase
 
     public function testRouteInvalid()
     {
-        $this->mockLogHandler->expects($this->once())
+        $this->logHandler->expects($this->once())
             ->method('logEvent')
-            ->with($this->equalTo('Invalid request'));
+            ->with($this->equalTo('Invalid request to /users'));
 
         $this->router->addRoute('GET', '/users', function () {
             return 'User list';
