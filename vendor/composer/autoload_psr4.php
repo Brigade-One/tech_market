@@ -6,6 +6,8 @@ $vendorDir = dirname(__DIR__);
 $baseDir = dirname($vendorDir);
 
 return array(
+    'TechMarket\\Lib\\' => array($baseDir . '/server/lib'),
+    'ServerTests\\Tests\\' => array($baseDir . '/server/tests'),
     'ServerTasks\\' => array($baseDir . '/server/lib/tasks'),
     'Revolt\\EventLoop\\React\\' => array($vendorDir . '/revolt/event-loop-adapter-react/src'),
     'Revolt\\' => array($vendorDir . '/revolt/event-loop/src'),
@@ -13,10 +15,12 @@ return array(
     'React\\EventLoop\\' => array($vendorDir . '/react/event-loop/src'),
     'React\\Async\\' => array($vendorDir . '/react/async/src'),
     'Psr\\Http\\Message\\' => array($vendorDir . '/psr/http-message/src'),
+    'PhpParser\\' => array($vendorDir . '/nikic/php-parser/lib/PhpParser'),
     'LibDNS\\' => array($vendorDir . '/daverandom/libdns/src'),
-    'League\\Uri\\' => array($vendorDir . '/league/uri-interfaces/src', $vendorDir . '/league/uri/src'),
+    'League\\Uri\\' => array($vendorDir . '/league/uri/src', $vendorDir . '/league/uri-interfaces/src'),
     'Kelunik\\Certificate\\' => array($vendorDir . '/kelunik/certificate/src'),
     'Firebase\\JWT\\' => array($vendorDir . '/firebase/php-jwt/src'),
+    'DeepCopy\\' => array($vendorDir . '/myclabs/deep-copy/src/DeepCopy'),
     'Amp\\WindowsRegistry\\' => array($vendorDir . '/amphp/windows-registry/src'),
     'Amp\\Sync\\' => array($vendorDir . '/amphp/sync/src'),
     'Amp\\Socket\\' => array($vendorDir . '/amphp/socket/src'),

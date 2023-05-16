@@ -1,4 +1,6 @@
 <?php
+namespace TechMarket\Lib;
+
 class LogHandler
 {
     public function logEvent($event)

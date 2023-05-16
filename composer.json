@@ -9,5 +9,14 @@
         "psr-4": {
             "ServerTasks\\": "server/lib/tasks/"
         }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "ServerTests\\Tests\\": "server/tests/",
+            "TechMarket\\Lib\\": "server/lib/"
+        }
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^10.1"
     }
 }

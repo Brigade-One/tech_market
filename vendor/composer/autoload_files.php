@@ -19,11 +19,13 @@ return array(
     'd4e415514e4352172d58f02433fa50e4' => $vendorDir . '/amphp/socket/src/functions.php',
     '1c2dcb9d6851a7abaae89f9586ddd460' => $vendorDir . '/amphp/socket/src/Internal/functions.php',
     '7fec264e4908bd2976476a6241c3f4d0' => $vendorDir . '/amphp/socket/src/SocketAddress/functions.php',
+    '6124b4c8570aa390c21fafd04a26c69f' => $vendorDir . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
     'c4e03ecd470d2a87804979c0a8152284' => $vendorDir . '/react/async/src/functions_include.php',
     '5d92623b88cbe7c988a6aca6fa79ebce' => $vendorDir . '/amphp/parallel/src/Context/functions.php',
     'c20d640a0b06382af5bbe7e0c7475adf' => $vendorDir . '/amphp/parallel/src/Context/Internal/functions.php',
     '42a785d14bae29c606457755ffd1653b' => $vendorDir . '/amphp/parallel/src/Ipc/functions.php',
     '805558626a43dc52f2afc82368f8d62e' => $vendorDir . '/amphp/parallel/src/Worker/functions.php',
+    'ec07570ca5a812141189b1fa81503674' => $vendorDir . '/phpunit/phpunit/src/Framework/Assert/Functions.php',
     '8c350ae619b0eea01269012a57a8fb81' => $vendorDir . '/revolt/event-loop-adapter-react/src/bootstrap.php',
     '71d05d7eb9d8ea1a5e41e2b54d4f525e' => $vendorDir . '/revolt/event-loop-adapter-react/etc/Factory.php',
 );

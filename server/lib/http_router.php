@@ -2,6 +2,12 @@
 class HttpRouter
 {
     private $routes = [];
+    private $logHandler;
+
+    public function __construct($logHandler)
+    {
+        $this->logHandler = $logHandler;
+    }
 
     public function addRoute($method, $path, $callback)
     {
@@ -11,11 +17,10 @@ class HttpRouter
             'callback' => $callback
         ];
     }
+
     public function route($method, $path)
     {
-        require_once 'lib/log_handler.php';
-        $logHandler = new LogHandler();
-        $logHandler->logEvent($method . ' request: ' . ' to ' . $path);
+        $this->logHandler->logEvent($method . ' request: ' . ' to ' . $path);
         foreach ($this->routes as $route) {
             if ($route['method'] === $method && $route['path'] === $path) {
                 $callback = $route['callback'];
@@ -25,5 +30,4 @@ class HttpRouter
         http_response_code(404);
         echo 'Invalid request';
     }
-
 }

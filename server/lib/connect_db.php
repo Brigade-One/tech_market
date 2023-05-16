@@ -14,8 +14,14 @@ class ConnectDB
     }
     public function connect()
     {
-        $dsn = "mysql:host=$this->host;dbname=$this->db_name";
-        $pdo = new PDO($dsn, $this->user_name, $this->password);
-        return $pdo;
+        try {
+            $dsn = "mysql:host=$this->host;dbname=$this->db_name";
+            $pdo = new PDO($dsn, $this->user_name, $this->password);
+            return $pdo;
+        } catch (PDOException $e) {
+            echo "Connection failed: " . $e->getMessage();
+            return null;
+        }
     }
+
 }

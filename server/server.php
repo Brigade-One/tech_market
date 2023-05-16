@@ -5,6 +5,7 @@ require_once 'lib/auth_controller.php';
 require_once 'lib/db_controller.php';
 require_once 'lib/order_controller.php';
 require_once 'lib/message_logger.php';
+require_once 'lib/log_handler.php';
 require_once 'lib/message_queue.php';
 
 header('Access-Control-Allow-Origin: http://techmarkethome');
@@ -23,7 +24,9 @@ startServer($host, $port, $docroot);
 
 $logger = new MessageLogger('logs/server_tasks_log.txt');
 $queue = new MessageQueue();
-$router = new HttpRouter();
+
+$logHandler = new LogHandler();
+$router = new HttpRouter($logHandler);
 
 $router->addRoute('POST', '/sign_up', function () use ($logger, $queue) {
     $logger->log('Client requested sign up');
@@ -45,7 +48,6 @@ $router->addRoute('GET', '/get_all_items', function () use ($logger, $queue) {
     $db = new DBController();
     $result = $db->getItemsByQuery('SELECT * FROM items');
     echo json_encode($result);
-
 });
 
 $router->addRoute('GET', '/search', function () {
@@ -87,7 +89,6 @@ $router->addRoute('POST', '/get_order_history', function () use ($logger, $queue
     /* $task = new OrderTask('getOrderHistory', ['token' => $token]);
     $queue->add($task);
     $logger->log('Client requested order history'); */
-
     OrderController::getOrderHistory($token);
 });
 
