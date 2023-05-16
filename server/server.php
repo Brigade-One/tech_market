@@ -5,7 +5,6 @@ require_once 'lib/auth_controller.php';
 require_once 'lib/db_controller.php';
 require_once 'lib/order_controller.php';
 require_once 'lib/message_logger.php';
-require_once 'lib/log_handler.php';
 require_once 'lib/message_queue.php';
 
 header('Access-Control-Allow-Origin: http://techmarkethome');
@@ -15,7 +14,7 @@ header('Access-Control-Allow-Headers: Content-Type, Authorization, X-Requested-W
 use ServerTasks\OrderTask;
 use ServerTasks\DatabaseTask;
 use ServerTasks\AuthTask;
-
+use TechMarket\Lib\LogHandler;
 // Server parameters.
 $host = 'techmarket';
 $port = 80;
@@ -24,7 +23,6 @@ startServer($host, $port, $docroot);
 
 $logger = new MessageLogger('logs/server_tasks_log.txt');
 $queue = new MessageQueue();
-
 $logHandler = new LogHandler();
 $router = new HttpRouter($logHandler);
 
