@@ -7,17 +7,29 @@ use PHPUnit\Framework\TestCase;
 
 require_once __DIR__ . '/../lib/http_router.php';
 
+class MockLogHandler extends LogHandler
+{
+    public function logEvent($event)
+    {
+        // Custom logic for logging event in the mock
+    }
+}
+
 class HttpRouterTest extends TestCase
 {
     private HttpRouter $router;
+    private MockLogHandler $mockLogHandler;
 
     protected function setUp(): void
     {
-        $this->router = new HttpRouter();
+        $this->mockLogHandler = $this->createMock(MockLogHandler::class);
+        $this->router = new HttpRouter($this->mockLogHandler);
     }
-
     public function testRouteValid()
     {
+        $this->mockLogHandler->expects($this->never())
+            ->method('logEvent');
+
         $this->router->addRoute('GET', '/users', function () {
             return 'User list';
         });
@@ -29,6 +41,10 @@ class HttpRouterTest extends TestCase
 
     public function testRouteInvalid()
     {
+        $this->mockLogHandler->expects($this->once())
+            ->method('logEvent')
+            ->with($this->equalTo('Invalid request'));
+
         $this->router->addRoute('GET', '/users', function () {
             return 'User list';
         });
