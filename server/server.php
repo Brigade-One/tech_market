@@ -67,8 +67,6 @@ $router->addRoute('POST', '/order', function () use ($logger, $queue) {
     $task = new OrderTask("order", ['token' => $token, 'jsonData' => file_get_contents('php://input')]);
     $queue->add($task);
     $logger->log('Added write order task to the message queue');
-    /* OrderController::writeOrderData($token, file_get_contents('php://input'));
-    echo json_encode(['success' => true, 'message' => 'Order placed successfully']); */
 });
 
 $router->addRoute('POST', '/get_order_history', function () use ($logger, $queue) {
