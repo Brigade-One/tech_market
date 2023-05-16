@@ -39,7 +39,7 @@ class SignUp
         if ($result !== false) {
             require_once 'lib/token_manager.php';
 
-            $jwt = TokenManager::generateToken($userObject);
+            $jwt = TokenManager::generateToken($receivedUser);
             return [
                 'success' => true,
                 'message' => 'User with name ' . $receivedUser->name . ' signed up successfully.',
