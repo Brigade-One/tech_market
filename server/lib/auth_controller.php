@@ -1,14 +1,16 @@
 <?php
 use TechMarket\Lib\LogHandler;
 use TechMarket\Lib\SignIn;
+use TechMarket\Lib\SignUp;
+use TechMarket\Lib\TokenManager;
+use TechMarket\Lib\LineDataReader;
 
 define("USER_FILE_PATH", "./data/users.txt");
 class AuthController
 {
     public static function signUp($jsonData)
     {
-        require_once 'lib/sign_up.php';
-        $signup = new SignUp(USER_FILE_PATH);
+        $signup = new SignUp(USER_FILE_PATH, new LineDataReader(USER_FILE_PATH), new TokenManager());
         $result = $signup->processSignUpData($jsonData);
         return AuthController::sendAuthRequestResponse($result);
     }

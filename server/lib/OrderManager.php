@@ -1,21 +1,29 @@
 <?php
+namespace TechMarket\Lib;
+
+use TechMarket\Lib\TokenManager;
+use TechMarket\Lib\Order;
+
 class OrderManager
 {
     private $filename;
-    public function __construct($filename)
+    private $tokenManager;
+
+    public function __construct($filename, TokenManager $tokenManager)
     {
         $this->filename = $filename;
+        $this->tokenManager = $tokenManager;
     }
+
     public function writeOrderData($jsonData)
     {
-        require_once 'order.php';
         $order = Order::fromJson($jsonData);
         $orders = $this->readOrderData()['orders'];
         foreach ($orders as $worder) {
             if ($worder->id === $this->generateId($jsonData)) {
                 return [
                     'success' => false,
-                    'message' => 'The order already written.'
+                    'message' => 'The order has already been written.'
                 ];
             }
         }
@@ -38,9 +46,9 @@ class OrderManager
     {
         require_once 'order.php';
         $orders = [];
-        $filename = $this->filename;
-        $file = fopen($filename, "r");
-
+        $this->filename = "c:\\OSPanel\\domains\\tech_market\\server\\data\\orders.txt";
+        $file = fopen($this->filename, "r");
+        print("Filename: " . $this->filename);
         while (!feof($file)) {
             $line = fgets($file);
             if ($line !== false) {
@@ -57,11 +65,7 @@ class OrderManager
     }
     public function getUserOrderHistory($token)
     {
-
-        require_once 'token_manager.php';
-
-        $tokenManager = new TokenManager();
-        $user = $tokenManager->retrieveUserData($token);
+        $user = $this->tokenManager->retrieveUserData($token);
         $orders = $this->readOrderData()['orders'];
         $userOrders = [];
         foreach ($orders as $order) {
@@ -69,9 +73,7 @@ class OrderManager
                 array_push($userOrders, $order);
             }
         }
-
         $reversedOrders = array_reverse($userOrders);
-
         return [
             'success' => true,
             'message' => 'User order history read successfully.',

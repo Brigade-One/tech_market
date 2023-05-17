@@ -1,4 +1,6 @@
 <?php
+namespace TechMarket\Lib;
+
 require __DIR__ . '/../../vendor/autoload.php';
 
 use Firebase\JWT\JWT;
@@ -6,7 +8,7 @@ use Firebase\JWT\JWT;
 class TokenManager
 {
     static public $secret_key = "y@_X:MLN+l'{71F";
-    static function generateToken($data)
+    public function generateToken($data)
     {
         $token = ["data" => $data];
         $jwt = JWT::encode($token, TokenManager::$secret_key);

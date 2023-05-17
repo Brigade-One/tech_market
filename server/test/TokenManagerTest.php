@@ -1,5 +1,6 @@
 <?php
 use PHPUnit\Framework\TestCase;
+use TechMarket\Lib\TokenManager;
 
 class TokenManagerTest extends TestCase
 {
@@ -10,7 +11,8 @@ class TokenManagerTest extends TestCase
     public function testGenerateToken()
     {
         $data = ['user_id' => 123];
-        $token = TokenManager::generateToken($data);
+        $tokenManager = new TokenManager();
+        $token = $tokenManager->generateToken($data);
 
         $this->assertNotEmpty($token);
         $this->assertIsString($token);
@@ -19,7 +21,8 @@ class TokenManagerTest extends TestCase
     public function testRetrieveUserData()
     {
         $data = ['data' => 'test'];
-        $token = TokenManager::generateToken($data);
+        $tokenManager = new TokenManager();
+        $token = $tokenManager->generateToken($data);
 
         $retrievedData = TokenManager::retrieveUserData($token);
 
@@ -29,7 +32,8 @@ class TokenManagerTest extends TestCase
     public function testVerifyToken()
     {
         $data = ['user_id' => 123];
-        $token = TokenManager::generateToken($data);
+        $tokenManager = new TokenManager();
+        $token = $tokenManager->generateToken($data);
 
         $isValid = TokenManager::verifyToken($token);
 

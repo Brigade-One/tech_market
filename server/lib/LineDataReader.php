@@ -15,9 +15,10 @@ class LineDataReader
     public function read()
     {
         $data = [];
+        $this->filename = "c:\\OSPanel\\domains\\tech_market\\server\\data\\" . $this->filename;
         $handle = fopen($this->filename, "r");
         if (!$handle) {
-            throw new Exception('Unable to open file');
+            throw new Exception('Unable to open file with path ' . $this->filename . '.');
         }
         while (($line = fgets($handle)) !== false) {
             $line = json_decode($line, true);

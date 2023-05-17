@@ -1,4 +1,8 @@
 <?php
+namespace TechMarket\Lib;
+
+use PDO;
+use PDOException;
 class ConnectDB
 {
     private $host;

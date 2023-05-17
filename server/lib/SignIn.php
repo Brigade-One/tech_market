@@ -3,7 +3,7 @@ namespace TechMarket\Lib;
 
 use TechMarket\Lib\LineDataReader;
 use TechMarket\Lib\User;
-use TokenManager;
+use TechMarket\Lib\TokenManager;
 
 class SignIn
 {
@@ -26,9 +26,10 @@ class SignIn
         // Check if there's a matching user record
         foreach ($users as $user) {
             if ($user['email'] === $receivedUser->email && $user['password'] === $receivedUser->password) {
-                require_once 'lib/token_manager.php';
+                 
                 $userObject = new User($user["name"], $user["email"], $user["password"]);
-                $jwt = TokenManager::generateToken($userObject);
+                $tokenManager = new TokenManager();
+                $jwt = $tokenManager->generateToken($userObject);
                 return [
                     'success' => true,
                     'message' => 'User with name ' . $userObject->name . ' signed in successfully.',

@@ -1,23 +1,29 @@
 <?php
-define('DB_NAME', 'techmarket');
-define('DB_TABLE', 'tech_market_db');
-define('DB_USER', 'root');
-define('DB_PASSWORD', '');
+namespace TechMarket\Lib;
+
+use TechMarket\Lib\ConnectDB;
+use PDO;
 
 class DBController
 {
     private static $pdo;
+    private $connectDB;
+
+    public function __construct($connectDB)
+    {
+        $this->connectDB = $connectDB;
+    }
 
     private static function connect()
     {
-        require_once 'lib/connect_db.php';
+        $connectDB = new ConnectDB('localhost', 'tech_market_db', 'root', '');
         if (!isset(self::$pdo)) {
-            self::$pdo = (new ConnectDB(DB_NAME, DB_TABLE, DB_USER, DB_PASSWORD))->connect();
+            self::$pdo = $connectDB->connect();
         }
         return self::$pdo;
     }
 
-    public static function getItemsByQuery($request)
+    public function getItemsByQuery($request)
     {
         $pdo = self::connect();
         $stmt = $pdo->query($request);
@@ -25,7 +31,7 @@ class DBController
         return $result;
     }
 
-    public static function getItemInstanceByID($id)
+    public function getItemInstanceByID($id)
     {
         $pdo = self::connect();
         $stmt = $pdo->query("SELECT i.*, v.v_name, c.c_name FROM items i JOIN vendors v ON i.FID_Vendor = v.ID_Vendors JOIN
@@ -39,7 +45,7 @@ category c ON i.FID_Category = c.ID_Category WHERE i.id = $id");
         echo json_encode($result[0]);
         return $result[0];
     }
-    static function createSqlQueryFromSearchRequest()
+    function createSqlQueryFromSearchRequest()
     {
         $query = $_GET['query'];
         $category = isset($_GET['category']) ? $_GET['category'] : null;

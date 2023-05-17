@@ -1,4 +1,7 @@
 <?php
+
+namespace TechMarket\Lib;
+
 class Order
 {
     public $id;

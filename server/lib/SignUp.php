@@ -1,18 +1,23 @@
 <?php
-use  TechMarket\Lib\LineDataReader;
-use TechMarket\Lib\User;
+namespace TechMarket\Lib;
+
+use Exception;
+
 class SignUp
 {
     private $filename;
+    private $lineDataReader;
+    private $tokenManager;
 
-    public function __construct($filename)
+    public function __construct($filename, LineDataReader $lineDataReader, TokenManager $tokenManager)
     {
         $this->filename = $filename;
+        $this->lineDataReader = $lineDataReader;
+        $this->tokenManager = $tokenManager;
     }
 
     public function processSignUpData($jsonData)
     {
- 
         require_once 'user.php';
 
         $receivedUser = User::fromJson($jsonData);
@@ -24,9 +29,7 @@ class SignUp
         $userData = $receivedUser->toJson() . "\n";
 
         // Read the user data from the file
-        $reader = new LineDataReader($this->filename);
-        $users = $reader->read();
-
+        $users = $this->lineDataReader->read();
 
         // Check if the user with the same email already exists
         foreach ($users as $user) {
@@ -38,9 +41,7 @@ class SignUp
         $result = file_put_contents($this->filename, $userData, FILE_APPEND);
 
         if ($result !== false) {
-            require_once 'lib/token_manager.php';
-
-            $jwt = TokenManager::generateToken($receivedUser);
+            $jwt = $this->tokenManager->generateToken($receivedUser);
             return [
                 'success' => true,
                 'message' => 'User with name ' . $receivedUser->name . ' signed up successfully.',
@@ -51,5 +52,4 @@ class SignUp
             return ['success' => false, 'message' => 'Signing up error.'];
         }
     }
-
 }

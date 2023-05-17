@@ -1,10 +1,16 @@
 <?php
 namespace ServerTasks;
 
-use DBController;
+use TechMarket\Lib\DBController;
 use Amp\Cancellation;
 use Amp\Parallel\Worker\Task;
 use Amp\Sync\Channel;
+use TechMarket\Lib\ConnectDB;
+
+define('DB_NAME', 'techmarket');
+define('DB_TABLE', 'tech_market_db');
+define('DB_USER', 'root');
+define('DB_PASSWORD', '');
 
 class DatabaseTask implements Task
 {
@@ -31,12 +37,15 @@ class DatabaseTask implements Task
     }
     public function getItemsByQuery($args)
     {
-        require_once 'lib/db_controller.php';
-        return json_encode(DBController::getItemsByQuery($args['query']));
+
+        $connectDB = new ConnectDB(DB_NAME, DB_TABLE, DB_USER, DB_PASSWORD);
+        $dbController = new DBController($connectDB);
+        return json_encode($dbController->getItemsByQuery($args['query']));
     }
     public function getItemById($args)
     {
-        require_once 'lib/db_controller.php';
-        return json_encode(DBController::getItemInstanceByID($args['id']));
+        $connectDB = new ConnectDB(DB_NAME, DB_TABLE, DB_USER, DB_PASSWORD);
+        $dbController = new DBController($connectDB);
+        return json_encode($dbController->getItemInstanceByID($args['id']));
     }
 }

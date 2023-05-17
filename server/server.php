@@ -2,7 +2,6 @@
 require '..\vendor\autoload.php';
 require_once 'lib/http_router.php';
 require_once 'lib/auth_controller.php';
-require_once 'lib/db_controller.php';
 require_once 'lib/order_controller.php';
 require_once 'lib/message_logger.php';
 require_once 'lib/message_queue.php';
@@ -15,6 +14,8 @@ use ServerTasks\OrderTask;
 use ServerTasks\DatabaseTask;
 use ServerTasks\AuthTask;
 use TechMarket\Lib\LogHandler;
+use TechMarket\Lib\DBController;
+use TechMarket\Lib\ConnectDB;
 
 // Server parameters.
 $host = 'techmarket';
@@ -48,7 +49,8 @@ $router->addRoute('GET', '/search', function () use ($logger, $queue) {
     /* $logger->log('Client requested items from DB');
     $task = new DatabaseTask('getItemsByQuery', ["query" => $_GET['query']]);
     $queue->add($task); */
-    $db = new DBController();
+    $connectDB = new ConnectDB('localhost', 'tech_market_db', 'root', '');
+    $db = new DBController($connectDB);
     $sql = $db->createSqlQueryFromSearchRequest();
     $result = $db->getItemsByQuery($sql);
     echo json_encode($result);
